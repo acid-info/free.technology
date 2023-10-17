@@ -56,6 +56,6 @@ $ yarn start
 
 2. Make your changes, push them to the `origin`, and open a Pull Request against the `develop` branch.
 
-3. After approval, merge the pull request, and verify the changes on the staging server (https://dev-press.logos.co/).
+3. After approval, merge the pull request, and verify the changes on the staging server (https://dev.logos.co/).
 
 4. When ready to promote changes to the live website, create a pull request against the "master" branch, based on the "develop" branch.

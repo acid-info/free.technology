@@ -27,11 +27,7 @@ pipeline {
       steps {
         script {
           withCredentials([
-            usernamePassword(
-              credentialsId: 'ift-unbody-api-token',
-              usernameVariable: 'UNBODY_PROJECT_ID',
-              passwordVariable: 'UNBODY_API_KEY'
-            ),
+            usernamePassword(),
             string(
               credentialsId: 'ift-simplecast-token',
               variable: 'SIMPLECAST_ACCESS_TOKEN'
@@ -43,10 +39,7 @@ pipeline {
           ]) {
             image = docker.build(
               "${IMAGE_NAME}:${GIT_COMMIT.take(8)}",
-              ["--build-arg='UNBODY_PROJECT_ID=${env.UNBODY_PROJECT_ID}'",
-               "--build-arg='UNBODY_API_KEY=${env.UNBODY_API_KEY}'",
-               "--build-arg='SIMPLECAST_ACCESS_TOKEN=${SIMPLECAST_ACCESS_TOKEN}'",
-               "--build-arg='REVALIDATE_WEBHOOK_TOKEN=${REVALIDATE_WEBHOOK_TOKEN}'",
+              ["--build-arg='REVALIDATE_WEBHOOK_TOKEN=${REVALIDATE_WEBHOOK_TOKEN}'",
                "."].join(' ')
             )
           }
@@ -80,7 +73,7 @@ pipeline {
     cleanup { cleanWs() }
     always { script {
       def result  = currentBuild.result.toLowerCase() ?: 'unknown'
-      discordNotify(header: "Logos Press Engine Docker image build ${result}!")
+      discordNotify(header: "IFT Docker image build ${result}!")
     } }
   }
 }
