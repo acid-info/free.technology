@@ -6,10 +6,11 @@ export type HomePageProps = React.DetailedHTMLProps<
   HTMLDivElement
 >
 
-export const HomePage: React.FC<HomePageProps> = ({ ...props }) => {
-  return <Root {...props}>IFT</Root>
+export const HomePage: React.FC<HomePageProps> = ({ children, ...props }) => {
+  return <Root {...props}>{children}</Root>
 }
 
 const Root = styled.div`
   width: 100%;
+  padding: 16px;
 `
