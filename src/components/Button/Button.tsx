@@ -12,7 +12,7 @@ const StyledButton = styled.button<ButtonProps>`
   background-color: ${(props) => (props.color === 'black' ? 'black' : 'white')};
   color: ${(props) => (props.color === 'black' ? 'white' : 'black')};
   font-size: ${(props) => props.fontSize || '14px'};
-  padding: ${(props) => props.padding || '10px 40px'};
+  padding: ${(props) => props.padding || '6px 12px'};
   border: 1px solid black;
   cursor: pointer;
   transition: 0.3s;
