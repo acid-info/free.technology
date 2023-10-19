@@ -20,19 +20,20 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.28);
-  padding: 16px 0;
+  margin-bottom: 70px;
 
   p {
     text-overflow: ellipsis;
     font-size: 22px;
     font-weight: 400;
     line-height: 122%;
+    margin-block: 28px;
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-block: 38px;
+    margin-bottom: 40px;
   }
 
   table td,
@@ -56,12 +57,15 @@ const Container = styled.div`
   }
 `
 
-const Title = styled.h2`
-  width: 50%;
+const Title = styled.h3`
+  font-size: 26px;
+  width: 100%;
+  padding-block: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 `
 
 const Content = styled.div`
-  width: 50%;
+  width: 100%;
 `
 
 export default PortfolioItem

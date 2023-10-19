@@ -2,21 +2,31 @@ import { SEO } from '@/components/SEO'
 import { Tags } from '@/components/Tags'
 import { HomePage } from '@/containers/Homepage'
 import { Button } from '@/components/Button'
-import { Hero } from '@/components/Hero'
+import { Hero, Description } from '@/components/Hero'
 import { Portfolio, PortfolioItem } from '@/components/Portfolio'
+import { Section } from '@/components/Section'
 
 <SEO />
 
 <HomePage>
     <Hero>
-        # Institute of Free <br /> Technology
-
-        <Tags tags={['Mission', 'Program details', 'Contact']} />
-
-        ### We enable entrepreneurship. Building and investing in great technology companies globally and providing a unique blend of operational support and capital.
-        <Button padding="10px 40px" color="black">Explore our Ecosystem</Button>
-
+        # Institute<br />of Free <br />Technology
+        
+        <Description>
+            ### We enable entrepreneurship. Building and investing in great technology companies globally and providing a unique blend of operational support and capital.
+            <Button color="white" width="265px" height="50px" padding="10px 40px">Explore our Ecosystem</Button>
+        </Description>
     </Hero>
+
+    <Section>
+        ## To this day, finleap has built 15 independent companies of which 10 are active portfolio companies collectively worth €3 billion+ including two unicorns
+
+            |                     |              |
+            |---------------------|--------------|
+            | We enable entrepreneurship. Building and investing in great technology companies globally and providing a unique blend of operational support and capital.  |  We enable entrepreneurship. Building and investing in great technology companies globally and providing a unique blend of operational support and capital.       |
+
+        <Button color="white">Learn more</Button>
+    </Section>
 
     <Portfolio>
         <PortfolioItem title="Codex">
@@ -41,6 +51,24 @@ import { Portfolio, PortfolioItem } from '@/components/Portfolio'
             <Button>Learn more</Button>
         </PortfolioItem>
 
-    </Portfolio>
+        <PortfolioItem title="Waku">
+            Elinvar is a WealthTech Platform as a Service, enabling asset & wealth managers to digitalize their business models. The multi-tenant platform offers service packages for core processes as well as third party connections. Elinvar’s partners profit from the combination of leading technology and the optimal regulatory setup as Elinvar holds all necessary BaFin licenses. With this comprehensive approach, Elinvar creates the unique opportunity for its partners to execute new business models, to access new value chains and to optimize their costs.
 
+            | Development Status | Vertical      |
+            |--------------------|---------------|
+            | Seed Stage         | Cryptography  |
+
+            <Button>Learn more</Button>
+        </PortfolioItem>
+
+        <PortfolioItem title="Nomos">
+            Elinvar is a WealthTech Platform as a Service, enabling asset & wealth managers to digitalize their business models. The multi-tenant platform offers service packages for core processes as well as third party connections. Elinvar’s partners profit from the combination of leading technology and the optimal regulatory setup as Elinvar holds all necessary BaFin licenses. With this comprehensive approach, Elinvar creates the unique opportunity for its partners to execute new business models, to access new value chains and to optimize their costs.
+
+            | Development Status | Vertical      |
+            |--------------------|---------------|
+            | Seed Stage         | Cryptography  |
+
+            <Button>Learn more</Button>
+        </PortfolioItem>
+    </Portfolio>
 </HomePage>

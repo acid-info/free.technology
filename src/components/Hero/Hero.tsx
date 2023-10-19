@@ -12,13 +12,10 @@ export const Hero: React.FC = ({ children, ...props }: Props) => {
 const Container = styled.div`
   h1 {
     text-transform: uppercase;
+    font-size: 80px;
+    line-height: 87%;
   }
-
-  h3 {
-    margin-bottom: 32px;
-  }
-
-  padding-bottom: 234px;
+  margin-bottom: 165px;
 `
 
 export default Hero

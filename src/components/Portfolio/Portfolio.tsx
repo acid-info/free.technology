@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import React from 'react'
 
 type Props = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
@@ -6,9 +7,11 @@ type Props = React.DetailedHTMLProps<
 >
 
 export const Portfolio = ({ children, ...props }: Props) => {
+  const childrenArray = React.Children.toArray(children)
+
   return (
     <Container {...props}>
-      <Title>Portfolio</Title>
+      <Title>Portfolio ({childrenArray?.length})</Title>
       {children}
     </Container>
   )
@@ -19,7 +22,7 @@ const Container = styled.div`
 `
 
 const Title = styled.p`
-  font-size: 22px;
+  font-size: 34px;
   font-weight: 400;
   line-height: 130%;
   padding-block: 16px;

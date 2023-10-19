@@ -1,4 +1,3 @@
-import { uiConfigs } from '@/configs/ui.configs'
 import { DefaultLayout } from '@/layouts/DefaultLayout'
 import { css, Global } from '@emotion/react'
 import { NextComponentType, NextPageContext } from 'next'
@@ -53,7 +52,6 @@ export default function App({ Component, pageProps }: AppLayoutProps) {
           }
 
           #__next {
-            max-width: ${uiConfigs.maxContainerWidth}px;
             margin-left: auto;
             margin-right: auto;
           }
@@ -79,19 +77,16 @@ export default function App({ Component, pageProps }: AppLayoutProps) {
           }
 
           h1 {
-            font-size: 112px;
             font-weight: 400;
             line-height: 116px;
           }
 
           h2 {
-            font-size: 52px;
             font-weight: 400;
             line-height: 130%;
           }
 
           h3 {
-            font-size: 36px;
             font-weight: 400;
             line-height: normal;
           }
