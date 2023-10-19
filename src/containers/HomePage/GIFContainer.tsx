@@ -1,3 +1,4 @@
+import { uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import React from 'react'
 
@@ -17,8 +18,8 @@ const Container = styled.div`
 
 const Image = styled.img`
   position: fixed;
-  top: 0;
+  top: ${uiConfigs.navbarHeight}px;
   right: 0;
-  height: 100vh;
+  height: calc(100vh - 28px);
   width: 50vw;
 `

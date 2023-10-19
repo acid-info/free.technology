@@ -24,6 +24,7 @@ const Root = styled.div`
 
 const Content = styled.div`
   width: 50vw;
+  margin-top: 48px;
   padding: 16px;
   box-sizing: border-box;
 `
