@@ -1,5 +1,4 @@
 import { SEO } from '@/components/SEO'
-import { HomePage } from '@/containers/HomePage'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { DefaultLayout } from '../layouts/DefaultLayout'
@@ -12,7 +11,6 @@ const Page = ({ mdxSource }: Props) => {
   return (
     <>
       <SEO />
-      <HomePage />
       <MDXRemote {...mdxSource} />
     </>
   )
