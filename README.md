@@ -41,7 +41,7 @@ The static files will be created in the `build` directory.
 $ yarn start
 ```
 
-4. Visit `http://localhost:3000` in your browser
+4. Visit `http://localhost:3000` in your browser.
 
 
 ## CI/CD
