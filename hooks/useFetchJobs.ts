@@ -32,6 +32,7 @@ function useFetchJobs() {
 
   const fetchJobs = async (selectedBoards: string[], titleFilter?: string) => {
     setIsLoading(true)
+
     try {
       const resultsPerBoard: { [key: string]: Job[] } = {}
 

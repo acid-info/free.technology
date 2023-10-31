@@ -1,0 +1,21 @@
+import { SEO } from '@/components/SEO'
+import { Navbar } from '@/components/Navbar'
+import { Home } from '@/containers/Home'
+import { Mission } from '@/components/Mission'
+import { Footer } from '@/components/Footer'
+import { JobList } from '@/components/JobList'
+import { Box } from '@/components/Box'
+
+<SEO />
+
+<Navbar />
+
+<Box>
+  <JobList unit={'codex'} />
+  <JobList unit={'status'} />
+  <JobList unit={'waku'} />
+  <JobList unit={'nimbus'} />
+  <JobList unit={'nomos'} />
+</Box>
+
+<Footer />
