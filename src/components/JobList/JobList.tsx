@@ -1,41 +1,36 @@
 import styled from '@emotion/styled'
-import { useEffect } from 'react'
-import useFetchJobs from '../../../hooks/useFetchJobs'
-import JobItem from './JobItem' // adjust path accordingly
+import JobItem, { Job } from './JobItem' // adjust path accordingly
 
-interface Props {
-  unit: string
+interface BoardJobs {
+  [key: string]: Job[]
 }
 
-const JobList = ({ unit }: Props) => {
-  const { data, error, isLoading, fetchJobs } = useFetchJobs()
+type Props = {
+  jobs: BoardJobs
+  activeBUs: string[]
+}
 
-  useEffect(() => {
-    fetchJobs([unit], '')
-  }, [unit])
-
-  if (isLoading) {
-    return <div>Loading jobs...</div>
+const JobList = ({ jobs, activeBUs }: Props) => {
+  if (jobs == null) {
+    return <div>Something went wrong</div>
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>
-  }
-
-  if (!data || data.jobs.length === 0) {
-    return <div>No jobs found</div>
-  }
-
-  return (
-    <Container>
-      <Title>{unit}</Title>
-      <Jobs>
-        {data?.jobs?.map((job: any) => (
-          <JobItem key={job.id} job={job} />
-        ))}
-      </Jobs>
-    </Container>
-  )
+  return Object.entries(jobs)
+    .filter(([businessUnit, _]) =>
+      !activeBUs?.length ? true : activeBUs.includes(businessUnit),
+    )
+    .map(([businessUnit, jobList]) => (
+      <Container key={businessUnit + '-jobs'}>
+        <Title>{businessUnit}</Title>
+        <Jobs>
+          {jobList?.length ? (
+            jobList.map((job: any) => <JobItem key={job.id} job={job} />)
+          ) : (
+            <NoJobs>No Open Positions</NoJobs>
+          )}
+        </Jobs>
+      </Container>
+    ))
 }
 
 const Container = styled.div`
@@ -58,6 +53,13 @@ const Title = styled.h3`
   font-weight: 400;
   line-height: 130%; /* 67.6px */
   text-transform: capitalize;
+`
+
+const NoJobs = styled.p`
+  padding-top: 24px;
+  font-size: 36px;
+  color: black;
+  text-decoration: none;
 `
 
 export default JobList

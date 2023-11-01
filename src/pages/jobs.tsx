@@ -1,23 +1,29 @@
 import { Box } from '@/components/Box'
-import { JobList } from '@/components/JobList'
+import { JobFilter, JobList } from '@/components/JobList'
 import { Navbar } from '@/components/Navbar'
 import { SEO } from '@/components/SEO'
 
+import { useState } from 'react'
+import { getJobs } from '../../utils/getJobs'
 import { DefaultLayout } from '../layouts/DefaultLayout'
 
-const Page = () => {
+const Page = ({ jobs }: any) => {
+  const [activeBUs, setActiveBUs] = useState<string[]>([])
+
   return (
     <>
       <SEO />
       <div>
         <Navbar />
-
         <Box>
-          <JobList unit={'codex'} />
-          <JobList unit={'status'} />
-          <JobList unit={'waku'} />
-          <JobList unit={'nimbus'} />
-          <JobList unit={'nomos'} />
+          <JobFilter
+            jobs={jobs}
+            activeBUs={activeBUs}
+            setActiveBUs={setActiveBUs}
+          />
+        </Box>
+        <Box>
+          <JobList jobs={jobs} activeBUs={activeBUs} />
         </Box>
       </div>
     </>
@@ -29,7 +35,23 @@ Page.getLayout = function getLayout(page: React.ReactNode) {
 }
 
 export async function getStaticProps() {
-  return { props: {} }
+  try {
+    const jobs = await getJobs(['all'], '')
+
+    return {
+      props: {
+        jobs,
+      },
+      revalidate: 3600, // In seconds
+    }
+  } catch (error) {
+    return {
+      props: {
+        jobs: [],
+      },
+      revalidate: 3600,
+    }
+  }
 }
 
 export default Page

@@ -1,21 +1,33 @@
 import styled from '@emotion/styled'
 import ArrowUpRight from '../Icons/ArrowUpRight'
 
-const JobItem = ({ job }: any) => {
+export type Job = {
+  id: string
+  internal_job_id: number
+  title: string
+  absolute_url: string
+  location: {
+    name: string
+  }
+  updated_at: string
+  requisition_id: string
+  metadata: any
+  data_compliance: any
+}
+
+const JobItem = ({ job }: { job: Job }) => {
   return (
     <JobContainer>
       <JobHeader>
-        <JobTitle
-          href={job.absolute_url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {job.title}
-        </JobTitle>
+        <JobTitle>{job.title}</JobTitle>
         <JobInfo>{job.location.name}</JobInfo>
       </JobHeader>
-      <ApplyButton>
-        Apply{' '}
+      <ApplyButton
+        href={job.absolute_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Apply
         <IconContainer>
           <ArrowUpRight />
         </IconContainer>
@@ -42,14 +54,10 @@ const JobHeader = styled.div`
   margin-bottom: 32px;
 `
 
-const JobTitle = styled.a`
+const JobTitle = styled.div`
   font-size: 36px;
   color: black;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `
 
 const JobInfo = styled.p`
@@ -66,19 +74,19 @@ const IconContainer = styled.span`
   right: 8px;
 `
 
-const ApplyButton = styled.button`
+const ApplyButton = styled.a`
   width: 105px;
   height: 42px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-
   background-color: white;
   position: relative;
   color: black;
   padding: 0 18px;
   border: 1px solid black;
   cursor: pointer;
+  text-decoration: none;
 `
 
 export default JobItem
