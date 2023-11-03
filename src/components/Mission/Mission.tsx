@@ -34,28 +34,37 @@ const Container = styled.div`
     margin-top: 24px;
   }
 
+  & > div > div {
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+
   p {
     text-overflow: ellipsis;
     font-size: 22px;
     font-weight: 400;
     line-height: 122%;
-    margin-block: 38px;
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  th {
+    color: rgba(0, 0, 0, 0.35);
   }
 
   table td,
   table th {
     width: calc(100% / 2);
+    vertical-align: baseline;
   }
 
   table thead {
-    border-top: 1px solid rgba(0, 0, 0, 0.28);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
   }
 
   table th,
@@ -65,7 +74,7 @@ const Container = styled.div`
     text-align: left;
     font-size: 18px;
     line-height: 130%;
-    padding: 6px 0;
+    padding: 20px 0 8px 0;
   }
 `
 

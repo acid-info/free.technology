@@ -84,7 +84,7 @@ const Tag = styled.div<{ active: boolean }>`
   align-items: center;
   justify-content: center;
   background-color: ${({ active }) => (active ? 'black' : 'white')};
-  color: ${({ active }) => (active ? 'white' : '#black')};
+  color: ${({ active }) => (active ? 'white' : 'black')};
   font-size: 14px;
   line-height: 20px;
   height: 28px;

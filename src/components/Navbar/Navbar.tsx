@@ -1,16 +1,23 @@
 import { uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 
 export const Navbar = () => {
   return (
     <Container>
       <span>
-        <p>Program details</p>
-        <p>Contact</p>
-      </span>
-      <span>
-        <p>News</p>
-        <p>Other</p>
+        <Link href="/">
+          <p>HOME</p>
+        </Link>
+        <Link href="/services">
+          <p>SERVICES</p>
+        </Link>
+        <Link href="/jobs">
+          <p>JOB LIST</p>
+        </Link>
+        <Link href="/challenges">
+          <p>CHALLENGES</p>
+        </Link>
       </span>
     </Container>
   )
@@ -35,7 +42,7 @@ const Container = styled.nav`
   span {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
   }
 
   p {

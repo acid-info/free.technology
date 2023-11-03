@@ -2,6 +2,7 @@ import { SEO } from '@/components/SEO'
 import { Tags } from '@/components/Tags'
 import { Home } from '@/containers/Home'
 import { Button } from '@/components/Button'
+import { Hero, Description } from '@/components/Hero'
 import { Portfolio, PortfolioItem } from '@/components/Portfolio'
 import { Section } from '@/components/Section'
 import { Navbar } from '@/components/Navbar'
@@ -9,69 +10,117 @@ import { Team, Member } from '@/components/Team'
 import { Mission } from '@/components/Mission'
 import { Footer } from '@/components/Footer'
 
-<SEO />
-
-<Navbar />
-
 <Home>
+    <Hero>
+        # Institute<br />of Free <br />Technology
+        
+        <Description>
+            A mission-driven tech startup studio. We take ideas from the drawing board to market with financial, technical, legal, HR, and brand-building support at every step.<br/><br/>
+            Our startups are free to focus on what they do best — building tech to safeguard civil liberties in the digital age.
+        </Description>
+
+        <Button color="white" width="150px" height="40px" padding="10px 34px">Learn more</Button>
+    </Hero>
+
     <Section>
-        ## To this day, finleap has built 15 independent companies of which 10 are active portfolio companies collectively worth €3 billion+ including two unicorns
+        ## Fostering innovation, defending digital liberties
 
-            |                     |              |
-            |---------------------|--------------|
-            | We enable entrepreneurship. Building and investing in great technology companies globally and providing a unique blend of operational support and capital.  |  We enable entrepreneurship. Building and investing in great technology companies globally and providing a unique blend of operational support and capital.       |
-
-        <Button color="white">Learn more</Button>
+        <Button color="white" width="188px" height="40px">Explore Ecosystem</Button>
     </Section>
 
     <Portfolio>
-        <PortfolioItem title="Codex">
-            Elinvar is a WealthTech Platform as a Service, enabling asset & wealth managers to digitalize their business models. The multi-tenant platform offers service packages for core processes as well as third party connections. Elinvar’s partners profit from the combination of leading technology and the optimal regulatory setup as Elinvar holds all necessary BaFin licenses. With this comprehensive approach, Elinvar creates the unique opportunity for its partners to execute new business models, to access new value chains and to optimize their costs.
+        <PortfolioItem mark="/icons/bu/logos.svg" title="Logos" est={2020}>
 
-            | Development Status | Vertical      |
+            | Vertical | Development status      |
             |--------------------|---------------|
-            | Seed Stage         | Cryptography  |
+            | Movement         | Cryptography  |
 
-            <Button color="black">Show more</Button>
-        </PortfolioItem>
-        <PortfolioItem title="Status">
-            finleap connect is the leading, independent Open Banking platform provider in Europe. It enables companies across a multitude of industries to provide the next generation of financial services by understanding how customers transact and interact.With its “full-stack” platform of solutions, finleap connect makes it possible for its clients to compliantly access the financial transactions data of customers, enrich said data with analytics tools, provide digital banking services and deliver high-quality, digital financial services products and solutions to customers.
-
-            finleap connect is a regulated payment institution under the Payment Services Supervision Act.
-
-            | Founder(s)          | Achievements | Founded |
-            |---------------------|--------------|---------|
-            | Ryan Frazier (CEO)  | $18M         | 2018    |
-            | Kenny Cason (CTO)   |              |         |
-
-            <Button>Learn more</Button>
-        </PortfolioItem>
-
-        <PortfolioItem title="Waku">
-            Elinvar is a WealthTech Platform as a Service, enabling asset & wealth managers to digitalize their business models. The multi-tenant platform offers service packages for core processes as well as third party connections. Elinvar’s partners profit from the combination of leading technology and the optimal regulatory setup as Elinvar holds all necessary BaFin licenses. With this comprehensive approach, Elinvar creates the unique opportunity for its partners to execute new business models, to access new value chains and to optimize their costs.
-
-            | Development Status | Vertical      |
+            | Founders | Achievements |
             |--------------------|---------------|
-            | Seed Stage         | Cryptography  |
+            | Jarrad Hope, Carl Bennetts | Public launch, founded Network State Press |
 
-            <Button>Learn more</Button>
+            A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.
+
+            <Button width="150px" height="40px" color="white">Learn more</Button>
         </PortfolioItem>
+        <PortfolioItem mark="/icons/bu/waku.svg" title="Waku" est={2020}>
 
-        <PortfolioItem title="Nomos">
-            Elinvar is a WealthTech Platform as a Service, enabling asset & wealth managers to digitalize their business models. The multi-tenant platform offers service packages for core processes as well as third party connections. Elinvar’s partners profit from the combination of leading technology and the optimal regulatory setup as Elinvar holds all necessary BaFin licenses. With this comprehensive approach, Elinvar creates the unique opportunity for its partners to execute new business models, to access new value chains and to optimize their costs.
-
-            | Development Status | Vertical      |
+            | Vertical | Development status      |
             |--------------------|---------------|
-            | Seed Stage         | Cryptography  |
+            | Movement         | Cryptography  |
 
-            <Button>Learn more</Button>
+            | Founders | Achievements |
+            |--------------------|---------------|
+            | Jarrad Hope, Carl Bennetts | Public launch, founded Network State Press |
+
+            A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.
+
+            <Button width="150px" height="40px" color="white">Learn more</Button>
+        </PortfolioItem>
+        <PortfolioItem mark="/icons/bu/codex.svg" title="Codex" est={2020}>
+
+            | Vertical | Development status      |
+            |--------------------|---------------|
+            | Movement         | Cryptography  |
+
+            | Founders | Achievements |
+            |--------------------|---------------|
+            | Jarrad Hope, Carl Bennetts | Public launch, founded Network State Press |
+
+            A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.
+
+            <Button width="150px" height="40px" color="white">Learn more</Button>
+        </PortfolioItem>
+        <PortfolioItem mark="/icons/bu/nomos.svg" title="Nomos" est={2020}>
+
+            | Vertical | Development status      |
+            |--------------------|---------------|
+            | Movement         | Cryptography  |
+
+            | Founders | Achievements |
+            |--------------------|---------------|
+            | Jarrad Hope, Carl Bennetts | Public launch, founded Network State Press |
+
+            A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.
+
+            <Button width="150px" height="40px" color="white">Learn more</Button>
+        </PortfolioItem>
+        <PortfolioItem mark="/icons/bu/status.svg" title="Status" est={2020}>
+
+            | Vertical | Development status      |
+            |--------------------|---------------|
+            | Movement         | Cryptography  |
+
+            | Founders | Achievements |
+            |--------------------|---------------|
+            | Jarrad Hope, Carl Bennetts | Public launch, founded Network State Press |
+
+            A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.
+
+            <Button width="150px" height="40px" color="white">Learn more</Button>
+        </PortfolioItem>
+        <PortfolioItem mark="/icons/bu/nimbus.svg" title="Nimbus" est={2020}>
+
+            | Vertical | Development status      |
+            |--------------------|---------------|
+            | Movement         | Cryptography  |
+
+            | Founders | Achievements |
+            |--------------------|---------------|
+            | Jarrad Hope, Carl Bennetts | Public launch, founded Network State Press |
+
+            A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.
+
+            <Button width="150px" height="40px" color="white">Learn more</Button>
         </PortfolioItem>
     </Portfolio>
     <Mission title="Mission">
-        ## We enable entrepreneurship. Building and investing in great technology companies globally and providing a unique blend of operational support and capital.
-
-        CLARK is Germany's leading digital insurance manager, founded on the fundamental principle that the significant things in life should be simple. The Insurtech makes it easier for consumers to manage, compare and optimize their insurances – all in one central app where changes can be done with just a few clicks. CLARK combines best-in-industry user experience with independent advice from insurance experts.
-
+        ## We support the development, adoption, and accessibility of solutions to digital age problems and are guided by our principles: liberty, censorship resistance, security, privacy, and inclusivity. 
+        
+        <div>
+            <p>We seek to connect with and support those innovating to defend our digital rights. The IFT emerged from Status, which Jarrad Hope and Carl Bennetts founded to enable the free flow of information and protect the right to private, secure conversations in 2017.</p>
+            <p>Over time, gaps in the infrastructure required to deliver Status in a form that fully reflects its founders’, contributors’, and users’ values became apparent, and the project’s scope widened. The IFT and the startups it incubates are the product of this expanded scope.</p>
+        </div>
 
         | Valuation           |  Employees   |
         |---------------------|--------------|
@@ -100,5 +149,5 @@ import { Footer } from '@/components/Footer'
             Partner & Portfolio Manager
         </Member>
     </Team>
-    <Footer/>
+
 </Home>

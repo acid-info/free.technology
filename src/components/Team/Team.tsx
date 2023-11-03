@@ -7,11 +7,9 @@ type Props = React.DetailedHTMLProps<
 >
 
 export const Team = ({ children, ...props }: Props) => {
-  const childrenArray = React.Children.toArray(children)
-
   return (
     <Container {...props}>
-      <Title>Team ({childrenArray?.length})</Title>
+      <Title>Who We Are</Title>
       <Grid>{children}</Grid>
     </Container>
   )
@@ -25,7 +23,7 @@ const Title = styled.p`
   font-size: 26px;
   font-weight: 400;
   line-height: 130%;
-  padding-block: 16px;
+  padding-block: 20px;
 `
 
 const Grid = styled.div`

@@ -1,26 +1,12 @@
-import { Box } from '@/components/Box'
-import { JobFilter, JobList } from '@/components/JobList'
-import { useState } from 'react'
+import { SEO } from '@/components/SEO'
 import { getJobs } from '../../utils/getJobs'
 import { DefaultLayout } from '../layouts/DefaultLayout'
 
-const Page = ({ jobs }: any) => {
-  const [activeBUs, setActiveBUs] = useState<string[]>([])
-
+const Page = () => {
   return (
     <>
-      <div>
-        <Box>
-          <JobFilter
-            jobs={jobs}
-            activeBUs={activeBUs}
-            setActiveBUs={setActiveBUs}
-          />
-        </Box>
-        <Box>
-          <JobList jobs={jobs} activeBUs={activeBUs} />
-        </Box>
-      </div>
+      <SEO />
+      <div></div>
     </>
   )
 }

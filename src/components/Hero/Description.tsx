@@ -11,14 +11,15 @@ export const Description: React.FC = ({ children, ...props }: Props) => {
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 40px;
   padding-block: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  margin-block: 32px;
 
-  h3 {
+  p {
     font-size: 22px;
     line-height: normal;
   }

@@ -22,12 +22,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h3,
-  p {
+  h3 {
     text-overflow: ellipsis;
     font-size: 22px;
     font-weight: 400;
     line-height: 130%;
+  }
+
+  p {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+    opacity: 0.5;
   }
 `
 
