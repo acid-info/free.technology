@@ -1,37 +1,58 @@
 import { SEO } from '@/components/SEO'
-import { getJobs } from '../../utils/getJobs'
-import { DefaultLayout } from '../layouts/DefaultLayout'
+import { SubPageLayout } from '../layouts/SubPageLayout'
 
-const Page = () => {
+const Page = ({ issues }: any) => {
   return (
     <>
       <SEO />
-      <div></div>
+      <div>
+        <h1>Open Issues</h1>
+        <ul>
+          {issues.map((issue: any) => (
+            <li key={issue.id}>
+              <a href={issue.url}>{issue.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   )
 }
 
 Page.getLayout = function getLayout(page: React.ReactNode) {
-  return <DefaultLayout>{page}</DefaultLayout>
+  return <SubPageLayout>{page}</SubPageLayout>
 }
 
 export async function getStaticProps() {
-  try {
-    const jobs = await getJobs(['all'], '')
+  let issues = []
 
-    return {
-      props: {
-        jobs,
+  try {
+    const res = await fetch('http://localhost:3000/api/challenges', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-      revalidate: 3600, // In seconds
+      body: JSON.stringify({
+        owner: 'waku-org',
+        repo: 'bounties',
+      }),
+    })
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch issues, status: ${res.status}`)
     }
+
+    const data = await res.json()
+    issues = data
   } catch (error) {
-    return {
-      props: {
-        jobs: [],
-      },
-      revalidate: 3600,
-    }
+    console.error('Error fetching issues:', error)
+  }
+
+  return {
+    props: {
+      issues,
+    },
+    revalidate: 3600, // In seconds. Adjust to your needs.
   }
 }
 

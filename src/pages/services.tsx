@@ -1,7 +1,12 @@
+import { SEO } from '@/components/SEO'
 import { DefaultLayout } from '../layouts/DefaultLayout'
 
 const Page = () => {
-  return <></>
+  return (
+    <>
+      <SEO />
+    </>
+  )
 }
 
 Page.getLayout = function getLayout(page: React.ReactNode) {

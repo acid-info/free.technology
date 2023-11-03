@@ -1,14 +1,16 @@
 import { Box } from '@/components/Box'
 import { JobFilter, JobList } from '@/components/JobList'
+import { SEO } from '@/components/SEO'
+import { SubPageLayout } from '@/layouts/SubPageLayout'
 import { useState } from 'react'
 import { getJobs } from '../../utils/getJobs'
-import { DefaultLayout } from '../layouts/DefaultLayout'
 
 const Page = ({ jobs }: any) => {
   const [activeBUs, setActiveBUs] = useState<string[]>([])
 
   return (
     <>
+      <SEO />
       <div>
         <Box>
           <JobFilter
@@ -26,7 +28,7 @@ const Page = ({ jobs }: any) => {
 }
 
 Page.getLayout = function getLayout(page: React.ReactNode) {
-  return <DefaultLayout>{page}</DefaultLayout>
+  return <SubPageLayout>{page}</SubPageLayout>
 }
 
 export async function getStaticProps() {

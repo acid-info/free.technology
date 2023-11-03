@@ -17,7 +17,16 @@ $ git clone https://github.com/acid-info/ift.git
 $ yarn install
 ```
 
-3. Start the development server:
+3. Set .env
+
+- Get Github Personal Access Token at [https://github.com/settings/tokens/new?scopes=repo](https://github.com/settings/tokens/new?scopes=repo)
+
+```
+NEXT_PUBLIC_SITE_URL=
+NEXT_GITHUB_PERSONAL_ACCESS_TOKEN=
+```
+
+4. Start the development server:
 ```bash
 $ yarn dev
 ```

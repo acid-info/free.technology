@@ -18,28 +18,10 @@ export const Footer = () => {
 
 const Container = styled.nav`
   display: flex;
-  padding-top: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.28);
-  margin-top: 140px;
-
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-
-  div {
-    width: 50%;
-  }
-
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-  }
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  padding: 16px;
 `
 
 export default Footer

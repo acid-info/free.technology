@@ -92,8 +92,10 @@ const Header = styled.div`
   padding-block: 24px;
 `
 
-const Toggle = styled.div`
+const Toggle = styled.button`
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 `
 
 const Title = styled.div`
