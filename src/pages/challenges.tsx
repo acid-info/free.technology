@@ -42,8 +42,10 @@ Page.getLayout = function getLayout(page: React.ReactNode) {
 export async function getStaticProps() {
   let issues = {}
 
+  const site = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+
   try {
-    const res = await fetch('http://localhost:3000/api/challenges', {
+    const res = await fetch(`${site}/api/challenges`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
