@@ -1,6 +1,5 @@
-// pages/api/issues.js
 import https from 'https'
-import { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default function handler(
   req: NextApiRequest,
@@ -11,64 +10,75 @@ export default function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 
-  const { owner, repo } = req.body
+  const repositories = req.body
 
-  if (!owner || !repo) {
-    return res.status(400).json({ error: 'Owner and repo are required.' })
+  if (
+    !Array.isArray(repositories) ||
+    repositories.some((repo) => !repo.owner || !repo.repo)
+  ) {
+    return res.status(400).json({
+      error: 'Each item in the array must have an owner and repo key.',
+    })
   }
 
   const query = `
-{
-  repository(owner: "${owner}", name: "${repo}") {
-    issues(first: 100, states: OPEN) {
-      nodes {
-        id
-        title
-        url
-        author {
+query {
+  ${repositories
+    .map(
+      (repository, index) => `
+    repo${index}: repository(owner: "${repository.owner}", name: "${repository.repo}") {
+      issues(first: 100, states: OPEN) {
+        nodes {
+          id
+          title
+          url
+          author {
             login
             avatarUrl
           }
-        labels(first: 10) {
-          nodes {
-            name
+          labels(first: 10) {
+            nodes {
+              name
+            }
           }
-        }
-        commentCount: comments {
+          commentCount: comments {
             totalCount
           }
-        commentsDetailed: comments(first: 10) {
-        nodes {
-            id
-            author {
-            login
+          commentsDetailed: comments(first: 10) {
+            nodes {
+              id
+              author {
+                login
+              }
+              body
+              createdAt
             }
-            body
-            createdAt
-        }
-        }
-        assignees(first: 10) {
-          nodes {
-            login
-            avatarUrl
           }
-        }
-        milestone {
-          title
-        }
-        createdAt
-        updatedAt
-        projectCards(first: 10) {
-          nodes {
-            project {
-              name
-              url
+          assignees(first: 10) {
+            nodes {
+              login
+              avatarUrl
+            }
+          }
+          milestone {
+            title
+          }
+          createdAt
+          updatedAt
+          projectCards(first: 10) {
+            nodes {
+              project {
+                name
+                url
+              }
             }
           }
         }
       }
     }
-  }
+  `,
+    )
+    .join('')}
 }
 `
 
@@ -93,10 +103,18 @@ export default function handler(
     graphqlRes.on('end', () => {
       try {
         const response = JSON.parse(data)
-        const rawIssues = response.data.repository.issues.nodes
-        // console.log('rawIssues', rawIssues)
 
-        res.status(200).json(rawIssues)
+        const issuesByRepo = repositories.reduce(
+          (accumulator, repository, index) => {
+            const repoAlias = `repo${index}`
+            accumulator[`${repository.owner}/${repository.repo}`] =
+              response.data[repoAlias].issues.nodes
+            return accumulator
+          },
+          {},
+        )
+
+        res.status(200).json(issuesByRepo)
       } catch (error) {
         console.error('Failed to parse response:', error)
         res.status(500).json({ error: 'Failed to parse response' })
