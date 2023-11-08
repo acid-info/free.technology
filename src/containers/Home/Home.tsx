@@ -1,4 +1,4 @@
-import { breakpoints } from '@/configs/ui.configs'
+import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import React from 'react'
 import { GIFContainer } from './GIFContainer'
@@ -30,7 +30,7 @@ const Root = styled.div`
 
 const Content = styled.div`
   width: 50%;
-  margin-top: 48px;
+  margin-top: ${uiConfigs.navbarHeight}px;
   padding: 16px;
   box-sizing: border-box;
 

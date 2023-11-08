@@ -1,5 +1,5 @@
 export const uiConfigs = {
-  navbarHeight: 28,
+  navbarHeight: 32,
   maxContainerWidth: 1440,
   articleRenderedMT: 45 * 2,
 }
