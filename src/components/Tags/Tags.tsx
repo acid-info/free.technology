@@ -20,8 +20,8 @@ const TagsContainer = styled.div`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
-  border-top: 1px solid rgba(0, 0, 0, 0.28);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
   margin-block: 16px;
 `
 

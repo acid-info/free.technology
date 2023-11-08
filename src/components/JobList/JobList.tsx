@@ -38,7 +38,7 @@ const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   margin-top: 180px;
-  border-top: 1px solid rgba(0, 0, 0, 0.28);
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
 `
 
 const Jobs = styled.div`

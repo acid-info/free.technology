@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import React from 'react'
 import { GIFContainer } from './GIFContainer'
@@ -20,11 +21,21 @@ const Root = styled.div`
   display: flex;
   width: 100%;
   box-sizing: border-box;
+
+  @media (max-width: ${breakpoints.md}px) {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
 `
 
 const Content = styled.div`
-  width: 50vw;
+  width: 50%;
   margin-top: 48px;
   padding: 16px;
   box-sizing: border-box;
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 100%;
+    margin-top: 0;
+  }
 `

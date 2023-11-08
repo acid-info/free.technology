@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 
 interface ButtonProps {
-  color?: 'black' | 'white'
+  color?: 'black' | 'white' | 'grey'
   fontSize?: string
   padding?: string
   width?: string
@@ -11,11 +11,16 @@ interface ButtonProps {
 }
 
 const StyledButton = styled.button<ButtonProps>`
-  background-color: ${(props) => (props.color === 'black' ? 'black' : 'white')};
+  background-color: ${(props) =>
+    props.color === 'black'
+      ? 'black'
+      : props.color === 'grey'
+      ? 'rgba(0, 0, 0, 0.05)'
+      : 'white'};
   color: ${(props) => (props.color === 'black' ? 'white' : 'black')};
   font-size: ${(props) => props.fontSize || '14px'};
   padding: ${(props) => props.padding || '6px 12px'};
-  border: 1px solid black;
+  border: ${(props) => (props.color === 'grey' ? 'none' : '1px solid black')};
   cursor: pointer;
   transition: 0.3s;
   box-sizing: border-box;
@@ -23,6 +28,7 @@ const StyledButton = styled.button<ButtonProps>`
   height: ${(props) => props.height || 'auto'};
   white-space: nowrap;
   text-align: center;
+  border-radius: 2px;
 
   &:hover {
     opacity: 0.8;

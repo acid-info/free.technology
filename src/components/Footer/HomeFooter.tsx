@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 
@@ -27,17 +28,54 @@ export const HomeFooter = () => {
         </p>
         <button>Email us</button>
       </Description>
-      <div>
+      <Links>
+        <LinksColumn>
+          <h3>Infrastructure</h3>
+          <a href="" target="_blank">
+            Waku
+          </a>
+          <a href="" target="_blank">
+            Nimbus
+          </a>
+          <a href="" target="_blank">
+            Codex
+          </a>
+          <a href="" target="_blank">
+            Nomos
+          </a>
+          <a href="" target="_blank">
+            Status
+          </a>
+          <a href="" target="_blank">
+            Keycard
+          </a>
+          <a href="" target="_blank">
+            Logos
+          </a>
+        </LinksColumn>
+        <LinksColumn>
+          <h3>Social</h3>
+          <a href="" target="_blank">
+            LinkedIn
+          </a>
+          <a href="" target="_blank">
+            Vimeo
+          </a>
+          <a href="" target="_blank">
+            Youtube
+          </a>
+          <a href="" target="_blank">
+            X
+          </a>
+        </LinksColumn>
+      </Links>
+      <Bottom>
         <p>
           Institute of Free Technology.
           <br />©{new Date().getFullYear()}
         </p>
-      </div>
-      <span>
-        <p>LinkedIn</p>
-        <p>Vimeo</p>
-        <p>Youtube</p>
-      </span>
+        <p>All Rights Reserved.</p>
+      </Bottom>
     </Container>
   )
 }
@@ -49,7 +87,7 @@ const Container = styled.nav`
   flex-direction: column;
   color: white;
   width: 50vw;
-  padding: 16px;
+  padding: 16px 16px 0 16px;
   margin-top: 204px;
 
   h2 {
@@ -58,11 +96,22 @@ const Container = styled.nav`
     font-weight: 400;
     line-height: 130%;
   }
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 100%;
+    margin-top: 74px;
+    padding: 16px 8px 0 8px;
+
+    h2 {
+      font-size: 22px;
+      line-height: 122%;
+      padding-block: 16px;
+    }
+  }
 `
 
 const Header = styled.div`
   padding-bottom: 16px;
-  margin-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 `
 
@@ -100,6 +149,76 @@ const Description = styled.div`
     border: 1px solid #fff;
     color: #fff;
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    p {
+      font-size: 22px;
+      line-height: 122%;
+    }
+  }
+`
+
+const Links = styled.div`
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding-bottom: 48px;
+  }
+`
+
+const LinksColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 50%;
+
+  h3 {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 16px;
+  }
+
+  a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    color: white;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    h3 {
+      font-size: 12px;
+    }
+
+    a {
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+`
+
+const Bottom = styled.div`
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  display: border-box;
+  padding-block: 20px;
+
+  p {
+    width: 50%;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    p {
+      font-size: 12px;
+      line-height: 130%;
+    }
   }
 `
 

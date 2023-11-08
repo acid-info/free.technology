@@ -16,7 +16,7 @@ export const Team = ({ children, ...props }: Props) => {
 }
 
 const Container = styled.div`
-  border-top: 1px solid rgba(0, 0, 0, 0.28);
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
 `
 
 const Title = styled.p`

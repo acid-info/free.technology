@@ -1,10 +1,25 @@
-import { uiConfigs } from '@/configs/ui.configs'
+import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <Container>
+    <Container scrolled={scrolled}>
       <span>
         <Link href="/">
           <p>HOME</p>
@@ -23,15 +38,13 @@ export const Navbar = () => {
   )
 }
 
-const Container = styled.nav`
+const Container = styled.nav<{ scrolled: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: black;
   height: ${uiConfigs.navbarHeight}px;
   padding: 4px 16px;
@@ -43,6 +56,7 @@ const Container = styled.nav`
     display: flex;
     align-items: center;
     gap: 24px;
+    flex-wrap: wrap;
   }
 
   p {
@@ -51,6 +65,25 @@ const Container = styled.nav`
     font-weight: 400;
     line-height: 20px;
     color: white;
+    white-space: nowrap;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    background-color: transparent;
+    background-color: ${({ scrolled }) => (scrolled ? 'black' : 'transparent')};
+
+    span {
+      gap: 10px 20px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 20px;
+    }
   }
 `
 

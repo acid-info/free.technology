@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import React from 'react'
 
@@ -27,6 +28,13 @@ const Title = styled.p`
   line-height: 130%;
   padding-block: 24px;
   margin-bottom: 56px;
+  box-sizing: border-box;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 22px;
+    line-height: 122%;
+    margin-bottom: 48px;
+  }
 `
 
 export default Portfolio

@@ -51,7 +51,10 @@ const MemberImage = styled(Image)`
 `
 
 const Content = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  gap: 8px;
 `
 
 export default Member
