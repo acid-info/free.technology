@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import JobItem, { Job } from './JobItem' // adjust path accordingly
 
@@ -39,6 +40,11 @@ const Container = styled.div`
   justify-content: space-between;
   margin-top: 180px;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-top: 60px;
+    flex-direction: column;
+  }
 `
 
 const Jobs = styled.div`
@@ -51,8 +57,15 @@ const Title = styled.h3`
   color: #000;
   font-size: 52px;
   font-weight: 400;
-  line-height: 130%; /* 67.6px */
+  line-height: 130%;
   text-transform: capitalize;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 22px;
+    line-height: 122%;
+    padding-block: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  }
 `
 
 const NoJobs = styled.p`

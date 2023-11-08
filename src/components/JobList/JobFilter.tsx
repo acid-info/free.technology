@@ -1,4 +1,4 @@
-import { uiConfigs } from '@/configs/ui.configs'
+import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import { Job } from './JobItem' // adjust path accordingly
 
@@ -77,6 +77,17 @@ const BUs = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
   padding: 16px 0;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: calc(100vw - 32px);
+    margin-left: -16px;
+    padding: 16px;
+  }
 `
 
 const Tag = styled.div<{ active: boolean }>`
@@ -94,6 +105,7 @@ const Tag = styled.div<{ active: boolean }>`
   text-transform: capitalize;
   cursor: pointer;
   border: 1px solid black;
+  white-space: nowrap;
 `
 
 const NoJobs = styled.p`

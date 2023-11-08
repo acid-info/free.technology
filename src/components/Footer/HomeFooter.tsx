@@ -1,4 +1,4 @@
-import { breakpoints } from '@/configs/ui.configs'
+import { breakpoints, footerBUs, footerSocial } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 
@@ -31,42 +31,19 @@ export const HomeFooter = () => {
       <Links>
         <LinksColumn>
           <h3>Infrastructure</h3>
-          <a href="" target="_blank">
-            Waku
-          </a>
-          <a href="" target="_blank">
-            Nimbus
-          </a>
-          <a href="" target="_blank">
-            Codex
-          </a>
-          <a href="" target="_blank">
-            Nomos
-          </a>
-          <a href="" target="_blank">
-            Status
-          </a>
-          <a href="" target="_blank">
-            Keycard
-          </a>
-          <a href="" target="_blank">
-            Logos
-          </a>
+          {footerBUs.map((bu) => (
+            <a key={bu.link} href={bu.link} target="_blank">
+              {bu.name}
+            </a>
+          ))}
         </LinksColumn>
         <LinksColumn>
           <h3>Social</h3>
-          <a href="" target="_blank">
-            LinkedIn
-          </a>
-          <a href="" target="_blank">
-            Vimeo
-          </a>
-          <a href="" target="_blank">
-            Youtube
-          </a>
-          <a href="" target="_blank">
-            X
-          </a>
+          {footerSocial.map((item) => (
+            <a key={item.link} href={item.link} target="_blank">
+              {item.name}
+            </a>
+          ))}
         </LinksColumn>
       </Links>
       <Bottom>

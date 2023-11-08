@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import ArrowUpRight from '../Icons/ArrowUpRight'
 
@@ -52,12 +53,21 @@ const JobHeader = styled.div`
   flex-direction: column;
   gap: 16px;
   margin-bottom: 32px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-bottom: 24px;
+  }
 `
 
 const JobTitle = styled.div`
   font-size: 36px;
   color: black;
   text-decoration: none;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 16px;
+    line-height: 130%;
+  }
 `
 
 const JobInfo = styled.p`
@@ -66,6 +76,10 @@ const JobInfo = styled.p`
   text-overflow: ellipsis;
   font-size: 18px;
   font-weight: 400;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 12px;
+  }
 `
 
 const IconContainer = styled.span`
@@ -77,14 +91,15 @@ const IconContainer = styled.span`
 const ApplyButton = styled.a`
   width: 105px;
   height: 42px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  background-color: white;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.05);
   position: relative;
   color: black;
   padding: 0 18px;
-  border: 1px solid black;
   cursor: pointer;
   text-decoration: none;
 `

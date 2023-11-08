@@ -1,10 +1,13 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
+  const isTransparent = router.pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +22,7 @@ export const Navbar = () => {
   }, [])
 
   return (
-    <Container scrolled={scrolled}>
+    <Container scrolled={scrolled} isTransparent={isTransparent}>
       <span>
         <Link href="/">
           <p>HOME</p>
@@ -38,7 +41,7 @@ export const Navbar = () => {
   )
 }
 
-const Container = styled.nav<{ scrolled: boolean }>`
+const Container = styled.nav<{ scrolled: boolean; isTransparent: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -74,7 +77,8 @@ const Container = styled.nav<{ scrolled: boolean }>`
 
   @media (max-width: ${breakpoints.md}px) {
     background-color: transparent;
-    background-color: ${({ scrolled }) => (scrolled ? 'black' : 'transparent')};
+    background-color: ${({ isTransparent, scrolled }) =>
+      !scrolled && isTransparent ? 'transparent' : 'black'};
 
     span {
       gap: 10px 20px;

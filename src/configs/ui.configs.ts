@@ -10,3 +10,53 @@ export const breakpoints = {
   lg: 1280,
   xl: 1440,
 }
+
+export const footerBUs = [
+  {
+    name: 'Waku',
+    link: '#',
+  },
+  {
+    name: 'Nimbus',
+    link: '#',
+  },
+  {
+    name: 'Codex',
+    link: '#',
+  },
+  {
+    name: 'Nomos',
+    link: '#',
+  },
+  {
+    name: 'Status',
+    link: '#',
+  },
+  {
+    name: 'Keycard',
+    link: '#',
+  },
+  {
+    name: 'Logos',
+    link: '#',
+  },
+]
+
+export const footerSocial = [
+  {
+    name: 'LinkedIn',
+    link: '#',
+  },
+  {
+    name: 'Vimeo',
+    link: '#',
+  },
+  {
+    name: 'Youtube',
+    link: '#',
+  },
+  {
+    name: 'X',
+    link: '#',
+  },
+]
