@@ -39,10 +39,12 @@ const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   margin-top: 180px;
+  margin-bottom: 204px;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
 
   @media (max-width: ${breakpoints.md}px) {
     margin-top: 60px;
+    margin-bottom: 74px;
     flex-direction: column;
   }
 `

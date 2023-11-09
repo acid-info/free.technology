@@ -1,54 +1,54 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
-import { Job } from './JobItem' // adjust path accordingly
-
-interface BoardJobs {
-  [key: string]: Job[]
-}
+import { ServiceType } from './ServiceItem'
 
 type Props = {
-  jobs: BoardJobs
-  activeBUs: string[]
-  setActiveBUs: React.Dispatch<React.SetStateAction<string[]>>
+  services: ServiceType[]
+  activeServices: string[]
+  setActiveServices: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-const JobFilter = ({ jobs, activeBUs, setActiveBUs }: Props) => {
-  if (jobs == null) {
+const ServiceFilter = ({
+  services,
+  activeServices,
+  setActiveServices,
+}: Props) => {
+  if (services == null) {
     return <div>Something went wrong</div>
   }
 
-  const businessUnits = Object.keys(jobs)
-
   const toggleBU = (bu: string) => {
-    if (activeBUs.includes(bu)) {
-      setActiveBUs((prevBUs) => prevBUs.filter((item) => item !== bu))
+    if (activeServices.includes(bu)) {
+      setActiveServices((prevServicesContainer) =>
+        prevServicesContainer.filter((item) => item !== bu),
+      )
     } else {
-      setActiveBUs((prevBUs) => [...prevBUs, bu])
+      setActiveServices((prevServicesContainer) => [
+        ...prevServicesContainer,
+        bu,
+      ])
     }
   }
 
   return (
     <Container>
-      <Title>Open Vacancies</Title>
+      <Title>Our Services</Title>
       <Border />
-      <BUs>
-        <Tag active={activeBUs.length === 0} onClick={() => setActiveBUs([])}>
-          All Jobs
-        </Tag>
-        {businessUnits?.length ? (
-          businessUnits.map((bu: string) => (
+      <ServicesContainer>
+        {services?.length ? (
+          services.map((service) => (
             <Tag
-              active={activeBUs.includes(bu)}
-              key={bu + '-tag'}
-              onClick={() => toggleBU(bu)}
+              active={activeServices.includes(service.title)}
+              key={service.title + '-tag'}
+              onClick={() => toggleBU(service.title)}
             >
-              {bu}
+              {service.title}
             </Tag>
           ))
         ) : (
-          <NoJobs>No Open Positions</NoJobs>
+          <NoServices>No Open Positions</NoServices>
         )}
-      </BUs>
+      </ServicesContainer>
       <Border />
     </Container>
   )
@@ -71,7 +71,7 @@ const Title = styled.h3`
   margin-bottom: 24px;
 `
 
-const BUs = styled.div`
+const ServicesContainer = styled.div`
   display: flex;
   overflow-x: auto;
   gap: 16px;
@@ -118,11 +118,11 @@ const Tag = styled.div<{ active: boolean }>`
   }
 `
 
-const NoJobs = styled.p`
+const NoServices = styled.p`
   padding-top: 24px;
   font-size: 36px;
   color: black;
   text-decoration: none;
 `
 
-export default JobFilter
+export default ServiceFilter

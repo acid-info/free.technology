@@ -66,7 +66,6 @@ function useFetchJobs() {
           (job) => job.title && job.title.includes(titleFilter),
         )
       }
-      console.log(allJobs)
       setData({ jobs: allJobs, meta: { total: allJobs.length } })
     } catch (err: any) {
       setError(err)

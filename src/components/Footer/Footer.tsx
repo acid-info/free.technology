@@ -48,7 +48,7 @@ export const Footer = () => {
             <h3>Infrastructure</h3>
             <LinkItems>
               {footerBUs.map((bu) => (
-                <a key={bu.link} href={bu.link} target="_blank">
+                <a key={bu.name} href={bu.link} target="_blank">
                   {bu.name}
                 </a>
               ))}
@@ -58,7 +58,7 @@ export const Footer = () => {
             <h3>Social</h3>
             <LinkItems>
               {footerSocial.map((item) => (
-                <a key={item.link} href={item.link} target="_blank">
+                <a key={item.name} href={item.link} target="_blank">
                   {item.name}
                 </a>
               ))}
@@ -70,14 +70,13 @@ export const Footer = () => {
   )
 }
 
-const Container = styled.nav`
+const Container = styled.footer`
   display: flex;
   box-sizing: border-box;
   background-color: black;
   flex-direction: column;
   color: white;
   padding: 16px 16px 44px 16px;
-  margin-top: 204px;
 
   h2 {
     padding-block: 24px;
@@ -88,7 +87,6 @@ const Container = styled.nav`
 
   @media (max-width: ${breakpoints.md}px) {
     width: 100%;
-    margin-top: 74px;
     padding: 16px 8px 0 8px;
 
     h2 {

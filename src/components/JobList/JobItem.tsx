@@ -17,7 +17,6 @@ export type Job = {
 }
 
 const JobItem = ({ job }: { job: Job }) => {
-  console.log(job)
   return (
     <JobContainer>
       <JobHeader>
@@ -86,7 +85,7 @@ const JobInfo = styled.p`
 const IconContainer = styled.span`
   position: absolute;
   top: 7px;
-  right: 8px;
+  right: 7px;
 `
 
 const ApplyButton = styled.a`

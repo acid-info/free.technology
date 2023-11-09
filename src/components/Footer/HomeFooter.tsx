@@ -32,7 +32,7 @@ export const HomeFooter = () => {
         <LinksColumn>
           <h3>Infrastructure</h3>
           {footerBUs.map((bu) => (
-            <a key={bu.link} href={bu.link} target="_blank">
+            <a key={bu.name} href={bu.link} target="_blank">
               {bu.name}
             </a>
           ))}
@@ -40,7 +40,7 @@ export const HomeFooter = () => {
         <LinksColumn>
           <h3>Social</h3>
           {footerSocial.map((item) => (
-            <a key={item.link} href={item.link} target="_blank">
+            <a key={item.name} href={item.link} target="_blank">
               {item.name}
             </a>
           ))}
@@ -57,7 +57,7 @@ export const HomeFooter = () => {
   )
 }
 
-const Container = styled.nav`
+const Container = styled.footer`
   display: flex;
   box-sizing: border-box;
   background-color: black;

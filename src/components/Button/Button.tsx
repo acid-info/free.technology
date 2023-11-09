@@ -29,6 +29,7 @@ const StyledButton = styled.button<ButtonProps>`
   white-space: nowrap;
   text-align: center;
   border-radius: 2px;
+  position: relative;
 
   &:hover {
     opacity: 0.8;
