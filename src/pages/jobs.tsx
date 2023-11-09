@@ -14,7 +14,7 @@ const Page = ({ jobs }: any) => {
       <div>
         <Box>
           <JobFilter
-            jobs={jobs}
+            data={jobs}
             activeBUs={activeBUs}
             setActiveBUs={setActiveBUs}
           />

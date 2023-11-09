@@ -1,5 +1,6 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import { FilterTitle } from '../Filter'
 import { Job } from './JobItem' // adjust path accordingly
 
 interface BoardJobs {
@@ -7,17 +8,17 @@ interface BoardJobs {
 }
 
 type Props = {
-  jobs: BoardJobs
+  data: BoardJobs
   activeBUs: string[]
   setActiveBUs: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-const JobFilter = ({ jobs, activeBUs, setActiveBUs }: Props) => {
-  if (jobs == null) {
+const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
+  if (data == null) {
     return <div>Something went wrong</div>
   }
 
-  const businessUnits = Object.keys(jobs)
+  const businessUnits = Object.keys(data)
 
   const toggleBU = (bu: string) => {
     if (activeBUs.includes(bu)) {
@@ -27,9 +28,16 @@ const JobFilter = ({ jobs, activeBUs, setActiveBUs }: Props) => {
     }
   }
 
+  const calculateTotalJobCount = (units: BoardJobs): number => {
+    return Object.keys(units).reduce((sum, unit) => sum + units[unit].length, 0)
+  }
+
   return (
     <Container>
-      <Title>Open Vacancies</Title>
+      <FilterTitle
+        title="Open Vacancies"
+        length={calculateTotalJobCount(data)}
+      />
       <Border />
       <BUs>
         <Tag active={activeBUs.length === 0} onClick={() => setActiveBUs([])}>
@@ -60,15 +68,6 @@ const Container = styled.div`
   width: 100%;
   margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
   margin-bottom: 56px;
-`
-
-const Title = styled.h3`
-  color: #000;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 130%; /* 67.6px */
-  text-transform: capitalize;
-  margin-bottom: 24px;
 `
 
 const BUs = styled.div`

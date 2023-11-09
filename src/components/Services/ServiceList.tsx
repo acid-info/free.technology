@@ -47,6 +47,10 @@ const Service = styled.div`
 
 const TitleContainer = styled.div`
   width: 100%;
+
+  @media (max-width: ${breakpoints.md}px) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  }
 `
 
 const Title = styled.h3`
@@ -62,7 +66,6 @@ const Title = styled.h3`
     font-size: 22px;
     line-height: 122%;
     padding-block: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
   }
 `
 

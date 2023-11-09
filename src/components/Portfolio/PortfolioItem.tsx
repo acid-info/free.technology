@@ -127,10 +127,6 @@ const Title = styled.div`
   gap: 16px;
   align-items: center;
   width: 100%;
-
-  @media (max-width: ${breakpoints.md}px) {
-    font-size: 12px;
-  }
 `
 
 const TitleText = styled.h3`

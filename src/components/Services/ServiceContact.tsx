@@ -21,7 +21,8 @@ const ServiceContact = () => {
 }
 
 const Container = styled.div`
-  margin-top: 268px;
+  margin-top: 207px;
+  margin-bottom: 56px;
   padding: 24px 0;
   display: flex;
   flex-direction: column;
@@ -29,37 +30,44 @@ const Container = styled.div`
   &:last-child {
     border-bottom: none;
   }
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-bottom: 32px;
+  }
 `
 
 const Header = styled.div`
   display: flex;
-  font-size: 22px;
+  justify-content: center;
+  font-size: 52px;
   font-weight: 400;
   padding: 24px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-  margin-bottom: 24px;
 
   @media (max-width: ${breakpoints.md}px) {
-    margin-bottom: 24px;
+    font-size: 22px;
   }
 `
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 24px;
   margin-bottom: 56px;
+  max-width: 1300px;
+  margin: 0 auto 56px auto;
 
   @media (max-width: ${breakpoints.md}px) {
     gap: 8px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
   }
 `
 
 const Title = styled.h3`
   font-size: 52px;
   color: black;
+  text-align: center;
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 22px;
@@ -74,26 +82,28 @@ const Description = styled.p`
   line-height: 122%;
   font-weight: 400;
   max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
 
   @media (max-width: ${breakpoints.md}px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `
 
 const EmailButton = styled.button`
-  height: 42px;
-  font-size: 14px;
+  width: 185px;
+  height: 76px;
+  margin: 0 auto;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 2px;
   background: black;
   position: relative;
   color: black;
   color: white;
   text-align: center;
-  padding: 10px 49px 10px 18px;
   cursor: pointer;
   border: none;
 `

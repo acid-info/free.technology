@@ -1,5 +1,6 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import { FilterTitle } from '../Filter'
 import { ServiceType } from './ServiceItem'
 
 type Props = {
@@ -17,22 +18,22 @@ const ServiceFilter = ({
     return <div>Something went wrong</div>
   }
 
-  const toggleBU = (bu: string) => {
-    if (activeServices.includes(bu)) {
+  const toggleService = (service: string) => {
+    if (activeServices.includes(service)) {
       setActiveServices((prevServicesContainer) =>
-        prevServicesContainer.filter((item) => item !== bu),
+        prevServicesContainer.filter((item) => item !== service),
       )
     } else {
       setActiveServices((prevServicesContainer) => [
         ...prevServicesContainer,
-        bu,
+        service,
       ])
     }
   }
 
   return (
     <Container>
-      <Title>Our Services</Title>
+      <FilterTitle title="Our Services" length={services.length} />
       <Border />
       <ServicesContainer>
         {services?.length ? (
@@ -40,7 +41,7 @@ const ServiceFilter = ({
             <Tag
               active={activeServices.includes(service.title)}
               key={service.title + '-tag'}
-              onClick={() => toggleBU(service.title)}
+              onClick={() => toggleService(service.title)}
             >
               {service.title}
             </Tag>
@@ -60,15 +61,25 @@ const Container = styled.div`
   width: 100%;
   margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
   margin-bottom: 56px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-top: calc(${uiConfigs.navbarHeight}px + 16px);
+  }
 `
 
 const Title = styled.h3`
   color: #000;
   font-size: 52px;
   font-weight: 400;
-  line-height: 130%; /* 67.6px */
+  line-height: 130%;
   text-transform: capitalize;
   margin-bottom: 24px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 22px;
+    line-height: 122%;
+    margin-bottom: 16px;
+  }
 `
 
 const ServicesContainer = styled.div`
