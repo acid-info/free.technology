@@ -120,7 +120,7 @@ const FooterInto = styled.div`
   gap: 16px;
 
   @media (max-width: ${breakpoints.md}px) {
-    & > div:first-child {
+    & > div:first-of-type {
       display: none;
     }
   }
@@ -243,11 +243,11 @@ const Org = styled.div`
   width: 50%;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 
-  p:first-child {
+  p:first-of-type {
     padding-top: 20px;
   }
 
-  p:nth-child(2) {
+  p:nth-of-type(2) {
     margin-top: auto;
     padding-bottom: 20px;
   }
@@ -261,7 +261,7 @@ const Org = styled.div`
       font-size: 12px;
     }
 
-    p:nth-child(2) {
+    p:nth-of-type(2) {
       padding-top: 20px;
       padding-bottom: unset;
       margin-top: unset;

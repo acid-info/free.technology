@@ -17,6 +17,7 @@ export type Job = {
 }
 
 const JobItem = ({ job }: { job: Job }) => {
+  console.log(job)
   return (
     <JobContainer>
       <JobHeader>

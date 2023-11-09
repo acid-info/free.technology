@@ -32,6 +32,7 @@ const JobFilter = ({ jobs, activeBUs, setActiveBUs }: Props) => {
   return (
     <Container>
       <Title>Open Vacancies</Title>
+      <Border />
       <BUs>
         <Tag active={activeBUs.length === 0} onClick={() => setActiveBUs([])}>
           All Jobs
@@ -50,6 +51,7 @@ const JobFilter = ({ jobs, activeBUs, setActiveBUs }: Props) => {
           <NoJobs>No Open Positions</NoJobs>
         )}
       </BUs>
+      <Border />
     </Container>
   )
 }
@@ -58,7 +60,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 24px;
   margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
 `
 
@@ -68,16 +69,14 @@ const Title = styled.h3`
   font-weight: 400;
   line-height: 130%; /* 67.6px */
   text-transform: capitalize;
+  margin-bottom: 24px;
 `
 
 const BUs = styled.div`
   display: flex;
-  align-items: center;
-  gap: 16px;
-  border-top: 1px solid rgba(0, 0, 0, 0.18);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-  padding: 16px 0;
   overflow-x: auto;
+  gap: 16px;
+  padding: 16px 0;
 
   &::-webkit-scrollbar {
     display: none;
@@ -90,6 +89,14 @@ const BUs = styled.div`
   }
 `
 
+const Border = styled.hr`
+  background: rgba(0, 0, 0, 0.18);
+  border: 0;
+  height: 1px;
+  width: 100%;
+  margin: 0;
+`
+
 const Tag = styled.div<{ active: boolean }>`
   display: flex;
   align-items: center;
@@ -100,12 +107,16 @@ const Tag = styled.div<{ active: boolean }>`
   line-height: 20px;
   height: 28px;
   border-radius: 14px;
-  padding: 0 14px;
+  padding: 4px 14px;
   box-sizing: border-box;
   text-transform: capitalize;
   cursor: pointer;
   border: 1px solid black;
   white-space: nowrap;
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding: 4px 10px;
+  }
 `
 
 const NoJobs = styled.p`
