@@ -61,6 +61,7 @@ const JobHeader = styled.div`
 
 const JobTitle = styled.div`
   font-size: 36px;
+  line-height: 42px;
   color: black;
   text-decoration: none;
 
@@ -76,6 +77,7 @@ const JobInfo = styled.p`
   text-overflow: ellipsis;
   font-size: 18px;
   font-weight: 400;
+  line-height: 22px;
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 12px;

@@ -12,7 +12,10 @@ export const Portfolio = ({ children, ...props }: Props) => {
 
   return (
     <Container {...props}>
-      <Title>Portfolio ({childrenArray?.length})</Title>
+      <Header>
+        <Title>Portfolio</Title>
+        <sup>({childrenArray?.length})</sup>
+      </Header>
       {children}
     </Container>
   )
@@ -22,18 +25,36 @@ const Container = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.18);
 `
 
+const Header = styled.div`
+  display: flex;
+  padding-block: 24px;
+  margin-bottom: 56px;
+
+  sup {
+    vertical-align: super;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding-block: 16px;
+    margin-bottom: 48px;
+    sup {
+      font-size: 12px;
+      margin-left: 0px;
+    }
+  }
+`
+
 const Title = styled.p`
   font-size: 36px;
   font-weight: 400;
   line-height: 130%;
-  padding-block: 24px;
-  margin-bottom: 56px;
   box-sizing: border-box;
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 22px;
     line-height: 122%;
-    margin-bottom: 48px;
   }
 `
 

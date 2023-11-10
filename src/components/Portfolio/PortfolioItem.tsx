@@ -17,14 +17,14 @@ export const PortfolioItem = ({ title, mark, est, children }: Props) => {
     setOpen(!open)
   }
   return (
-    <Container>
+    <Container onClick={handleClick}>
       <Header>
         <Title>
           <Image src={mark} width={34} height={34} alt={title + '-logo'} />
           <TitleText>{title}</TitleText>
           <Tag>est. {est}</Tag>
         </Title>
-        <Toggle onClick={handleClick}>
+        <Toggle>
           <ToggleButtonImage
             src={open ? '/icons/minus.svg' : '/icons/plus.svg'}
             alt={open ? 'minus' : 'plus'}
@@ -42,6 +42,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
+  cursor: pointer;
 
   p {
     text-overflow: ellipsis;

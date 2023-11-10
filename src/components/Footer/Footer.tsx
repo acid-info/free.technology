@@ -128,11 +128,12 @@ const FooterInfoItem = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  line-height: 122%;
 
   h2 {
     font-size: 36px;
     font-weight: 400;
-    line-height: 130%;
+    line-height: 42px;
   }
 
   @media (max-width: ${breakpoints.md}px) {
@@ -140,7 +141,6 @@ const FooterInfoItem = styled.div`
 
     h2 {
       font-size: 22px;
-      line-height: 122%;
     }
   }
 `

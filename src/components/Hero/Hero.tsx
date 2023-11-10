@@ -14,7 +14,7 @@ const Container = styled.div`
   h1,
   h2 {
     font-size: 36px;
-    line-height: 128%;
+    line-height: 122%;
     word-break: break-word;
   }
 

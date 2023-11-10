@@ -21,7 +21,7 @@ const Container = styled.div`
 
   p {
     font-size: 22px;
-    line-height: normal;
+    line-height: 122%;
   }
 
   @media (max-width: ${breakpoints.md}px) {

@@ -106,7 +106,7 @@ const Title = styled.h3`
   color: #000;
   font-size: 52px;
   font-weight: 400;
-  line-height: 130%;
+  line-height: 60px;
   text-transform: capitalize;
 
   @media (max-width: ${breakpoints.md}px) {

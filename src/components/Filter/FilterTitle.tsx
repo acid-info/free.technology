@@ -41,9 +41,9 @@ const Title = styled.h3`
   color: #000;
   font-size: 52px;
   font-weight: 400;
-  line-height: 130%;
   text-transform: capitalize;
   margin-bottom: 24px;
+  line-height: 60px;
 `
 
 export default FilterTitle

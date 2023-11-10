@@ -71,7 +71,7 @@ const Container = styled.footer`
     padding-block: 24px;
     font-size: 34px;
     font-weight: 400;
-    line-height: 130%;
+    line-height: 42px;
   }
 
   @media (max-width: ${breakpoints.md}px) {
@@ -112,7 +112,7 @@ const Description = styled.div`
 
   p {
     font-size: 36px;
-    line-height: 122%;
+    line-height: 42px;
   }
 
   button {
@@ -130,8 +130,9 @@ const Description = styled.div`
 
   @media (max-width: ${breakpoints.md}px) {
     width: 100%;
-    margin-top: 24px;
-    margin-bottom: 32px;
+    margin-top: 8px;
+    margin-bottom: 48px;
+    gap: 32px;
 
     p {
       font-size: 22px;
