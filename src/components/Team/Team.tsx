@@ -20,7 +20,7 @@ const Container = styled.div`
 `
 
 const Title = styled.p`
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 130%;
   padding-block: 20px;

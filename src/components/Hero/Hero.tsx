@@ -18,6 +18,17 @@ const Container = styled.div`
     word-break: break-word;
   }
 
+  h1 {
+    display: inline-flex;
+
+    sup {
+      vertical-align: super;
+      font-size: 22px;
+      position: relative;
+      top: -0.5em;
+    }
+  }
+
   h2 {
     opacity: 0.3;
     margin-bottom: 32px;
@@ -30,6 +41,13 @@ const Container = styled.div`
     h2 {
       font-size: 22px;
       line-height: 122%;
+    }
+
+    h1 {
+      sup {
+        vertical-align: super;
+        font-size: 12px;
+      }
     }
 
     margin-bottom: 74px;
