@@ -1,6 +1,6 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Box } from '../Box'
 import JobItem, { Job } from './JobItem'
 
@@ -18,28 +18,28 @@ const JobList = ({ jobs, activeBUs }: Props) => {
     return <div>Something went wrong</div>
   }
 
-  const businessUnitMark = (businessUnit: string) => {
-    switch (businessUnit) {
-      case 'logos':
-        return '/icons/bu/logos.svg'
-      case 'codex':
-        return '/icons/bu/codex.svg'
-      case 'status':
-        return '/icons/bu/status.svg'
-      case 'waku':
-        return '/icons/bu/waku.svg'
-      case 'nimbus':
-        return '/icons/bu/nimbus.svg'
-      case 'nomos':
-        return '/icons/bu/nomos.svg'
-      case 'vac':
-        return '/icons/bu/vac.svg'
-      case 'keycard':
-        return ''
-      default:
-        return ''
-    }
-  }
+  // const businessUnitMark = (businessUnit: string) => {
+  //   switch (businessUnit) {
+  //     case 'logos':
+  //       return '/icons/bu/logos.svg'
+  //     case 'codex':
+  //       return '/icons/bu/codex.svg'
+  //     case 'status':
+  //       return '/icons/bu/status.svg'
+  //     case 'waku':
+  //       return '/icons/bu/waku.svg'
+  //     case 'nimbus':
+  //       return '/icons/bu/nimbus.svg'
+  //     case 'nomos':
+  //       return '/icons/bu/nomos.svg'
+  //     case 'vac':
+  //       return '/icons/bu/vac.svg'
+  //     case 'keycard':
+  //       return ''
+  //     default:
+  //       return ''
+  //   }
+  // }
 
   return (
     <CustomBox>
@@ -50,14 +50,14 @@ const JobList = ({ jobs, activeBUs }: Props) => {
         .map(([businessUnit, jobList]) => (
           <Container key={businessUnit + '-jobs'}>
             <TitleContainer>
-              {businessUnitMark(businessUnit)?.length ? (
+              {/* {businessUnitMark(businessUnit)?.length ? (
                 <Mark
                   width={50}
                   height={50}
                   src={businessUnitMark(businessUnit)}
                   alt={businessUnit + '-mark'}
                 />
-              ) : null}
+              ) : null} */}
               <Title>{businessUnit}</Title>
             </TitleContainer>
 
@@ -125,11 +125,11 @@ const NoJobs = styled.p`
   text-decoration: none;
 `
 
-const Mark = styled(Image)`
-  @media (max-width: ${breakpoints.md}px) {
-    display: none;
-  }
-`
+// const Mark = styled(Image)`
+//   @media (max-width: ${breakpoints.md}px) {
+//     display: none;
+//   }
+// `
 
 const CustomBox = styled(Box)`
   margin-bottom: 238px;
