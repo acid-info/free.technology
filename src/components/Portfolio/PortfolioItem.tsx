@@ -128,11 +128,15 @@ const Title = styled.div`
   gap: 16px;
   align-items: center;
   width: 100%;
+
+  @media (max-width: ${breakpoints.md}px) {
+    gap: 12px;
+  }
 `
 
 const TitleText = styled.h3`
-  font-size: 26px;
-  line-height: 130%;
+  font-size: 22px;
+  line-height: 26px;
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 16px;
@@ -148,14 +152,15 @@ const Tag = styled.div`
   font-size: 12px;
   line-height: 16px;
   height: 24px;
-  border-radius: 12px;
-  padding: 4px 9px;
+  padding: 4px 10px;
   box-sizing: border-box;
   cursor: pointer;
-  border: 1px solid black;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
 
   @media (max-width: ${breakpoints.md}px) {
-    font-size: 11px;
+    font-size: 12px;
+    padding: 4px 8px;
   }
 `
 

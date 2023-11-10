@@ -42,7 +42,7 @@ const ImageContainer = styled.div`
   position: relative;
   width: 100%;
   margin-bottom: 16px;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1;
 `
 
 const MemberImage = styled(Image)`

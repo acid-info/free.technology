@@ -33,9 +33,8 @@ const Container = styled.div`
 
   h2 {
     font-size: 36px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 42px;
     margin-top: 24px;
   }
 

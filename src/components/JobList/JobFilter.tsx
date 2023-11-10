@@ -1,9 +1,10 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import { calculateTotalJobCount } from '../../../utils/jobs'
 import { FilterTitle } from '../Filter'
 import { Job } from './JobItem' // adjust path accordingly
 
-interface BoardJobs {
+export interface BoardJobs {
   [key: string]: Job[]
 }
 
@@ -26,10 +27,6 @@ const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
     } else {
       setActiveBUs((prevBUs) => [...prevBUs, bu])
     }
-  }
-
-  const calculateTotalJobCount = (units: BoardJobs): number => {
-    return Object.keys(units).reduce((sum, unit) => sum + units[unit].length, 0)
   }
 
   return (
