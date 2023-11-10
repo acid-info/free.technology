@@ -67,7 +67,7 @@ const Container = styled.div`
   flex-direction: column;
   width: 100%;
   margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
-  margin-bottom: 56px;
+  margin-bottom: 20px;
 `
 
 const BUs = styled.div`

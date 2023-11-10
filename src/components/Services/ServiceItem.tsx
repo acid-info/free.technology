@@ -65,6 +65,7 @@ const Description = styled.p`
   font-size: 22px;
   line-height: 122%;
   font-weight: 400;
+  max-width: 817px;
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 14px;

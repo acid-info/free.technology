@@ -1,6 +1,7 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import { Box } from '../Box'
 import JobItem, { Job } from './JobItem'
 
 interface BoardJobs {
@@ -40,33 +41,37 @@ const JobList = ({ jobs, activeBUs }: Props) => {
     }
   }
 
-  return Object.entries(jobs)
-    .filter(([businessUnit, _]) =>
-      !activeBUs?.length ? true : activeBUs.includes(businessUnit),
-    )
-    .map(([businessUnit, jobList]) => (
-      <Container key={businessUnit + '-jobs'}>
-        <TitleContainer>
-          {businessUnitMark(businessUnit)?.length ? (
-            <Mark
-              width={50}
-              height={50}
-              src={businessUnitMark(businessUnit)}
-              alt={businessUnit + '-mark'}
-            />
-          ) : null}
-          <Title>{businessUnit}</Title>
-        </TitleContainer>
+  return (
+    <CustomBox>
+      {Object.entries(jobs)
+        .filter(([businessUnit, _]) =>
+          !activeBUs?.length ? true : activeBUs.includes(businessUnit),
+        )
+        .map(([businessUnit, jobList]) => (
+          <Container key={businessUnit + '-jobs'}>
+            <TitleContainer>
+              {businessUnitMark(businessUnit)?.length ? (
+                <Mark
+                  width={50}
+                  height={50}
+                  src={businessUnitMark(businessUnit)}
+                  alt={businessUnit + '-mark'}
+                />
+              ) : null}
+              <Title>{businessUnit}</Title>
+            </TitleContainer>
 
-        <Jobs>
-          {jobList?.length ? (
-            jobList.map((job: any) => <JobItem key={job.id} job={job} />)
-          ) : (
-            <NoJobs>No Open Positions</NoJobs>
-          )}
-        </Jobs>
-      </Container>
-    ))
+            <Jobs>
+              {jobList?.length ? (
+                jobList.map((job: any) => <JobItem key={job.id} job={job} />)
+              ) : (
+                <NoJobs>No Open Positions</NoJobs>
+              )}
+            </Jobs>
+          </Container>
+        ))}
+    </CustomBox>
+  )
 }
 
 const Container = styled.div`
@@ -74,12 +79,10 @@ const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   margin-top: 180px;
-  margin-bottom: 204px;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
 
   @media (max-width: ${breakpoints.md}px) {
     margin-top: 60px;
-    margin-bottom: 74px;
     flex-direction: column;
   }
 `
@@ -125,6 +128,14 @@ const NoJobs = styled.p`
 const Mark = styled(Image)`
   @media (max-width: ${breakpoints.md}px) {
     display: none;
+  }
+`
+
+const CustomBox = styled(Box)`
+  margin-bottom: 238px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-bottom: 195px;
   }
 `
 

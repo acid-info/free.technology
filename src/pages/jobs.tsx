@@ -19,9 +19,7 @@ const Page = ({ jobs }: any) => {
             setActiveBUs={setActiveBUs}
           />
         </Box>
-        <Box>
-          <JobList jobs={jobs} activeBUs={activeBUs} />
-        </Box>
+        <JobList jobs={jobs} activeBUs={activeBUs} />
       </div>
     </>
   )
