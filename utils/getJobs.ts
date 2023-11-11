@@ -1,6 +1,6 @@
 const boardMappings: any = {
   // acidtest: "testacidinfo",
-  logos: 'logos',
+  // logos: 'logos',
   status: 'status72',
   nimbus: 'nimbus',
   codex: 'codex',
@@ -9,6 +9,7 @@ const boardMappings: any = {
   // ift: "instituteoffreetechnologies",
   vac: 'vac',
   waku: 'waku',
+  other: 'iftother',
 }
 
 export async function getJobs(boardsArg: string[], titleFilter: string) {
