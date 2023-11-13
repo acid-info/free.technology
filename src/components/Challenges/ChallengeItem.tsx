@@ -151,10 +151,6 @@ const ChallengeHeader = styled.div`
   align-items: center;
   padding: 24px 0;
   cursor: pointer;
-
-  @media (max-width: ${breakpoints.md}px) {
-    margin-bottom: 24px;
-  }
 `
 
 const ChallengeTitle = styled.div`
