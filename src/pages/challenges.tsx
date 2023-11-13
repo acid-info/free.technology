@@ -1,35 +1,24 @@
+import { Box } from '@/components/Box'
+import { ChallengeFilter, ChallengeList } from '@/components/Challenges'
 import { SEO } from '@/components/SEO'
+import { useState } from 'react'
 import { SubPageLayout } from '../layouts/SubPageLayout'
 
 const Page = ({ issues }: any) => {
+  const [activeBUs, setActiveBUs] = useState<string[]>([])
+
   return (
     <>
       <SEO />
       <div>
-        <h1>Open Issues</h1>
-        {Object.entries(issues).map(([repoFullName, issuesList]: any) => (
-          <div key={repoFullName}>
-            <h2>Repository: {repoFullName}</h2>
-            <ul>
-              {issuesList.map((issue: any) => (
-                <li key={issue.id}>
-                  <a href={issue.url} target="_blank" rel="noopener noreferrer">
-                    {issue.title}
-                  </a>{' '}
-                  - by {issue.author.login}
-                  <div>
-                    Labels:{' '}
-                    {issue.labels.nodes
-                      .map((label: any) => label.name)
-                      .join(', ')}
-                  </div>
-                  <div>Comments: {issue.commentCount.totalCount}</div>
-                  {/* Add any other issue details you want to render */}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <Box>
+          <ChallengeFilter
+            data={issues}
+            activeBUs={activeBUs}
+            setActiveBUs={setActiveBUs}
+          />
+        </Box>
+        <ChallengeList challenges={issues} activeBUs={activeBUs} />
       </div>
     </>
   )

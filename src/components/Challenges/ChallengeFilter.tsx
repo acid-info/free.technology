@@ -2,19 +2,14 @@ import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import { calculatElementCount } from '../../../utils/count'
 import { FilterTitle } from '../Filter'
-import { Job } from './JobItem' // adjust path accordingly
-
-export interface BoardJobs {
-  [key: string]: Job[]
-}
 
 type Props = {
-  data: BoardJobs
+  data: any
   activeBUs: string[]
   setActiveBUs: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
+const ChallengeFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
   if (data == null) {
     return <div>Something went wrong</div>
   }
@@ -35,7 +30,7 @@ const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
       <Border />
       <BUs>
         <Tag active={activeBUs.length === 0} onClick={() => setActiveBUs([])}>
-          All Jobs
+          All Challenges
         </Tag>
         {businessUnits?.length ? (
           businessUnits.map((bu: string) => (
@@ -48,7 +43,7 @@ const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
             </Tag>
           ))
         ) : (
-          <NoJobs>No Open Positions</NoJobs>
+          <NoChallenges>No Open Positions</NoChallenges>
         )}
       </BUs>
       <Border />
@@ -111,11 +106,11 @@ const Tag = styled.div<{ active: boolean }>`
   }
 `
 
-const NoJobs = styled.p`
+const NoChallenges = styled.p`
   padding-top: 24px;
   font-size: 36px;
   color: black;
   text-decoration: none;
 `
 
-export default JobFilter
+export default ChallengeFilter

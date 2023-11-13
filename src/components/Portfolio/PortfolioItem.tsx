@@ -16,6 +16,7 @@ export const PortfolioItem = ({ title, mark, est, children }: Props) => {
   const handleClick = () => {
     setOpen(!open)
   }
+
   return (
     <Container onClick={handleClick}>
       <Header>
