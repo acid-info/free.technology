@@ -1,5 +1,5 @@
 import { Box } from '@/components/Box'
-import { JobFilter, JobList } from '@/components/JobList'
+import { JobFilter, JobList } from '@/components/Jobs'
 import { SEO } from '@/components/SEO'
 import { SubPageLayout } from '@/layouts/SubPageLayout'
 import { useState } from 'react'

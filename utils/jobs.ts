@@ -1,4 +1,4 @@
-import { BoardJobs } from '@/components/JobList/JobFilter'
+import { BoardJobs } from '@/components/Jobs/JobFilter'
 
 export const calculateTotalJobCount = (units: BoardJobs): number => {
   if (!units) {
