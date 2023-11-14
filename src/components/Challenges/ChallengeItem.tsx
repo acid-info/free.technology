@@ -64,91 +64,79 @@ const ChallengeItem = ({ challenge }: { challenge: Challenge }) => {
         </Toggle>
       </ChallengeHeader>
       {open && (
-        <Content>
-          <table>
-            <thead>
-              <tr>
-                <th>Participants</th>
-                <th>Assignees</th>
-                <th>Labels</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                {challenge.commentCount.totalCount > 0 ? (
-                  <Participants>
-                    {challenge.commentCount.totalCount}+
-                    <AvatarContainer>
-                      {challenge.commentsDetailed.nodes
-                        .slice(0, 5)
-                        .map((comment) => (
-                          <Avatar
-                            key={comment.id}
-                            width={28}
-                            height={28}
-                            src={comment.author.avatarUrl}
-                            alt={comment.author.login}
-                            className="avatar"
-                          />
-                        ))}
-                    </AvatarContainer>
-                  </Participants>
-                ) : (
-                  'No Participants Yet'
-                )}
-                <td>
-                  {challenge.commentCount.totalCount > 0 && (
-                    <Participants>
-                      {challenge.assignees.nodes
-                        .map((assignee) => assignee.login)
-                        .join(', ')}
-                      <AvatarContainer>
-                        {challenge.assignees.nodes
-                          .slice(0, 5)
-                          .map((assignee) => (
-                            <Avatar
-                              key={assignee.avatarUrl}
-                              width={28}
-                              height={28}
-                              src={assignee.avatarUrl}
-                              alt={assignee.login}
-                              className="avatar"
-                            />
-                          ))}
-                      </AvatarContainer>
-                    </Participants>
-                  )}
-                </td>
-                <td>
-                  {challenge.labels.nodes.map((label) => (
-                    <span key={label.name} className="label">
-                      {label.name}
-                    </span>
-                  ))}
-                </td>
-              </tr>
-              <tr>
-                <th>Title</th>
-                <th>Milestone</th>
-                <th>Projects</th>
-              </tr>
-              <tr>
-                <td></td>
-                <td>
-                  {challenge.milestone
-                    ? challenge.milestone.title
-                    : 'No Milestone'}
-                </td>
-                <td>
-                  {challenge.projectCards.nodes.length > 0
-                    ? challenge.projectCards.nodes
-                        .map((card) => card.name)
-                        .join(', ')
-                    : 'None Yet'}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <>
+          <Content>
+            <DataSection>
+              <span>Participants</span>
+              {challenge.commentCount.totalCount > 0 ? (
+                <Participants>
+                  {challenge.commentCount.totalCount}+
+                  <AvatarContainer>
+                    {challenge.commentsDetailed.nodes
+                      .slice(0, 5)
+                      .map((comment) => (
+                        <Avatar
+                          key={comment.id}
+                          width={28}
+                          height={28}
+                          src={comment.author.avatarUrl}
+                          alt={comment.author.login}
+                          className="avatar"
+                        />
+                      ))}
+                  </AvatarContainer>
+                </Participants>
+              ) : (
+                'No Participants Yet'
+              )}
+            </DataSection>
+            <DataSection>
+              <span>Assignees</span>
+              {challenge.commentCount.totalCount > 0 && (
+                <Participants>
+                  {challenge.assignees.nodes
+                    .map((assignee) => assignee.login)
+                    .join(', ')}
+                  <AvatarContainer>
+                    {challenge.assignees.nodes.slice(0, 5).map((assignee) => (
+                      <Avatar
+                        key={assignee.avatarUrl}
+                        width={28}
+                        height={28}
+                        src={assignee.avatarUrl}
+                        alt={assignee.login}
+                        className="avatar"
+                      />
+                    ))}
+                  </AvatarContainer>
+                </Participants>
+              )}
+            </DataSection>
+            <DataSection>
+              <span>Labels</span>
+              {challenge.labels.nodes.map((label) => (
+                <Label key={label.name} className="label">
+                  {label.name}
+                </Label>
+              ))}
+            </DataSection>
+
+            <DataSection>
+              <span>Title</span>
+            </DataSection>
+            <DataSection>
+              <span>Milestone</span>
+              {challenge.milestone ? challenge.milestone.title : 'No Milestone'}
+            </DataSection>
+            <DataSection>
+              <span>Projects</span>
+              {challenge.projectCards.nodes.length > 0
+                ? challenge.projectCards.nodes
+                    .map((card) => card.name)
+                    .join(', ')
+                : 'None Yet'}
+            </DataSection>
+          </Content>
           <RewardContainer>
             <span>
               <CurrencyContainer>
@@ -166,7 +154,7 @@ const ChallengeItem = ({ challenge }: { challenge: Challenge }) => {
               </IconContainer>
             </GithubButton>
           </RewardContainer>
-        </Content>
+        </>
       )}
     </ChallengeContainer>
   )
@@ -230,59 +218,63 @@ const ToggleButtonImage = styled.img`
 `
 
 const Content = styled.div`
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 20px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  th {
+  & > div:not(:last-child):after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    margin-top: 20px;
+  }
+`
+
+const DataSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 8px;
+  align-items: flex-start;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+
+  > span {
     color: rgba(0, 0, 0, 0.35);
-    text-transform: capitalize;
-
-    padding-top: 20px;
-    padding-bottom: 8px;
-    border-top: 1px solid rgba(0, 0, 0, 0.18) !important;
-  }
-
-  tr {
-    display: flex;
-    align-items: center;
-  }
-
-  table td,
-  table th {
-    width: calc(100% / 3);
     font-size: 18px;
     line-height: 22px;
   }
 
-  table > tbody > tr:nth-child(2) {
-    margin-top: 20px;
-  }
-
-  table th,
-  table tr {
-    border: none;
-    font-weight: 400;
-    text-align: left;
-    font-size: 18px;
-    line-height: 130%;
-  }
-
-  .label {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 4px 14px;
-    border-radius: 999px;
-    border: 1px solid rgba(0, 0, 0, 0.18);
+  @media (max-width: ${breakpoints.md}px) {
+    > span {
+      font-size: 14px;
+      line-height: 130%;
+    }
   }
 `
 
-const Participants = styled.td`
+const Participants = styled.p`
   display: flex;
   flex-direction: column;
+  font-size: 18px;
   gap: 8px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 14px;
+  }
+`
+
+const Label = styled.span`
+  font-size: 14px !important;
+  line-height: 20px !important;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  color: black !important;
+  box-sizing: border-box;
 `
 
 const AvatarContainer = styled.div`
@@ -309,6 +301,11 @@ const GithubButton = styled.a`
   padding: 0 18px;
   cursor: pointer;
   text-decoration: none;
+  position: relative;
+
+  span {
+    justify-content: flex-end;
+  }
 `
 
 const IconContainer = styled.span`
@@ -330,6 +327,20 @@ const RewardContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 24px;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    flex-direction: column;
+    padding: 16px;
+
+    span {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    a {
+      width: 100%;
+    }
   }
 `
 
