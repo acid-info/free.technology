@@ -1,5 +1,6 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import Image from 'next/image'
 import { useState } from 'react'
 import ArrowUpRight from '../Icons/ArrowUpRight'
 
@@ -74,21 +75,49 @@ const ChallengeItem = ({ challenge }: { challenge: Challenge }) => {
             </thead>
             <tbody>
               <tr>
-                <Participants>
-                  {challenge.commentCount.totalCount}+
-                  {challenge.assignees.nodes.map((assignee) => (
-                    <img
-                      key={assignee.login}
-                      src={assignee.avatarUrl}
-                      alt={assignee.login}
-                      className="avatar"
-                    />
-                  ))}
-                </Participants>
+                {challenge.commentCount.totalCount > 0 ? (
+                  <Participants>
+                    {challenge.commentCount.totalCount}+
+                    <AvatarContainer>
+                      {challenge.commentsDetailed.nodes
+                        .slice(0, 5)
+                        .map((comment) => (
+                          <Avatar
+                            key={comment.id}
+                            width={28}
+                            height={28}
+                            src={comment.author.avatarUrl}
+                            alt={comment.author.login}
+                            className="avatar"
+                          />
+                        ))}
+                    </AvatarContainer>
+                  </Participants>
+                ) : (
+                  'No Participants Yet'
+                )}
                 <td>
-                  {challenge.assignees.nodes
-                    .map((assignee) => assignee.login)
-                    .join(', ')}
+                  {challenge.commentCount.totalCount > 0 && (
+                    <Participants>
+                      {challenge.assignees.nodes
+                        .map((assignee) => assignee.login)
+                        .join(', ')}
+                      <AvatarContainer>
+                        {challenge.assignees.nodes
+                          .slice(0, 5)
+                          .map((assignee) => (
+                            <Avatar
+                              key={assignee.avatarUrl}
+                              width={28}
+                              height={28}
+                              src={assignee.avatarUrl}
+                              alt={assignee.login}
+                              className="avatar"
+                            />
+                          ))}
+                      </AvatarContainer>
+                    </Participants>
+                  )}
                 </td>
                 <td>
                   {challenge.labels.nodes.map((label) => (
@@ -121,7 +150,15 @@ const ChallengeItem = ({ challenge }: { challenge: Challenge }) => {
             </tbody>
           </table>
           <RewardContainer>
-            <div>Reward:</div>
+            <span>
+              <CurrencyContainer>
+                <Image src="/icons/dai.svg" alt="dai" width={37} height={37} />
+              </CurrencyContainer>
+              <RewardInfo>
+                <p>Reward:</p>
+                <p>1000 DAI</p>
+              </RewardInfo>
+            </span>
             <GithubButton href={challenge.url} target="_blank">
               See on Github
               <IconContainer>
@@ -233,12 +270,6 @@ const Content = styled.div`
     line-height: 130%;
   }
 
-  .avatar {
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-  }
-
   .label {
     font-size: 14px;
     line-height: 20px;
@@ -252,6 +283,16 @@ const Participants = styled.td`
   display: flex;
   flex-direction: column;
   gap: 8px;
+`
+
+const AvatarContainer = styled.div`
+  display: flex;
+  gap: -4px;
+`
+
+const Avatar = styled(Image)`
+  border-radius: 50%;
+  border: 1px solid white;
 `
 
 const GithubButton = styled.a`
@@ -284,6 +325,42 @@ const RewardContainer = styled.div`
   align-self: stretch;
   border: 1px solid rgba(0, 0, 0, 0.18);
   margin-bottom: 20px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+`
+
+const CurrencyContainer = styled.div`
+  display: flex;
+  width: 66px;
+  height: 66px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 999px;
+  background: #000;
+  color: white;
+`
+
+const RewardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  & > p:first-of-type {
+    font-size: 18px;
+    line-height: 22px;
+    opacity: 0.5;
+  }
+
+  & > p:last-of-type {
+    font-size: 22px;
+    line-height: 26px;
+  }
 `
 
 export default ChallengeItem

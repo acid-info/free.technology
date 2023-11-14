@@ -49,6 +49,7 @@ query {
               id
               author {
                 login
+                avatarUrl
               }
               body
               createdAt
