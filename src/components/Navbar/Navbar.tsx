@@ -33,9 +33,9 @@ export const Navbar = () => {
         <Link href="/jobs">
           <p>JOB LIST</p>
         </Link>
-        <Link href="/challenges">
+        {/* <Link href="/challenges">
           <p>CHALLENGES</p>
-        </Link>
+        </Link> */}
       </span>
     </Container>
   )
