@@ -12,7 +12,7 @@ const Page = ({ jobs }: any) => {
     <>
       <SEO />
       <div>
-        <Box>
+        <Box marginBottom="180px">
           <JobFilter
             data={jobs}
             activeBUs={activeBUs}

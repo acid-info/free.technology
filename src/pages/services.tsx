@@ -13,7 +13,7 @@ const Page = ({ services }: any) => {
     <>
       <SEO />
       <div>
-        <Box>
+        <Box marginBottom="180px">
           <ServiceFilter
             services={services}
             activeServices={activeServices}

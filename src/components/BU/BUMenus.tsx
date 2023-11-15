@@ -11,9 +11,12 @@ const BUMenus = ({ children }: Props) => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 180px;
 
-  margin-bottom: 324px;
+  margin-bottom: 144px;
+
+  > div {
+    margin-bottom: 180px;
+  }
 `
 
 export default BUMenus

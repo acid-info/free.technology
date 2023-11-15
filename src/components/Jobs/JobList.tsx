@@ -54,7 +54,6 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin-top: 180px;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
 
   @media (max-width: ${breakpoints.md}px) {
@@ -73,7 +72,7 @@ const TitleContainer = styled.div`
   gap: 16px;
   width: 100%;
   height: fit-content;
-  padding-top: 24px;
+  padding-block: 24px;
 
   @media (max-width: ${breakpoints.md}px) {
     padding-block: 16px;

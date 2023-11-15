@@ -80,7 +80,7 @@ const TitleContainer = styled.div`
   gap: 16px;
   width: 100%;
   height: fit-content;
-  padding-top: 24px;
+  padding-block: 24px;
 
   @media (max-width: ${breakpoints.md}px) {
     padding-block: 16px;
