@@ -1,0 +1,87 @@
+import { breakpoints, uiConfigs } from '@/configs/ui.configs'
+import styled from '@emotion/styled'
+import { Tag } from '../Tag'
+
+type Props = {
+  activeMenus: string[]
+  setActiveMenus: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+const BUMenuFilter = ({ activeMenus, setActiveMenus }: Props) => {
+  const menus = [
+    'Testimonials',
+    'About',
+    'Milestones',
+    'Team',
+    'Jobs',
+    'Challenges',
+    'Media',
+  ]
+
+  const toggleMenu = (menu: string) => {
+    if (activeMenus.includes(menu)) {
+      setActiveMenus((preveMenus) => preveMenus.filter((item) => item !== menu))
+    } else {
+      setActiveMenus((preveMenus) => [...preveMenus, menu])
+    }
+  }
+
+  return (
+    <Container>
+      <Border />
+      <Menus>
+        <Tag
+          active={activeMenus.length === 0}
+          onClick={() => setActiveMenus([])}
+        >
+          All
+        </Tag>
+        {menus.map((menu: string) => (
+          <Tag
+            active={activeMenus.includes(menu)}
+            key={menu + '-tag'}
+            onClick={() => toggleMenu(menu)}
+          >
+            {menu}
+          </Tag>
+        ))}
+      </Menus>
+      <Border />
+    </Container>
+  )
+}
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
+  margin-bottom: 20px;
+  padding-inline: 16px;
+`
+
+const Menus = styled.div`
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 16px 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: calc(100vw - 32px);
+    margin-left: -16px;
+    padding: 16px;
+  }
+`
+
+const Border = styled.hr`
+  background: rgba(0, 0, 0, 0.18);
+  border: 0;
+  height: 1px;
+  width: 100%;
+  margin: 0;
+`
+
+export default BUMenuFilter

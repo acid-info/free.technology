@@ -1,4 +1,4 @@
-const boardMappings: any = {
+export const JOB_BOARD_MAPPING: any = {
   // acidtest: "testacidinfo",
   // logos: 'logos',
   status: 'status72',
@@ -30,10 +30,11 @@ export async function getJobs(boardsArg: string[], titleFilter: string) {
 
   for (let board of boards) {
     if (board === 'all') {
-      const promises = Object.entries(boardMappings).map(([key, boardName]) =>
-        fetchJobsForBoard(boardName as string).then((jobs) => ({
-          [key]: jobs,
-        })),
+      const promises = Object.entries(JOB_BOARD_MAPPING).map(
+        ([key, boardName]) =>
+          fetchJobsForBoard(boardName as string).then((jobs) => ({
+            [key]: jobs,
+          })),
       )
       const allResults: { [key: string]: any } = {}
       const results = await Promise.all(promises)
@@ -42,7 +43,7 @@ export async function getJobs(boardsArg: string[], titleFilter: string) {
       })
       return allResults
     } else {
-      const results = await fetchJobsForBoard(boardMappings[board])
+      const results = await fetchJobsForBoard(JOB_BOARD_MAPPING[board])
       return { [board]: results }
     }
   }

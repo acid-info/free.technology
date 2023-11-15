@@ -1,6 +1,5 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
-// import Image from 'next/image'
 import { Box } from '../Box'
 import JobItem, { Job } from './JobItem'
 
@@ -11,38 +10,24 @@ interface BoardJobs {
 type Props = {
   jobs: BoardJobs
   activeBUs: string[]
+  marginTop?: string
+  marginBottom?: string
+  title?: string
 }
 
-const JobList = ({ jobs, activeBUs }: Props) => {
+const JobList = ({
+  jobs,
+  activeBUs,
+  marginTop = '0',
+  marginBottom = '238px',
+  title,
+}: Props) => {
   if (jobs == null) {
     return <div>Something went wrong</div>
   }
 
-  // const businessUnitMark = (businessUnit: string) => {
-  //   switch (businessUnit) {
-  //     case 'logos':
-  //       return '/icons/bu/logos.svg'
-  //     case 'codex':
-  //       return '/icons/bu/codex.svg'
-  //     case 'status':
-  //       return '/icons/bu/status.svg'
-  //     case 'waku':
-  //       return '/icons/bu/waku.svg'
-  //     case 'nimbus':
-  //       return '/icons/bu/nimbus.svg'
-  //     case 'nomos':
-  //       return '/icons/bu/nomos.svg'
-  //     case 'vac':
-  //       return '/icons/bu/vac.svg'
-  //     case 'keycard':
-  //       return ''
-  //     default:
-  //       return ''
-  //   }
-  // }
-
   return (
-    <CustomBox>
+    <Box marginTop={marginTop} marginBottom={marginBottom}>
       {Object.entries(jobs)
         .filter(([businessUnit, _]) =>
           !activeBUs?.length ? true : activeBUs.includes(businessUnit),
@@ -50,17 +35,8 @@ const JobList = ({ jobs, activeBUs }: Props) => {
         .map(([businessUnit, jobList]) => (
           <Container key={businessUnit + '-jobs'}>
             <TitleContainer>
-              {/* {businessUnitMark(businessUnit)?.length ? (
-                <Mark
-                  width={50}
-                  height={50}
-                  src={businessUnitMark(businessUnit)}
-                  alt={businessUnit + '-mark'}
-                />
-              ) : null} */}
-              <Title>{businessUnit}</Title>
+              <Title>{title ?? businessUnit}</Title>
             </TitleContainer>
-
             <Jobs>
               {jobList?.length ? (
                 jobList.map((job: any) => <JobItem key={job.id} job={job} />)
@@ -70,7 +46,7 @@ const JobList = ({ jobs, activeBUs }: Props) => {
             </Jobs>
           </Container>
         ))}
-    </CustomBox>
+    </Box>
   )
 }
 
@@ -123,20 +99,6 @@ const NoJobs = styled.p`
   font-size: 36px;
   color: black;
   text-decoration: none;
-`
-
-// const Mark = styled(Image)`
-//   @media (max-width: ${breakpoints.md}px) {
-//     display: none;
-//   }
-// `
-
-const CustomBox = styled(Box)`
-  margin-bottom: 238px;
-
-  @media (max-width: ${breakpoints.md}px) {
-    margin-bottom: 195px;
-  }
 `
 
 export default JobList

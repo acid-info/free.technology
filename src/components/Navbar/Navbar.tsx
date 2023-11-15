@@ -7,7 +7,9 @@ import { useEffect, useState } from 'react'
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
-  const isTransparent = router.pathname === '/'
+  const isTransparent = router.pathname === '/' || router.pathname === '/[bu]'
+
+  const background = router.pathname === '/[bu]' ? 'transparent' : 'black'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +24,11 @@ export const Navbar = () => {
   }, [])
 
   return (
-    <Container scrolled={scrolled} isTransparent={isTransparent}>
+    <Container
+      scrolled={scrolled}
+      isTransparent={isTransparent}
+      background={background}
+    >
       <span>
         <Link href="/">
           <p>HOME</p>
@@ -41,14 +47,19 @@ export const Navbar = () => {
   )
 }
 
-const Container = styled.nav<{ scrolled: boolean; isTransparent: boolean }>`
+const Container = styled.nav<{
+  scrolled: boolean
+  isTransparent: boolean
+  background: string
+}>`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex;
-  background: black;
+  background-color: ${({ isTransparent, scrolled, background }) =>
+    !scrolled && isTransparent ? background : scrolled ? 'black' : background};
   height: ${uiConfigs.navbarHeight}px;
   padding: 4px 16px;
 
@@ -76,7 +87,6 @@ const Container = styled.nav<{ scrolled: boolean; isTransparent: boolean }>`
   }
 
   @media (max-width: ${breakpoints.md}px) {
-    background-color: transparent;
     background-color: ${({ isTransparent, scrolled }) =>
       !scrolled && isTransparent ? 'transparent' : 'black'};
 

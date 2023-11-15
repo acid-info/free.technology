@@ -10,6 +10,9 @@ interface BoardChallenges {
 type Props = {
   challenges: BoardChallenges
   activeBUs: string[]
+  marginTop?: string
+  marginBottom?: string
+  title?: string
 }
 
 function extractOrgName(repoIdentifier: string): string {
@@ -17,13 +20,19 @@ function extractOrgName(repoIdentifier: string): string {
   return orgPart.replace(/-.*/, '')
 }
 
-const ChallengeList = ({ challenges, activeBUs }: Props) => {
+const ChallengeList = ({
+  title,
+  challenges,
+  activeBUs,
+  marginTop = '0',
+  marginBottom = '180px',
+}: Props) => {
   if (challenges == null) {
     return <div>Something went wrong</div>
   }
 
   return (
-    <CustomBox>
+    <CustomBox marginTop={marginTop} marginBottom={marginBottom}>
       {Object.entries(challenges)
         .filter(([businessUnit, _]) =>
           !activeBUs?.length ? true : activeBUs.includes(businessUnit),
@@ -31,7 +40,7 @@ const ChallengeList = ({ challenges, activeBUs }: Props) => {
         .map(([businessUnit, challengeList]) => (
           <Container key={businessUnit + '-challenges'}>
             <TitleContainer>
-              <Title>{extractOrgName(businessUnit)}</Title>
+              <Title>{title ?? extractOrgName(businessUnit)}</Title>
             </TitleContainer>
 
             <Challenges>
@@ -53,7 +62,6 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin-top: 180px;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
 
   @media (max-width: ${breakpoints.md}px) {
@@ -107,8 +115,6 @@ const NoChallenges = styled.p`
 // `
 
 const CustomBox = styled(Box)`
-  margin-bottom: 238px;
-
   @media (max-width: ${breakpoints.md}px) {
     margin-bottom: 195px;
   }
