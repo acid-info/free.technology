@@ -35,6 +35,7 @@ yarn-error.log*
 next-env.d.ts
 
 .idea
+.env
 
 public/rss.xml
 public/atom*.xml
