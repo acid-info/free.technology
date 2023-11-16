@@ -12,7 +12,7 @@ const BUMilestones = ({ data }: Props) => {
         title={'Milestones'}
         description={
           <ScrollableContainer>
-            {data.map((item: any, index: number) => (
+            {data?.map((item: any, index: number) => (
               <Item key={'milestone-' + index}>
                 <GreyBox key={item.milestone}>
                   <Year>{item.year}</Year>

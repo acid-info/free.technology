@@ -7,6 +7,7 @@ import { Team, Member } from '@/components/Team'
 import { Mission } from '@/components/Mission'
 import { HomeFooter } from '@/components/Footer'
 import Link from 'next/link'
+import BU_DATA from '../data/bu-data'
 
 <SEO />
 
@@ -24,103 +25,101 @@ import Link from 'next/link'
     </Hero>
 
     <Portfolio>
-        <PortfolioItem mark="/icons/bu/logos.svg" title="Logos" est={2020}>
+        <PortfolioItem mark="/icons/bu/logos.svg" title="Logos" est={BU_DATA.logos.hero.est}>
 
             | Vertical | Development status      |
             |--------------------|---------------|
-            | Movement         | In development  |
+            | {BU_DATA.logos.hero.vertical}         | {BU_DATA.logos.hero.devStatus}  |
 
             | Founders | Achievements |
             |--------------------|---------------|
-            | Jarrad Hope, Carl Bennetts | Public launch, founded Logos Press Engine |
+            | {BU_DATA.logos.hero.founders} | {BU_DATA.logos.hero.achievements} |
 
-            A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.
+            <p>{BU_DATA.logos.hero.description}</p>
 
             <Link href="/logos"><Button width="150px" height="40px" color="grey">Learn more</Button></Link>
         </PortfolioItem>
-        <PortfolioItem mark="/icons/bu/waku.svg" title="Waku" est={2020}>
+        <PortfolioItem mark="/icons/bu/waku.svg" title="Waku" est={BU_DATA.waku.hero.est}>
 
             | Vertical | Development status      |
             |--------------------|---------------|
-            | Decentralised communications         | In production  |
+            | {BU_DATA.waku.hero.vertical}         | {BU_DATA.waku.hero.devStatus}  |
 
-            | Founder | Achievements |
+            | Founders | Achievements |
             |--------------------|---------------|
-            | Oskar Thorén | Integrated with Status, Railgun, and the Graph |
+            | {BU_DATA.waku.hero.founders} | {BU_DATA.waku.hero.achievements} |
 
-            A family of generalised P2P communications protocols. The messaging layer of the Logos stack. Waku is private, censorship resistant, modular, and scalable by design. This combination of features makes Waku suitable to run in a wide range of environments, including phones and browsers, while upholding its users' rights to private communications.
+            <p>{BU_DATA.waku.hero.description}</p>
 
             <Link href="/waku"><Button width="150px" height="40px" color="grey">Learn more</Button></Link>
         </PortfolioItem>
-        <PortfolioItem mark="/icons/bu/codex.svg" title="Codex" est={2020}>
+        <PortfolioItem mark="/icons/bu/codex.svg" title="Codex" est={BU_DATA.codex.hero.est}>
 
             | Vertical | Development status      |
             |--------------------|---------------|
-            | Decentralised storage         | Proof of concept  |
+            | {BU_DATA.codex.hero.vertical}         | {BU_DATA.codex.hero.devStatus}  |
 
-            | Founder | Achievements |
+            | Founders | Achievements |
             |--------------------|---------------|
-            | Dmitriy Ryajov | First proof-of-concept client delivered, awarded Ethereum Foundation data availability sampling research grant |
+            | {BU_DATA.codex.hero.founders} | {BU_DATA.codex.hero.achievements} |
 
-            A decentralised storage engine with strong censorship resistance and retrievability guarantees. The data archiving layer of the Logos stack. Codex leverages a novel combination of cutting-edge features, including erasure coding, a lazy repair system, ZK-based remote auditing, and incentivisation mechanisms to ensure reliability, data durability, efficiency, and cost effectiveness.
+            <p>{BU_DATA.codex.hero.description}</p>
 
             <Link href="/codex"><Button width="150px" height="40px" color="grey">Learn more</Button></Link>
         </PortfolioItem>
-        <PortfolioItem mark="/icons/bu/nomos.svg" title="Nomos" est={2020}>
+        <PortfolioItem mark="/icons/bu/nomos.svg" title="Nomos" est={BU_DATA.nomos.hero.est}>
 
             | Vertical | Development status      |
             |--------------------|---------------|
-            | Layer-1         | Research  |
+            | {BU_DATA.nomos.hero.vertical}         | {BU_DATA.nomos.hero.devStatus}  |
 
             | Founders | Achievements |
             |--------------------|---------------|
-            | Jarrad Hope, Carl Bennetts | Carnot consensus algorithm specification written |
+            | {BU_DATA.nomos.hero.founders} | {BU_DATA.nomos.hero.achievements} |
 
-            A sovereign, modular, zk-encrypted network of blockchains. The trustless agreements layer of the Logos stack. The forthcoming Nomos network will provide a common infrastructure layer upon which communities and aspiring network states can build social, governance, and financial services that uphold their community members' fundamental rights and values.
+            <p>{BU_DATA.nomos.hero.description}</p>
 
             <Link href="/nomos"><Button width="150px" height="40px" color="grey">Learn more</Button></Link>
         </PortfolioItem>
-        <PortfolioItem mark="/icons/bu/status.svg" title="Status" est={2020}>
+        <PortfolioItem mark="/icons/bu/status.svg" title="Status" est={BU_DATA.status.hero.est}>
 
             | Vertical | Development status      |
             |--------------------|---------------|
-            | Instant messaging, community management         | In production  |
+            | {BU_DATA.status.hero.vertical}         | {BU_DATA.status.hero.devStatus}  |
 
             | Founders | Achievements |
             |--------------------|---------------|
-            | Jarrad Hope, Carl Bennetts | Status v1 launched for desktop and mobile, Status v2 in development |
+            | {BU_DATA.status.hero.founders} | {BU_DATA.status.hero.achievements} |
 
-            A blockchain-based super app that combines private messaging, a wallet, a DApp browser, and tools for web3 community management. Status aims to be a truly decentralised communication tool and, since its founding in 2017, has been progressively removing reliance on centralised infrastructure. The application leverages Waku and other technologies developed under the IFT umbrella.
+            <p>{BU_DATA.status.hero.description}</p>
 
             <Link href="/status"><Button width="150px" height="40px" color="grey">Learn more</Button></Link>
         </PortfolioItem>
-        <PortfolioItem mark="/icons/bu/keycard.svg" title="Keycard" est={2020}>
+        <PortfolioItem mark="/icons/bu/keycard.svg" title="Keycard" est={BU_DATA.keycard.hero.est}>
 
             | Vertical | Development status      |
             |--------------------|---------------|
-            | Hardware wallet  | In production  |
+            | {BU_DATA.keycard.hero.vertical}         | {BU_DATA.keycard.hero.devStatus}  |
 
             | Founders | Achievements |
             |--------------------|---------------|
-            | Jarrad Hope, Carl Bennetts | Keycard launched, Status integration |
+            | {BU_DATA.keycard.hero.founders} | {BU_DATA.keycard.hero.achievements} |
 
-            A discreet, convenient, affordable hardware security solution for crypto assets. Taking the form of a credit card, Keycard offers comparable crypto security at a fraction of the cost of others in the hardware wallet niche. Keycard is in production, and the team is working on a full hardware wallet, which will be entirely open-source and compatible with existing Keycards while offering a familiar user experience.
+            <p>{BU_DATA.keycard.hero.description}</p>
 
             <Link href="/status"><Button width="150px" height="40px" color="grey">Learn more</Button></Link>
         </PortfolioItem>
-        <PortfolioItem mark="/icons/bu/nimbus.svg" title="Nimbus" est={2020}>
+        <PortfolioItem mark="/icons/bu/nimbus.svg" title="Nimbus" est={BU_DATA.nimbus.hero.est}>
 
             | Vertical | Development status      |
             |--------------------|---------------|
-            | Ethereum client         | In production  |
+            | {BU_DATA.nimbus.hero.vertical}         | {BU_DATA.nimbus.hero.devStatus}  |
 
             | Founders | Achievements |
             |--------------------|---------------|
-            | Jarrad Hope, Carl Bennetts | Nimbus consensus client released, staking protocol partnerships established, Ethereum Foundation grant received |
+            | {BU_DATA.nimbus.hero.founders} | {BU_DATA.nimbus.hero.achievements} |
 
-            A lightweight Ethereum client implementation designed to reduce hardware requirements for solo stakers and increase efficiency for institutional staking service operators.
-
-            Nimbus' mission is to make staking accessible, thus promoting maximum network decentralisation. The Nimbus consensus client is in production, and an execution client is in development. By offering lightweight implementations for both consensus and execution layers, Nimbus simplifies operating an Ethereum node for hobbyists and institutional stakers alike.
+            <p>{BU_DATA.nimbus.hero.description}</p>
 
             <Link href="/nimbus"><Button width="150px" height="40px" color="grey">Learn more</Button></Link>
         </PortfolioItem>
