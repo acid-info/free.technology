@@ -1,4 +1,5 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
+import { BUMenuBar } from '@/pages/[bu]'
 import styled from '@emotion/styled'
 import { Tag } from '../Tag'
 
@@ -8,16 +9,6 @@ type Props = {
 }
 
 const BUMenuFilter = ({ activeMenus, setActiveMenus }: Props) => {
-  const menus = [
-    'Testimonials',
-    'About',
-    'Milestones',
-    'Team',
-    'Jobs',
-    'Challenges',
-    'Media',
-  ]
-
   const toggleMenu = (menu: string) => {
     if (activeMenus.includes(menu)) {
       setActiveMenus((preveMenus) => preveMenus.filter((item) => item !== menu))
@@ -36,7 +27,7 @@ const BUMenuFilter = ({ activeMenus, setActiveMenus }: Props) => {
         >
           All
         </Tag>
-        {menus.map((menu: string) => (
+        {BUMenuBar.map((menu: string) => (
           <Tag
             active={activeMenus.includes(menu)}
             key={menu + '-tag'}

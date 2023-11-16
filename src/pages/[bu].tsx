@@ -4,10 +4,11 @@ import {
   BUMedia,
   BUMenuFilter,
   BUMenus,
+  BUMilestones,
   BUTeam,
+  BUTestimonials,
   BUVideo,
 } from '@/components/BU'
-import BUTestimonials from '@/components/BU/Testimonials/BUTestimonials'
 import { ChallengeList } from '@/components/Challenges'
 import { JobList } from '@/components/Jobs'
 import { SEO } from '@/components/SEO'
@@ -15,6 +16,16 @@ import BU_DATA from '@/data/bu-data'
 import { SubPageLayout } from '@/layouts/SubPageLayout'
 import { useState } from 'react'
 import { JOB_BOARD_MAPPING, getJobs } from '../../utils/getJobs'
+
+export const BUMenuBar = [
+  'Testimonials',
+  'About',
+  'Milestones',
+  'Team',
+  'Jobs',
+  'Challenges',
+  'Media',
+]
 
 const Page = ({ bu, jobs, issues }: any) => {
   const [activeMenus, setActiveMenus] = useState<string[]>([])
@@ -35,6 +46,9 @@ const Page = ({ bu, jobs, issues }: any) => {
           ) : null}
           {activeMenus.length === 0 || activeMenus.includes('About') ? (
             <BUAbout data={BU_DATA[bu]?.about} />
+          ) : null}
+          {activeMenus.length === 0 || activeMenus.includes('Milestones') ? (
+            <BUMilestones data={BU_DATA[bu]?.milestones} />
           ) : null}
           {activeMenus.length === 0 || activeMenus.includes('Team') ? (
             <BUTeam />

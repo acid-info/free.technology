@@ -64,6 +64,24 @@ const BU_DATA: any = {
     about: {
       description: `The network facilitates human-to-human, machine-to-human, and machine-to-machine communication in both directions, giving it an enormous scope of potential applications — from internode communications to in-game messaging and everything in between. Currently, there are three Waku client implementations: nwaku (reference implementation in Nim), Go-Waku (for Go applications), and JS-Waku (for browsers).\n\nWaku v1 was a fork of the Whisper protocol, but persistent scalability issues forced an entire protocol rewrite, birthing Waku v2 in 2021. At a high level, Waku v2 implements Pub/Sub over libp2p, extending the networking framework’s capabilities to include retrieving historical messages for mostly offline devices, adaptive nodes, and bandwidth preservation for resource-restricted devices.\n\nKey to Waku’s design is its modularity. When integrating Waku with an app, developers can select which protocols to implement according to their use case and users’ hardware availability, enabling devices with limited resources to contribute as peers in the network. The Relay protocol is the foundation of Waku and handles Pub/Sub messaging. Among the other protocols complementing Relay are Store, which enables historic message retrieval; Filter, which preserves bandwidth for nodes with limited resources; and Light Push, which allows nodes with short connections and limited bandwidth to publish messages to the Waku network.`,
     },
+    milestones: [
+      {
+        year: '2023',
+        title: 'Scaling to support 10,000 and 1 million nodes',
+      },
+      {
+        year: '2023',
+        title: 'Autosharding, DoS protection, bandwidth capping',
+      },
+      {
+        year: '2024',
+        title: 'Node operator incentivisation',
+      },
+      {
+        year: '2024+',
+        title: 'Use case-specific SDKs',
+      },
+    ],
   },
   codex: {
     hero: {

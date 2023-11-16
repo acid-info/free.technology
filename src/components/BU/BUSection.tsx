@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 type Props = {
   title: string
-  description: React.ReactNode
+  description?: React.ReactNode
 }
 
 const BUSection = ({ title, description }: Props) => {
@@ -12,7 +12,7 @@ const BUSection = ({ title, description }: Props) => {
       <TitleContainer>
         <Title>{title}</Title>
       </TitleContainer>
-      <Content>{description}</Content>
+      {description && <Content>{description}</Content>}
     </Container>
   )
 }
