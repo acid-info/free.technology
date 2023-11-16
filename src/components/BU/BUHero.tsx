@@ -57,7 +57,7 @@ export const BUHero = ({ data }: Props) => {
               </tr>
             </tbody>
           </table>
-          <Description>{data.description}</Description>
+          <Description>{data?.description}</Description>
           <table>
             <thead>
               <tr>
@@ -83,28 +83,32 @@ export const BUHero = ({ data }: Props) => {
             </tbody>
           </table>
           <Buttons>
-            <Link href={data?.website} target="_blank">
-              <Button
-                color="black"
-                width="162px"
-                height="54px"
-                padding="0 0 0 18px"
-                icon
-              >
-                Website
-              </Button>
-            </Link>
-            <Link href={data?.github} target="_blank">
-              <Button
-                color="grey"
-                width="162px"
-                height="54px"
-                padding="0 0 0 18px"
-                icon
-              >
-                Github
-              </Button>
-            </Link>
+            {data?.website && (
+              <Link href={data?.website} target="_blank">
+                <LinkButton
+                  color="black"
+                  width="162px"
+                  height="54px"
+                  padding="0 0 0 18px"
+                  icon
+                >
+                  Website
+                </LinkButton>
+              </Link>
+            )}
+            {data?.github && (
+              <Link href={data?.github} target="_blank">
+                <LinkButton
+                  color="grey"
+                  width="162px"
+                  height="54px"
+                  padding="0 0 0 18px"
+                  icon
+                >
+                  Github
+                </LinkButton>
+              </Link>
+            )}
           </Buttons>
         </Content>
       </BUInfo>
@@ -280,6 +284,10 @@ const Buttons = styled.div`
   display: flex;
   gap: 16px;
   padding-top: 24px;
+`
+
+const LinkButton = styled(Button)`
+  width: 162px;
 `
 
 export default BUHero

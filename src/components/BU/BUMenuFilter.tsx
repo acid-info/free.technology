@@ -55,7 +55,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
-  margin-bottom: 20px;
   padding-inline: 16px;
 `
 

@@ -7,6 +7,7 @@ import {
   BUTeam,
   BUVideo,
 } from '@/components/BU'
+import BUTestimonials from '@/components/BU/Testimonials/BUTestimonials'
 import { ChallengeList } from '@/components/Challenges'
 import { JobList } from '@/components/Jobs'
 import { SEO } from '@/components/SEO'
@@ -28,8 +29,10 @@ const Page = ({ bu, jobs, issues }: any) => {
           activeMenus={activeMenus}
           setActiveMenus={setActiveMenus}
         />
-
         <BUMenus>
+          {activeMenus.length === 0 || activeMenus.includes('Testimonials') ? (
+            <BUTestimonials data={BU_DATA[bu]?.testimonials} />
+          ) : null}
           {activeMenus.length === 0 || activeMenus.includes('About') ? (
             <BUAbout data={BU_DATA[bu]?.about} />
           ) : null}
