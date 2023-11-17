@@ -49,6 +49,15 @@ const Content = styled.div`
     white-space: pre-wrap;
     max-width: 817px;
   }
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding-top: 0;
+
+    p {
+      font-size: 14px;
+      line-height: 126%;
+    }
+  }
 `
 
 const TitleContainer = styled.div`

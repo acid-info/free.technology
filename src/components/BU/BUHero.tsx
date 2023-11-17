@@ -24,7 +24,15 @@ export const BUHero = ({ data }: Props) => {
       <BUInfo>
         <Header>
           <Title>
-            <TitleText>{data?.bu}</TitleText>
+            <BUTitle>
+              <MobileMark
+                width={40}
+                height={40}
+                src={businessUnitMark(data?.bu)}
+                alt={data?.bu + '-mark'}
+              />
+              <TitleText>{data?.bu}</TitleText>
+            </BUTitle>
             <Badge>est. {data?.est}</Badge>
           </Title>
         </Header>
@@ -122,6 +130,11 @@ const Container = styled.div`
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: space-between;
+  padding: 16px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding: 0 8px;
+  }
 `
 
 const MarkContainer = styled.div`
@@ -142,12 +155,12 @@ const BUInfo = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 32px 16px 48px 16px;
+  padding: 32px 0 48px 0;
   box-sizing: border-box;
 
   @media (max-width: ${breakpoints.md}px) {
     width: 100%;
-    padding: 16px 0 16px 16px;
+    padding: 0;
   }
 `
 
@@ -170,9 +183,14 @@ const Title = styled.div`
   gap: 16px;
   align-items: center;
   width: 100%;
+`
+
+const BUTitle = styled.div`
+  display: flex;
+  align-items: center;
 
   @media (max-width: ${breakpoints.md}px) {
-    gap: 12px;
+    gap: 8px;
   }
 `
 
@@ -182,11 +200,14 @@ const TitleText = styled.h3`
   text-transform: capitalize;
 
   @media (max-width: ${breakpoints.md}px) {
-    font-size: 16px;
+    font-size: 40px;
+    line-height: 122%;
   }
 `
 
 const Content = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding-bottom: 40px;
 
@@ -245,6 +266,8 @@ const Content = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
+    flex-direction: column-reverse;
+
     p {
       font-size: 14px;
       font-weight: 400;
@@ -284,10 +307,32 @@ const Buttons = styled.div`
   display: flex;
   gap: 16px;
   padding-top: 24px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 100%;
+    gap: 8px;
+    padding-block: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
+
+    a {
+      width: 100%;
+    }
+  }
 `
 
 const LinkButton = styled(Button)`
   width: 162px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 100%;
+    height: 40px;
+  }
+`
+
+const MobileMark = styled(Image)`
+  @media (min-width: ${breakpoints.md}px) {
+    display: none;
+  }
 `
 
 export default BUHero

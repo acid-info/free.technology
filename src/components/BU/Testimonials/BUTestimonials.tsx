@@ -35,6 +35,10 @@ const Container = styled.div`
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: space-between;
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding: 0 8px;
+  }
 `
 
 const ItemContainer = styled.div`

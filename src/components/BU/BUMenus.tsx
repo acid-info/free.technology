@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 
 type Props = {
@@ -16,6 +17,12 @@ const Container = styled.div`
 
   > div {
     margin-bottom: 180px;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    > div {
+      margin-bottom: 80px;
+    }
   }
 `
 

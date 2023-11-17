@@ -47,6 +47,10 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
   padding-inline: 16px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding-inline: 8px;
+  }
 `
 
 const Menus = styled.div`
@@ -60,7 +64,7 @@ const Menus = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
-    width: calc(100vw - 32px);
+    width: calc(100vw - 16px);
     margin-left: -16px;
     padding: 16px;
   }
