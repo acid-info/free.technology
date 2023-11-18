@@ -93,7 +93,7 @@ const GridContainer = styled.div`
 
 const Section = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-auto-rows: minmax(100px, auto);
   gap: 16px;
 `

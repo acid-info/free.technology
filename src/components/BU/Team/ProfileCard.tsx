@@ -19,6 +19,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  min-width: 120px;
 `
 
 const ProfileImage = styled.img`
