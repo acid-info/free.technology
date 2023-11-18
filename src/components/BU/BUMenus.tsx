@@ -20,6 +20,8 @@ const Container = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
+    margin-bottom: 18px;
+
     > div {
       margin-bottom: 80px;
     }

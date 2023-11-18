@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 
 type Props = {
@@ -17,12 +18,17 @@ const ProfileCard = ({ name, position, imageUrl }: Props) => (
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 `
 
 const ProfileImage = styled.img`
   width: auto;
   height: auto;
   margin-bottom: 16px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-bottom: 8px;
+  }
 `
 
 const Name = styled.p`
@@ -31,6 +37,12 @@ const Name = styled.p`
   line-height: 26px;
   text-transform: capitalize;
   margin-bottom: 8px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 14px;
+    line-height: 130%;
+    margin-bottom: 4px;
+  }
 `
 
 const Position = styled.p`
@@ -39,6 +51,11 @@ const Position = styled.p`
   line-height: 22px;
   text-transform: capitalize;
   opacity: 0.5;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 12px;
+    line-height: 130%;
+  }
 `
 
 export default ProfileCard

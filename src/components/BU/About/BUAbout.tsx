@@ -24,6 +24,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 16px;
+
+  p {
+    padding-top: 24px;
+  }
 `
 
 export default BUAbout

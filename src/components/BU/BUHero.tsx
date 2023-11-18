@@ -287,7 +287,7 @@ const Content = styled.div`
     }
 
     table {
-      margin-bottom: 16px;
+      margin-bottom: 0;
     }
 
     table th,
@@ -298,7 +298,7 @@ const Content = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
-    padding-bottom: 16px;
+    padding-bottom: 80px;
 
     button {
       width: 100%;

@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import BUSection from '../BUSection'
 import ProfileCard from './ProfileCard'
@@ -73,18 +74,43 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 16px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    & > div > div {
+      border-bottom: 0;
+    }
+
+    & > div > div:nth-of-type(2) {
+      padding-bottom: 24px;
+    }
+
+    h3 {
+      margin-top: 8px;
+      font-size: 22px;
+      line-height: 122%;
+    }
+  }
 `
 
 const GridContainer = styled.div`
   margin-top: 140px;
   padding-top: 40px;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-top: 0;
+  }
 `
 
 const Section = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(222px, 1fr));
   gap: 16px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
 `
 
 export default BUTeam

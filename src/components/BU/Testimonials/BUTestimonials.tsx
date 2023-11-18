@@ -59,9 +59,11 @@ const ItemContainer = styled.div`
 
 const Item = styled.section`
   flex-shrink: 0;
+  box-sizing: border-box;
 
   @media (max-width: ${breakpoints.md}px) {
     width: 216px;
+    height: 370px;
   }
 `
 
@@ -83,23 +85,29 @@ const Icon = styled.div`
 `
 
 const Paragraph = styled.p`
-  font-family: Helvetica;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 24px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 14px;
+    line-height: 126%;
+  }
 `
 
 const Title = styled.h2`
-  font-family: Helvetica;
   font-size: 36px;
-  font-style: normal;
   font-weight: 400;
   line-height: 42px;
   padding-top: 24px;
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   margin-top: auto;
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 22px;
+    padding-top: 16px;
+  }
 `
 
 const FlexContainer = styled.div`
@@ -112,7 +120,8 @@ const FlexContainer = styled.div`
   align-self: stretch;
 
   @media (max-width: ${breakpoints.md}px) {
-    height: 358px;
+    padding-top: 16px;
+    height: 282px;
   }
 `
 

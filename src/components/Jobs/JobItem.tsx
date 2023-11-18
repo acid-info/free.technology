@@ -56,6 +56,7 @@ const JobHeader = styled.div`
 
   @media (max-width: ${breakpoints.md}px) {
     margin-bottom: 24px;
+    gap: 8px;
   }
 `
 

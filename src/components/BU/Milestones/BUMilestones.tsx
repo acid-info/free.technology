@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import BUSection from '../BUSection'
 
@@ -51,6 +52,11 @@ const ScrollableContainer = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 100vw;
+    margin-top: 8px;
+  }
 `
 
 const Item = styled.div`
@@ -63,6 +69,10 @@ const Item = styled.div`
     hr {
       display: none;
     }
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    gap: 16px;
   }
 `
 
@@ -84,6 +94,12 @@ const GreyBox = styled.div`
     line-height: 26px;
     text-transform: capitalize;
     margin-bottom: 0;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 216px;
+    height: 284px;
+    padding: 16px 40px 16px 16px;
   }
 `
 
@@ -109,6 +125,10 @@ const Bar = styled.hr`
   height: 1px;
   z-index: 0;
   left: 30px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    width: 260px;
+  }
 `
 
 const Step = styled.span`

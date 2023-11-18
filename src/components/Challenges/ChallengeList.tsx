@@ -116,7 +116,7 @@ const NoChallenges = styled.p`
 
 const CustomBox = styled(Box)`
   @media (max-width: ${breakpoints.md}px) {
-    margin-bottom: 195px;
+    margin-bottom: 80px;
   }
 `
 

@@ -25,7 +25,6 @@ const Container = styled.div`
   box-sizing: border-box;
 
   @media (max-width: ${breakpoints.md}px) {
-    margin-top: 60px;
     flex-direction: column;
   }
 `
@@ -66,6 +65,7 @@ const TitleContainer = styled.div`
 
   @media (max-width: ${breakpoints.md}px) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    padding-top: 0;
   }
 `
 
