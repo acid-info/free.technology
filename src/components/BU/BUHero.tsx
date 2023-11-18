@@ -13,14 +13,15 @@ interface Props {
 export const BUHero = ({ data }: Props) => {
   return (
     <Container>
-      <MarkContainer>
-        <Mark
-          width={520}
-          height={520}
-          src={businessUnitMark(data?.bu)}
-          alt={data?.bu + '-mark'}
-        />
-      </MarkContainer>
+      <Left>
+        <MarkContainer>
+          <Mark
+            fill
+            src={businessUnitMark(data?.bu)}
+            alt={data?.bu + '-mark'}
+          />
+        </MarkContainer>
+      </Left>
       <BUInfo>
         <Header>
           <Title>
@@ -129,8 +130,7 @@ const Container = styled.div`
   width: 100%;
   flex-wrap: wrap;
   box-sizing: border-box;
-  justify-content: space-between;
-  padding: 16px;
+  padding: 0 16px;
 
   @media (max-width: ${breakpoints.md}px) {
     padding: 0 8px;
@@ -139,6 +139,10 @@ const Container = styled.div`
 
 const MarkContainer = styled.div`
   box-sizing: border-box;
+  position: relative;
+  width: 520px;
+  height: 520px;
+  padding: 150px;
 
   @media (max-width: ${breakpoints.md}px) {
     display: none;
@@ -151,11 +155,18 @@ const Mark = styled(Image)`
   }
 `
 
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  width: 50%;
+  box-sizing: border-box;
+`
+
 const BUInfo = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 32px 0 48px 0;
+  padding: 32px 0 48px 16px;
   box-sizing: border-box;
 
   @media (max-width: ${breakpoints.md}px) {
@@ -209,7 +220,6 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-bottom: 40px;
 
   p {
     text-overflow: ellipsis;

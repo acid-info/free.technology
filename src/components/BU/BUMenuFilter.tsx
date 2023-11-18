@@ -1,4 +1,4 @@
-import { breakpoints, uiConfigs } from '@/configs/ui.configs'
+import { breakpoints } from '@/configs/ui.configs'
 import { BUMenuBar } from '@/pages/[bu]'
 import styled from '@emotion/styled'
 import { Tag } from '../Tag'
@@ -45,7 +45,6 @@ const BUMenuFilter = ({ activeMenus, setActiveMenus }: Props) => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
   padding-inline: 16px;
 
   @media (max-width: ${breakpoints.md}px) {

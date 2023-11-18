@@ -57,12 +57,7 @@ const Item = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-
-  &:first-of-type {
-    span {
-      border-radius: 50%;
-    }
-  }
+  border-radius: 2px;
 
   &:last-of-type {
     hr {
@@ -130,7 +125,7 @@ const Step = styled.span`
 `
 
 const StepNumber = styled.p`
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 24px;
 `
 
