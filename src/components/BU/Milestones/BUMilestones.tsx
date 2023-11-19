@@ -38,6 +38,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 16px;
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding: 0 8px;
+  }
 `
 
 const ScrollableContainer = styled.div`
@@ -54,8 +58,9 @@ const ScrollableContainer = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
-    width: 100vw;
+    width: calc(100vw - 8px);
     margin-top: 8px;
+    margin-left: -8px;
   }
 `
 

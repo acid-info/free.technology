@@ -108,15 +108,10 @@ const NoChallenges = styled.p`
   text-decoration: none;
 `
 
-// const Mark = styled(Image)`
-//   @media (max-width: ${breakpoints.md}px) {
-//     display: none;
-//   }
-// `
-
 const CustomBox = styled(Box)`
   @media (max-width: ${breakpoints.md}px) {
     margin-bottom: 80px;
+    padding: 0 8px;
   }
 `
 

@@ -76,6 +76,8 @@ const Container = styled.div`
   padding: 0 16px;
 
   @media (max-width: ${breakpoints.md}px) {
+    padding: 0 8px;
+
     & > div > div {
       border-bottom: 0;
     }
@@ -85,7 +87,7 @@ const Container = styled.div`
     }
 
     h3 {
-      margin-top: 8px;
+      margin-bottom: 8px;
       font-size: 22px;
       line-height: 122%;
     }

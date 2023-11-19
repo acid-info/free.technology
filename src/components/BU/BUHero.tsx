@@ -38,59 +38,61 @@ export const BUHero = ({ data }: Props) => {
           </Title>
         </Header>
         <Content>
-          <table>
-            <thead>
-              <tr>
-                <th>Development status</th>
-                <th>Vertical</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{data?.devStatus}</td>
-                <td>{data?.vertical}</td>
-              </tr>
-            </tbody>
-          </table>
-          <table>
-            <thead>
-              <tr>
-                <th>Achievements</th>
-                <th>Founders</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{data?.achievements}</td>
-                <td>{data?.founders}</td>
-              </tr>
-            </tbody>
-          </table>
-          <Description>{data?.description}</Description>
-          <table>
-            <thead>
-              <tr>
-                <th>Connect:</th>
-                <th>Programme lead:</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  {data?.connect?.map((item: any) => (
-                    <Link
-                      key={item.label + '-link'}
-                      href={item.link}
-                      target="_blank"
-                    >
-                      {item?.label}
-                    </Link>
-                  ))}
-                </td>
-                <td>{data?.lead}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Development status</th>
+                  <th>Vertical</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{data?.devStatus}</td>
+                  <td>{data?.vertical}</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th>Achievements</th>
+                  <th>Founders</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{data?.achievements}</td>
+                  <td>{data?.founders}</td>
+                </tr>
+              </tbody>
+            </table>
+            <Description>{data?.description}</Description>
+            <table>
+              <thead>
+                <tr>
+                  <th>Connect:</th>
+                  <th>Programme lead:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {data?.connect?.map((item: any) => (
+                      <Link
+                        key={item.label + '-link'}
+                        href={item.link}
+                        target="_blank"
+                      >
+                        {item?.label}
+                      </Link>
+                    ))}
+                  </td>
+                  <td>{data?.lead}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <Buttons>
             {data?.website && (
               <Link href={data?.website} target="_blank">
@@ -287,6 +289,10 @@ const Content = styled.div`
     }
 
     table {
+      margin-bottom: 16px;
+    }
+
+    table:last-of-type {
       margin-bottom: 0;
     }
 
@@ -295,9 +301,10 @@ const Content = styled.div`
       font-size: 14px;
       padding: 16px 0 8px 0;
     }
-  }
 
-  @media (max-width: ${breakpoints.md}px) {
+    tbody {
+    }
+
     padding-bottom: 80px;
 
     button {

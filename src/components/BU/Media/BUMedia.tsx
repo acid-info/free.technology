@@ -65,6 +65,8 @@ const Container = styled.div`
   padding: 0 16px;
 
   @media (max-width: ${breakpoints.md}px) {
+    padding: 0 8px;
+
     & > div > div {
       border-bottom: 0;
       margin-bottom: 8px;

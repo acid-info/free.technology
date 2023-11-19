@@ -27,7 +27,7 @@ const JobList = ({
   }
 
   return (
-    <Box marginTop={marginTop} marginBottom={marginBottom}>
+    <CustomBox marginTop={marginTop} marginBottom={marginBottom}>
       {Object.entries(jobs)
         .filter(([businessUnit, _]) =>
           !activeBUs?.length ? true : activeBUs.includes(businessUnit),
@@ -46,7 +46,7 @@ const JobList = ({
             </Jobs>
           </Container>
         ))}
-    </Box>
+    </CustomBox>
   )
 }
 
@@ -98,6 +98,12 @@ const NoJobs = styled.p`
   font-size: 36px;
   color: black;
   text-decoration: none;
+`
+
+const CustomBox = styled(Box)`
+  @media (max-width: ${breakpoints.md}px) {
+    padding: 0 8px;
+  }
 `
 
 export default JobList
