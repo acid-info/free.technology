@@ -255,7 +255,7 @@ const Content = styled.div`
     &:not(:last-child) {
       &:after {
         fill: rgba(0, 0, 0, 0.35);
-        content: '•';
+        content: '·';
         margin-inline: 8px;
         text-decoration: none;
         display: inline-block;
