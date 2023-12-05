@@ -39,7 +39,8 @@ export const Footer = () => {
         <Org>
           <p>
             Institute of Free Technology.
-            <br />©{new Date().getFullYear()}
+            <br />
+            🄯{new Date().getFullYear()}
           </p>
           <p>All Rights Reserved.</p>
         </Org>

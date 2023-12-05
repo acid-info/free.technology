@@ -49,7 +49,8 @@ export const HomeFooter = () => {
       <Bottom>
         <p>
           Institute of Free Technology.
-          <br />©{new Date().getFullYear()}
+          <br />
+          🄯{new Date().getFullYear()}
         </p>
         <p>All Rights Reserved.</p>
       </Bottom>
