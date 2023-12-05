@@ -24,6 +24,7 @@ const Image = styled.img`
   top: 0px;
   width: 100%;
   box-sizing: border-box;
+  object-fit: cover;
 
   @media (max-width: ${breakpoints.md}px) {
     width: 100%;

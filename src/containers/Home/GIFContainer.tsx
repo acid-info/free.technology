@@ -28,6 +28,7 @@ const Image = styled.img`
   width: 50vw;
   height: calc(100vh - 28px);
   box-sizing: border-box;
+  object-fit: cover;
 
   @media (max-width: ${breakpoints.md}px) {
     position: relative;
