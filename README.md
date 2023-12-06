@@ -56,8 +56,8 @@ Keep in mind this webpage rebuilds itself at runtime.
 
 ## CI/CD
 
-- The `master` branch is automatically deployed to the production server through [CI](https://ci.infra.status.im/job/website/job/free.technology/)
-- The `develop` branch is automatically deployed to the staging server through [CI](https://ci.infra.status.im/job/website/job/dev.free.technology/)
+- The `master` branch is deployed via [CI](https://ci.infra.status.im/job/website/job/free.technology/) to https://free.technology/.
+- The `develop` branch is deployed via [CI](https://ci.infra.status.im/job/website/job/dev.free.technology/) to https://dev.free.technology/.
 
 ## Change Process
 
