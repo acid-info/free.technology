@@ -40,7 +40,8 @@ export const Footer = () => {
           <p>
             Institute of Free Technology.
             <br />
-            🄯{new Date().getFullYear()}
+            <span>©</span>
+            {new Date().getFullYear()}
           </p>
           <p>All Rights Reserved.</p>
         </Org>
@@ -244,6 +245,11 @@ const Org = styled.div`
 
   p:first-of-type {
     padding-top: 20px;
+
+    span {
+      display: inline-block;
+      transform: rotate(180deg);
+    }
   }
 
   p:nth-of-type(2) {

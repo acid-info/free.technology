@@ -50,7 +50,8 @@ export const HomeFooter = () => {
         <p>
           Institute of Free Technology.
           <br />
-          🄯{new Date().getFullYear()}
+          <span>©</span>
+          {new Date().getFullYear()}
         </p>
         <p>All Rights Reserved.</p>
       </Bottom>
@@ -191,6 +192,11 @@ const Bottom = styled.div`
 
   p {
     width: 50%;
+
+    span {
+      display: inline-block;
+      transform: rotate(180deg);
+    }
   }
 
   @media (max-width: ${breakpoints.md}px) {

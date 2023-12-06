@@ -26,6 +26,7 @@ const Container = styled.div`
       font-size: 22px;
       position: relative;
       top: -0.5em;
+      transform: rotate(180deg);
     }
   }
 
