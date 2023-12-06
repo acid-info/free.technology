@@ -34,7 +34,7 @@ $ yarn dev
 4. Visit `http://localhost:3000` in your browser
 
 
-## How to Run a Static Build (Production Build)
+## How to Run a Static Build(Production Build) locally
 
 1. Generate static files for production:
 
