@@ -34,17 +34,17 @@ $ yarn dev
 4. Visit `http://localhost:3000` in your browser
 
 
-## How to Run a Static Build(Production Build) locally
+## How to Run a Build (Production Build)
 
-1. Generate static files for production:
+1. Generate files for production:
 
 ```bash
 $ yarn build
 ```
 
-The static files will be created in the `build` directory.
+The files will be created in the `build` directory.
 
-2. Serve the static build:
+2. Serve the build:
 
 ```bash
 $ yarn start
@@ -52,12 +52,12 @@ $ yarn start
 
 4. Visit `http://localhost:3000` in your browser.
 
+Keep in mind this webpage rebuilds itself at runtime.
 
 ## CI/CD
 
-- The `master` branch is automatically deployed to the production server (e.g., logos.co) through [CI](https://ci.infra.status.im)
-- The `develop` branch is automatically deployed to the staging server (e.g., dev.logos.co) through [CI](https://ci.infra.status.im)
-
+- The `master` branch is automatically deployed to the production server through [CI](https://ci.infra.status.im/job/website/job/free.technology/)
+- The `develop` branch is automatically deployed to the staging server through [CI](https://ci.infra.status.im/job/website/job/dev.free.technology/)
 
 ## Change Process
 
