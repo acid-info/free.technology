@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 
@@ -27,6 +28,11 @@ const Container = styled.div`
     font-size: 22px;
     font-weight: 400;
     line-height: 130%;
+
+    @media (max-width: ${breakpoints.xl}px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 
   p {
@@ -35,6 +41,11 @@ const Container = styled.div`
     font-weight: 400;
     text-transform: capitalize;
     opacity: 0.5;
+
+    @media (max-width: ${breakpoints.xl}px) {
+      font-size: 13px;
+      line-height: 18px;
+    }
   }
 `
 
@@ -43,6 +54,10 @@ const ImageContainer = styled.div`
   width: 100%;
   margin-bottom: 16px;
   aspect-ratio: 1;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    margin-bottom: 12px;
+  }
 `
 
 const MemberImage = styled(Image)`

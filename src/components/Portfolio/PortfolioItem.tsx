@@ -85,6 +85,26 @@ const Container = styled.div`
     padding: 20px 0 8px 0;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    table {
+      margin-bottom: 15px;
+    }
+
+    table th,
+    table tr {
+      font-size: 13px;
+      line-height: 18px;
+      padding: 15px 0 6px 0;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 122%;
+      margin-top: 30px;
+      margin-bottom: 24px;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     p {
       font-size: 14px;
@@ -114,6 +134,10 @@ const Header = styled.div`
   padding-block: 24px;
   box-sizing: border-box;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-block: 18px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     padding-block: 16px;
   }
@@ -140,14 +164,19 @@ const TitleText = styled.h3`
   font-size: 22px;
   line-height: 26px;
 
-  @media (max-width: ${breakpoints.md}px) {
+  @media (max-width: ${breakpoints.xl}px) {
     font-size: 16px;
+    line-height: 20px;
   }
 `
 
 const Content = styled.div`
   width: 100%;
   padding-bottom: 40px;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-bottom: 30px;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     padding-bottom: 16px;
@@ -161,6 +190,11 @@ const Content = styled.div`
 const ToggleButtonImage = styled.img`
   width: 48px;
   height: 48px;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    width: 36px;
+    height: 36px;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     width: 18px;

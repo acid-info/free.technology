@@ -76,6 +76,14 @@ const Container = styled.footer`
     line-height: 42px;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    h2 {
+      font-size: 27px;
+      line-height: 32px;
+      padding-block: 18px;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     width: 100%;
     margin-top: 74px;
@@ -127,7 +135,26 @@ const Description = styled.div`
     background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
+    box-sizing: border-box;
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.xl}px) {
+    margin-top: 24px;
+    margin-bottom: 48px;
+    gap: 30px;
+
+    p {
+      font-size: 27px;
+      line-height: 32px;
+    }
+
+    button {
+      width: 95px;
+      font-size: 11px;
+      line-height: 15px;
+      padding: 8px 16px;
+    }
   }
 
   @media (max-width: ${breakpoints.md}px) {
@@ -149,7 +176,7 @@ const Links = styled.div`
   padding-bottom: 64px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 
-  @media (max-width: ${breakpoints.md}px) {
+  @media (max-width: ${breakpoints.xl}px) {
     padding-bottom: 48px;
   }
 `
@@ -172,6 +199,18 @@ const LinksColumn = styled.div`
     color: white;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    h3 {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    a {
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     h3 {
       font-size: 12px;
@@ -179,7 +218,7 @@ const LinksColumn = styled.div`
 
     a {
       font-size: 12px;
-      line-height: 130%;
+      line-height: 15px;
     }
   }
 `
@@ -196,6 +235,15 @@ const Bottom = styled.div`
     span {
       display: inline-block;
       transform: rotate(180deg);
+    }
+  }
+
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-block: 15px;
+
+    p {
+      font-size: 12px;
+      line-height: 15px;
     }
   }
 

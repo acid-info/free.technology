@@ -1,3 +1,4 @@
+import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import React from 'react'
 
@@ -24,12 +25,22 @@ const Title = styled.p`
   font-weight: 400;
   line-height: 130%;
   padding-block: 20px;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 16px;
+    line-height: 20px;
+    padding-block: 18px;
+  }
 `
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    gap: 12px;
+  }
 `
 
 export default Team

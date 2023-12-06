@@ -37,6 +37,28 @@ const Container = styled.div`
 
   margin-bottom: 165px;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    h1,
+    h2 {
+      font-size: 27px;
+      line-height: 32px;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    button {
+      width: 110px;
+      height: 32px;
+      font-size: 11px;
+      line-height: 15px;
+      padding: 8px 26px;
+    }
+
+    margin-bottom: 150px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     h1,
     h2 {

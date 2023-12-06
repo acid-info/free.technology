@@ -24,6 +24,15 @@ const Container = styled.div`
     line-height: 122%;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    margin-block: 18px;
+    padding-block: 18px;
+    p {
+      font-size: 16px;
+      line-height: 122%;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     p {
       font-size: 14px;

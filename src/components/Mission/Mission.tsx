@@ -86,6 +86,21 @@ const Container = styled.div`
     padding: 20px 0 8px 0;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    margin-top: 165px;
+    margin-bottom: 111px;
+
+    h2 {
+      font-size: 27px;
+      line-height: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 122%;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     h2 {
       font-size: 22px;
@@ -117,6 +132,11 @@ const Title = styled.h3`
   line-height: 130%;
   width: 100%;
   padding-block: 16px;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 27px;
+    line-height: 32px;
+  }
 `
 
 const Content = styled.div`

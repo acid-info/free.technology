@@ -16,6 +16,11 @@ export const Badge = styled.div`
   border-radius: 999px;
   border: 1px solid rgba(0, 0, 0, 0.18);
 
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 9px;
+    padding: 3px 7.5px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     font-size: 12px;
     padding: 4px 8px;

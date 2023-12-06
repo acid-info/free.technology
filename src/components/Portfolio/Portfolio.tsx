@@ -36,9 +36,20 @@ const Header = styled.div`
     font-weight: 400;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-block: 18px;
+    margin-bottom: 42px;
+
+    sup {
+      font-size: 12px;
+      margin-left: 0px;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     padding-block: 16px;
     margin-bottom: 48px;
+
     sup {
       font-size: 12px;
       margin-left: 0px;
@@ -51,6 +62,11 @@ const Title = styled.p`
   font-weight: 400;
   line-height: 130%;
   box-sizing: border-box;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 27px;
+    line-height: 32px;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 22px;
