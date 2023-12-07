@@ -137,6 +137,47 @@ const BU_DATA: any = {
         title: 'Public mainnet launch',
       },
     ],
+    profiles: [
+      {
+        name: 'Dmitriy',
+      },
+      {
+        name: 'Slava',
+      },
+      {
+        name: 'Ben',
+      },
+      {
+        name: 'Jaremy',
+      },
+      {
+        name: 'Tomasz',
+      },
+      {
+        name: 'Mark',
+      },
+      {
+        name: 'Eric',
+      },
+      {
+        name: 'Adam',
+      },
+      {
+        name: 'Csaba',
+      },
+      {
+        name: 'Leo',
+      },
+      {
+        name: 'Balazs',
+      },
+      {
+        name: 'Jessie',
+      },
+      {
+        name: 'Giuliano',
+      },
+    ],
   },
   nomos: {
     hero: {

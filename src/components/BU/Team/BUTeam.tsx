@@ -3,40 +3,7 @@ import styled from '@emotion/styled'
 import BUSection from '../BUSection'
 import ProfileCard from './ProfileCard'
 
-const profiles = [
-  {
-    name: 'Alex Johnson',
-    position: 'Software Engineer',
-    imageUrl: '/photos/mock.png',
-  },
-  {
-    name: 'Samantha Bloom',
-    position: 'Product Manager',
-    imageUrl: '/photos/mock.png',
-  },
-  {
-    name: 'Michael Reeves',
-    position: 'UX Designer',
-    imageUrl: '/photos/mock.png',
-  },
-  {
-    name: 'Jessica Tan',
-    position: 'Data Scientist',
-    imageUrl: '/photos/mock.png',
-  },
-  {
-    name: 'Raj Patel',
-    position: 'DevOps Specialist',
-    imageUrl: '/photos/mock.png',
-  },
-  {
-    name: 'Alex Johnson',
-    position: 'Software Engineer',
-    imageUrl: '/photos/mock.png',
-  },
-]
-
-const BUTeam = () => {
+const BUTeam = ({ profiles }: any) => {
   return (
     <Container>
       <BUSection
@@ -56,7 +23,7 @@ const BUTeam = () => {
       />
       <GridContainer>
         <Section>
-          {profiles.map((profile, index) => (
+          {profiles?.map((profile: any, index: number) => (
             <ProfileCard
               key={index}
               name={profile.name}

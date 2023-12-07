@@ -5,7 +5,6 @@ import {
   BUMenuFilter,
   BUMenus,
   BUMilestones,
-  BUTeam,
   BUTestimonials,
   BUVideo,
 } from '@/components/BU'
@@ -50,9 +49,9 @@ const Page = ({ bu, jobs, issues }: any) => {
           {activeMenus.length === 0 || activeMenus.includes('Milestones') ? (
             <BUMilestones data={BU_DATA[bu]?.milestones} />
           ) : null}
-          {activeMenus.length === 0 || activeMenus.includes('Team') ? (
-            <BUTeam />
-          ) : null}
+          {/* {activeMenus.length === 0 && BU_DATA[bu]?.profiles?.length || activeMenus.includes('Team') && BU_DATA[bu]?.profiles?.length ? (
+            <BUTeam profiles={BU_DATA[bu]?.profiles} />
+          ) : null} */}
           {activeMenus.length === 0 || activeMenus.includes('Jobs') ? (
             <JobList
               title="Jobs"
