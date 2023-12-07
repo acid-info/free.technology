@@ -19,9 +19,7 @@ export const BUMenuBar = [
   'Testimonials',
   'About',
   'Milestones',
-  'Team',
   'Jobs',
-  'Challenges',
   'Media',
 ]
 
