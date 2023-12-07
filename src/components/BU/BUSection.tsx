@@ -49,6 +49,15 @@ const Content = styled.div`
     max-width: 817px;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-top: 18px;
+
+    p {
+      font-size: 16px;
+      line-height: 122%;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     padding-top: 0;
 
@@ -63,6 +72,10 @@ const TitleContainer = styled.div`
   width: 100%;
   padding-top: 24px;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-top: 18px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.18);
     padding-top: 0;
@@ -74,6 +87,11 @@ const Title = styled.h3`
   font-weight: 400;
   line-height: 60px;
   text-transform: capitalize;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 38px;
+    line-height: 45px;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 22px;

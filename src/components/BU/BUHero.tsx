@@ -145,6 +145,12 @@ const MarkContainer = styled.div`
   height: 520px;
   padding: 150px;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    width: 390px;
+    height: 390px;
+    padding: 113px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     display: none;
   }
@@ -170,6 +176,10 @@ const BUInfo = styled.div`
   padding: 32px 0 48px 16px;
   box-sizing: border-box;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    padding: 24px 0 36px 12px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     width: 100%;
     padding: 0;
@@ -184,6 +194,10 @@ const Header = styled.div`
   width: 100%;
   padding-bottom: 32px;
   box-sizing: border-box;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-bottom: 24px;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     padding-block: 16px;
@@ -210,6 +224,11 @@ const TitleText = styled.h3`
   font-size: 90px;
   line-height: 103px;
   text-transform: capitalize;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 66px;
+    line-height: 78px;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 40px;
@@ -276,6 +295,29 @@ const Content = styled.div`
     padding: 20px 0 8px 0;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    p {
+      margin-top: 36px;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    table {
+      margin-bottom: 15px;
+    }
+
+    table th,
+    table tr {
+      font-size: 13px;
+      line-height: 18px;
+      padding: 15px 0 6px 0;
+    }
+
+    tr > td > a {
+      font-size: 13px;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     flex-direction: column-reverse;
 
@@ -339,9 +381,16 @@ const Buttons = styled.div`
 const LinkButton = styled(Button)`
   width: 162px;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    width: 120px;
+    height: 43px;
+    font-size: 11px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     width: 100%;
     height: 40px;
+    font-size: 14px;
   }
 `
 

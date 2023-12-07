@@ -101,6 +101,15 @@ const GreyBox = styled.div`
     margin-bottom: 0;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    padding: 12px;
+
+    h3 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     width: 216px;
     height: 284px;
