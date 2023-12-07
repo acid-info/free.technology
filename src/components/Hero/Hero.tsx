@@ -35,7 +35,7 @@ const Container = styled.div`
     margin-bottom: 32px;
   }
 
-  margin-bottom: 165px;
+  margin-bottom: 200px;
 
   @media (max-width: ${breakpoints.xl}px) {
     h1,

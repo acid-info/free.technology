@@ -85,6 +85,11 @@ const Container = styled.div`
     padding: 20px 0 8px 0;
   }
 
+  &:hover {
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.02);
+  }
+
   @media (max-width: ${breakpoints.xl}px) {
     table {
       margin-bottom: 15px;

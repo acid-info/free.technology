@@ -37,7 +37,6 @@ const BUMenuFilter = ({ activeMenus, setActiveMenus }: Props) => {
           </Tag>
         ))}
       </Menus>
-      <Border />
     </Container>
   )
 }

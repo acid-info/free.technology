@@ -28,8 +28,8 @@ const Container = styled.div`
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-  margin-top: 220px;
-  margin-bottom: 148px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 
   h2 {
     font-size: 36px;

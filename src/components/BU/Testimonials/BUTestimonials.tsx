@@ -50,6 +50,7 @@ const ItemContainer = styled.div`
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    gap: 8px;
   }
 
   &::-webkit-scrollbar {
@@ -60,16 +61,19 @@ const ItemContainer = styled.div`
 const Item = styled.section`
   flex-shrink: 0;
   box-sizing: border-box;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 16px;
 
   @media (max-width: ${breakpoints.md}px) {
-    width: 216px;
-    height: 370px;
+    width: 275px;
+    height: 384px;
   }
 `
 
 const Header = styled.div`
   width: 100%;
-  padding-block: 16px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 `
 
@@ -88,18 +92,22 @@ const Paragraph = styled.p`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  opacity: 0.54;
+
+  @media (max-width: ${breakpoints.lg}px) {
+    line-height: 126%;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 14px;
-    line-height: 126%;
   }
 `
 
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 42px;
-  padding-top: 24px;
+  padding-top: 16px;
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   margin-top: auto;
@@ -113,7 +121,7 @@ const Title = styled.h2`
 const FlexContainer = styled.div`
   display: flex;
   height: 226px;
-  padding-top: 24px;
+  padding-top: 16px;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
