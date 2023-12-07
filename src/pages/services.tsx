@@ -3,8 +3,16 @@ import { SEO } from '@/components/SEO'
 import { ServiceFilter, ServiceList } from '@/components/Services'
 import ServiceContact from '@/components/Services/ServiceContact'
 import { ServiceType } from '@/components/Services/ServiceItem'
+import { breakpoints } from '@/configs/ui.configs'
 import { SubPageLayout } from '@/layouts/SubPageLayout'
+import styled from '@emotion/styled'
 import { useState } from 'react'
+
+const CustomBox = styled(Box)`
+  @media (max-width: ${breakpoints.xl}px) {
+    margin-bottom: 130px;
+  }
+`
 
 const Page = ({ services }: any) => {
   const [activeServices, setActiveServices] = useState<string[]>([])
@@ -13,13 +21,13 @@ const Page = ({ services }: any) => {
     <>
       <SEO />
       <div>
-        <Box marginBottom="180px">
+        <CustomBox marginBottom="180px">
           <ServiceFilter
             services={services}
             activeServices={activeServices}
             setActiveServices={setActiveServices}
           />
-        </Box>
+        </CustomBox>
         <Box>
           <ServiceList services={services} activeServices={activeServices} />
           <ServiceContact />

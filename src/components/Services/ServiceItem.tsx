@@ -46,6 +46,10 @@ const ServiceContainer = styled.div`
   &:last-child {
     border-bottom: none;
   }
+
+  @media (max-width: ${breakpoints.xl}px) {
+    padding: 18px 0;
+  }
 `
 
 const ServiceHeader = styled.div`
@@ -66,6 +70,10 @@ const Description = styled.p`
   line-height: 122%;
   font-weight: 400;
   max-width: 817px;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 16px;
+  }
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 14px;

@@ -183,7 +183,7 @@ const BU_DATA: any = {
     hero: {
       bu: 'nomos',
       est: '2022',
-      devStatus: 'In production',
+      devStatus: 'Research',
       vertical: 'Layer-1',
       founders: 'Jarrad Hope, Carl Bennetts',
       achievements: 'Carnot consensus algorithm specification written',

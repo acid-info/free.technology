@@ -63,6 +63,10 @@ const Container = styled.div`
   margin-top: calc(${uiConfigs.navbarHeight}px + 24px);
   margin-bottom: 20px;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    margin-top: calc(${uiConfigs.navbarHeight}px + 18px);
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     margin-top: calc(${uiConfigs.navbarHeight}px + 16px);
   }

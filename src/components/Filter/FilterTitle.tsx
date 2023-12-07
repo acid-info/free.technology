@@ -44,6 +44,12 @@ const Title = styled.h3`
   text-transform: capitalize;
   margin-bottom: 24px;
   line-height: 60px;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 38px;
+    line-height: 45px;
+    margin-bottom: 18px;
+  }
 `
 
 export default FilterTitle
