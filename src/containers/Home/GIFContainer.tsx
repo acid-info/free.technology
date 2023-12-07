@@ -12,7 +12,6 @@ export const GIFContainer: React.FC = () => {
 
 const Container = styled.div`
   width: 50%;
-  background-color: black;
   background-size: 100%;
   box-sizing: border-box;
 

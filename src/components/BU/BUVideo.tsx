@@ -11,7 +11,6 @@ const BUVideo: React.FC = () => {
 }
 
 const Container = styled.div`
-  background-color: black;
   background-size: 100%;
   box-sizing: border-box;
   width: 100%;
