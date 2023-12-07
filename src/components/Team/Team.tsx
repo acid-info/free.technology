@@ -31,6 +31,13 @@ const Title = styled.p`
     line-height: 20px;
     padding-block: 18px;
   }
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 22px;
+    line-height: 122%;
+    padding-block: 16px;
+    margin-bottom: 24px;
+  }
 `
 
 const Grid = styled.div`
@@ -40,6 +47,10 @@ const Grid = styled.div`
 
   @media (max-width: ${breakpoints.xl}px) {
     gap: 12px;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    gap: 8px;
   }
 `
 

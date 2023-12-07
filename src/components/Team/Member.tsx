@@ -4,15 +4,17 @@ import Image from 'next/image'
 
 interface Props {
   children: React.ReactNode
-  img: string
+  img?: string
 }
 
-export const Member = ({ img, children }: Props) => {
+export const Member = ({ img = '', children }: Props) => {
   return (
     <Container>
-      <ImageContainer>
-        <MemberImage src={img} alt={img} fill />
-      </ImageContainer>
+      {img?.length ? (
+        <ImageContainer>
+          <MemberImage src={img} alt={img} fill />{' '}
+        </ImageContainer>
+      ) : null}
       <Content>{children}</Content>
     </Container>
   )
@@ -22,17 +24,15 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
 
   h3 {
     text-overflow: ellipsis;
     font-size: 22px;
     font-weight: 400;
     line-height: 130%;
-
-    @media (max-width: ${breakpoints.xl}px) {
-      font-size: 16px;
-      line-height: 20px;
-    }
   }
 
   p {
@@ -41,8 +41,18 @@ const Container = styled.div`
     font-weight: 400;
     text-transform: capitalize;
     opacity: 0.5;
+  }
 
-    @media (max-width: ${breakpoints.xl}px) {
+  @media (max-width: ${breakpoints.xl}px) {
+    padding-top: 16px;
+    padding-bottom: 8px;
+
+    h3 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    p {
       font-size: 13px;
       line-height: 18px;
     }
