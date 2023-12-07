@@ -1,7 +1,7 @@
 import {
   BUAbout,
   BUHero,
-  BUMedia,
+  // BUMedia,
   BUMenuFilter,
   BUMenus,
   BUMilestones,
@@ -71,9 +71,9 @@ const Page = ({ bu, jobs, issues }: any) => {
               marginBottom="0"
             />
           ) : null}
-          {activeMenus.length === 0 || activeMenus.includes('Media') ? (
+          {/* {activeMenus.length === 0 || activeMenus.includes('Media') ? (
             <BUMedia />
-          ) : null}
+          ) : null} */}
         </BUMenus>
       </div>
     </>

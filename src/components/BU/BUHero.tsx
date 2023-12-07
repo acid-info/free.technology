@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
 import { businessUnitMark } from '../../../utils/bu'
-import { Badge } from '../Badge'
 import { Button } from '../Button'
 
 interface Props {
@@ -34,7 +33,6 @@ export const BUHero = ({ data }: Props) => {
               />
               <TitleText>{data?.bu}</TitleText>
             </BUTitle>
-            <Badge>est. {data?.est}</Badge>
           </Title>
         </Header>
         <Content>
@@ -56,14 +54,14 @@ export const BUHero = ({ data }: Props) => {
             <table>
               <thead>
                 <tr>
+                  <th>Founded</th>
                   <th>Achievements</th>
-                  <th>Founders</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td>{data?.est}</td>
                   <td>{data?.achievements}</td>
-                  <td>{data?.founders}</td>
                 </tr>
               </tbody>
             </table>
