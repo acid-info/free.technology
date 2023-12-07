@@ -1,5 +1,6 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 
 const ServiceContact = () => {
   return (
@@ -15,7 +16,9 @@ const ServiceContact = () => {
           please get in touch.
         </Description>
       </Content>
-      <EmailButton>Email us</EmailButton>
+      <Link href="mailto:info@free.technology">
+        <EmailButton>Email us</EmailButton>
+      </Link>
     </Container>
   )
 }

@@ -26,6 +26,13 @@ const Container = styled.div`
     box-sizing: border-box;
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    sup {
+      font-size: 18px;
+      margin-left: 4px;
+    }
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     font-size: 22px;
     line-height: 122%;

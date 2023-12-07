@@ -41,7 +41,7 @@ const Header = styled.div`
     margin-bottom: 42px;
 
     sup {
-      font-size: 12px;
+      font-size: 18px;
       margin-left: 0px;
     }
   }
