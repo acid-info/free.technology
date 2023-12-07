@@ -1,6 +1,7 @@
 import { breakpoints, footerBUs, footerSocial } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const Footer = () => {
   const handleGoToTop = () => {
@@ -31,7 +32,9 @@ export const Footer = () => {
               <br />
               Contact the IFT to see what we can do for you and your startup.
             </p>
-            <button>Email us</button>
+            <Link href="mailto:info@free.technology">
+              <button>Email us</button>
+            </Link>
           </Description>
         </FooterInfoItem>
       </FooterInto>
