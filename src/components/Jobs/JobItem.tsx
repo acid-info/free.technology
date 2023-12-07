@@ -66,6 +66,11 @@ const JobTitle = styled.div`
   color: black;
   text-decoration: none;
 
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 27px;
+    line-height: 32px;
+  }
+
   @media (max-width: ${breakpoints.md}px) {
     font-size: 16px;
     line-height: 130%;
@@ -105,6 +110,13 @@ const ApplyButton = styled.a`
   padding: 0 18px;
   cursor: pointer;
   text-decoration: none;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    width: 81px;
+    height: 33px;
+    font-size: 11px;
+    padding: 0 14px;
+  }
 `
 
 export default JobItem
