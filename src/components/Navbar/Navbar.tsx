@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react'
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
-  const isTransparent = router.pathname === '/' || router.pathname === '/[bu]'
+  const isTransparent = router.pathname === '/'
 
-  const background = router.pathname === '/[bu]' ? 'transparent' : 'black'
+  const background = 'black'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,6 +60,7 @@ const Container = styled.nav<{
   display: flex;
   background-color: ${({ isTransparent, scrolled, background }) =>
     !scrolled && isTransparent ? background : scrolled ? 'black' : background};
+
   height: ${uiConfigs.navbarHeight}px;
   padding: 4px 16px;
 

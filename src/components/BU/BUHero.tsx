@@ -1,4 +1,4 @@
-import { breakpoints } from '@/configs/ui.configs'
+import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -131,6 +131,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   box-sizing: border-box;
   padding: 0 16px;
+  margin-top: calc(${uiConfigs.navbarHeight}px);
 
   @media (max-width: ${breakpoints.md}px) {
     padding: 0 8px;

@@ -6,7 +6,6 @@ import {
   BUMenus,
   BUMilestones,
   BUTestimonials,
-  BUVideo,
 } from '@/components/BU'
 import { ChallengeList } from '@/components/Challenges'
 import { JobList } from '@/components/Jobs'
@@ -32,7 +31,7 @@ const Page = ({ bu, jobs, issues }: any) => {
   return (
     <>
       <SEO />
-      <BUVideo />
+      {/* <BUVideo /> */}
       <div>
         <BUHero data={BU_DATA[bu]?.hero} />
         <BUMenuFilter
