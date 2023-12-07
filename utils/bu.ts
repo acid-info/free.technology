@@ -15,7 +15,7 @@ export const businessUnitMark = (businessUnit: string) => {
     case 'vac':
       return '/icons/bu/vac.svg'
     case 'keycard':
-      return ''
+      return '/icons/bu/keycard.svg'
     default:
       return ''
   }
