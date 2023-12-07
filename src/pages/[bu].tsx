@@ -113,28 +113,28 @@ export async function getStaticProps({ params }: any) {
   let jobs: any = []
   let issues = {}
 
-  const site = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  // const site = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
   try {
     if (Object.keys(JOB_BOARD_MAPPING).includes(bu)) {
       jobs = await getJobs([bu], '')
     }
 
-    if (bu === 'waku') {
-      const res = await fetch(`${site}/api/challenges`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify([{ owner: 'waku-org', repo: 'bounties' }]),
-      })
+    // if (bu === 'waku') {
+    //   const res = await fetch(`${site}/api/challenges`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify([{ owner: 'waku-org', repo: 'bounties' }]),
+    //   })
 
-      if (!res.ok) {
-        throw new Error(`Failed to fetch issues, status: ${res.status}`)
-      }
+    //   if (!res.ok) {
+    //     throw new Error(`Failed to fetch issues, status: ${res.status}`)
+    //   }
 
-      issues = await res.json()
-    }
+    //   issues = await res.json()
+    // }
 
     return {
       props: {
