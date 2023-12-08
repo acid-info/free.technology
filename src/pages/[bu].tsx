@@ -17,7 +17,7 @@ import { useState } from 'react'
 import { JOB_BOARD_MAPPING, getJobs } from '../../utils/getJobs'
 
 const Section = styled.section`
-  scroll-margin-top: 24px;
+  scroll-margin-top: 90px;
 `
 
 const Page = ({ bu, jobs }: any) => {

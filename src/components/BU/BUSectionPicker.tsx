@@ -1,6 +1,7 @@
-import { breakpoints } from '@/configs/ui.configs'
+import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { Tag } from '../Tag'
 
 type Props = {
@@ -10,6 +11,25 @@ type Props = {
 }
 
 const BUSectionPicker = ({ menus, activeMenus, setActiveMenus }: Props) => {
+  const [isSticky, setIsSticky] = useState(false)
+
+  const checkSticky = () => {
+    const stickyElement = document.getElementById('stickyPicker')
+
+    if (stickyElement) {
+      const rect = stickyElement.getBoundingClientRect()
+      console.log(rect.top)
+      setIsSticky(rect.top <= uiConfigs.navbarHeight)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkSticky)
+    return () => {
+      window.removeEventListener('scroll', checkSticky)
+    }
+  }, [])
+
   const toggleMenu = (menu: string) => {
     if (activeMenus.includes(menu)) {
       setActiveMenus((preveMenus) => preveMenus.filter((item) => item !== menu))
@@ -19,7 +39,7 @@ const BUSectionPicker = ({ menus, activeMenus, setActiveMenus }: Props) => {
   }
 
   return (
-    <Container>
+    <Container id="stickyPicker" isSticky={isSticky}>
       <Border />
       <Menus>
         {menus.map((menu: string) => (
@@ -37,10 +57,14 @@ const BUSectionPicker = ({ menus, activeMenus, setActiveMenus }: Props) => {
   )
 }
 
-const Container = styled.div`
+const Container = styled.div<{ isSticky: boolean }>`
   display: flex;
   flex-direction: column;
   padding-inline: 16px;
+  position: sticky;
+  top: calc(${uiConfigs.navbarHeight}px);
+  background-color: #fff;
+  border-bottom: ${(props) => (props.isSticky ? '1px solid #e5e5e5' : 'none')};
 
   @media (max-width: ${breakpoints.md}px) {
     padding-inline: 8px;
