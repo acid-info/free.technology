@@ -18,7 +18,6 @@ const BUSectionPicker = ({ menus, activeMenus, setActiveMenus }: Props) => {
 
     if (stickyElement) {
       const rect = stickyElement.getBoundingClientRect()
-      console.log(rect.top)
       setIsSticky(rect.top <= uiConfigs.navbarHeight)
     }
   }
@@ -64,6 +63,7 @@ const Container = styled.div<{ isSticky: boolean }>`
   position: sticky;
   top: calc(${uiConfigs.navbarHeight}px);
   background-color: #fff;
+  z-index: 10;
   border-bottom: ${(props) => (props.isSticky ? '1px solid #e5e5e5' : 'none')};
 
   @media (max-width: ${breakpoints.md}px) {
