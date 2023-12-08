@@ -38,19 +38,17 @@ const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
         <Tag active={activeBUs.length === 0} onClick={() => setActiveBUs([])}>
           All Jobs
         </Tag>
-        {businessUnits?.length ? (
-          businessUnits.map((bu: string) => (
-            <Tag
-              active={activeBUs.includes(bu)}
-              key={bu + '-tag'}
-              onClick={() => toggleBU(bu)}
-            >
-              {bu}
-            </Tag>
-          ))
-        ) : (
-          <NoJobs>No Open Positions</NoJobs>
-        )}
+        {businessUnits?.length
+          ? businessUnits.map((bu: string) => (
+              <Tag
+                active={activeBUs.includes(bu)}
+                key={bu + '-tag'}
+                onClick={() => toggleBU(bu)}
+              >
+                {bu}
+              </Tag>
+            ))
+          : null}
       </BUs>
       <Border />
     </Container>
@@ -92,13 +90,6 @@ const Border = styled.hr`
   height: 1px;
   width: 100%;
   margin: 0;
-`
-
-const NoJobs = styled.p`
-  padding-top: 24px;
-  font-size: 36px;
-  color: black;
-  text-decoration: none;
 `
 
 export default JobFilter

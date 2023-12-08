@@ -18,6 +18,9 @@ export const Tag = styled.div<{ active: boolean }>`
   border: 1px solid black;
   white-space: nowrap;
 
+  user-select: none;
+  -webkit-user-select: none;
+
   @media (max-width: ${breakpoints.md}px) {
     padding: 4px 10px;
   }

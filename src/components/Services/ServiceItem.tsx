@@ -97,6 +97,9 @@ const ServiceButton = styled.button`
   padding: 10px 49px 10px 18px;
   cursor: pointer;
   border: none;
+
+  user-select: none;
+  -webkit-user-select: none;
 `
 
 const IconContainer = styled.span`

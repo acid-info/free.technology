@@ -41,7 +41,10 @@ const JobList = ({
               {jobList?.length ? (
                 jobList.map((job: any) => <JobItem key={job.id} job={job} />)
               ) : (
-                <NoJobs>No Open Positions</NoJobs>
+                <NoJobs>
+                  No Open Positions
+                  {/* <p>Please get in touch on our Discord.</p> */}
+                </NoJobs>
               )}
             </Jobs>
           </Container>
@@ -99,10 +102,37 @@ const Title = styled.h3`
 `
 
 const NoJobs = styled.p`
-  padding-top: 24px;
   font-size: 36px;
   color: black;
   text-decoration: none;
+  /* padding-top: 24px; */
+
+  display: flex;
+  height: 100%;
+  align-items: center;
+
+  p {
+    color: rgba(0, 0, 0, 0.54);
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 8px;
+
+    @media (max-width: ${breakpoints.md}px) {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: ${breakpoints.xl}px) {
+    font-size: 27px;
+    line-height: 32px;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 16px;
+    line-height: 130%;
+  }
 `
 
 const CustomBox = styled(Box)`

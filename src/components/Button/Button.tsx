@@ -33,6 +33,9 @@ const StyledButton = styled.button<ButtonProps>`
   border-radius: 2px;
   position: relative;
 
+  user-select: none;
+  -webkit-user-select: none;
+
   svg {
     path {
       stroke: ${(props) => (props.color === 'black' ? 'white' : 'black')};

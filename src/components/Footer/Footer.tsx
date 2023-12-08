@@ -116,6 +116,9 @@ const GoToTop = styled.button`
   border: 1px solid #fff;
   background-color: transparent;
   cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
 `
 
 const FooterInto = styled.div`
@@ -237,6 +240,14 @@ const LinkItems = styled.div`
 
   @media (max-width: ${breakpoints.md}px) {
     flex-direction: column;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 

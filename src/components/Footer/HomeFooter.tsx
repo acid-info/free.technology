@@ -114,6 +114,9 @@ const GoToTop = styled.button`
   border: 1px solid #fff;
   background-color: transparent;
   cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
 `
 
 const Description = styled.div`
@@ -200,6 +203,11 @@ const LinksColumn = styled.div`
     font-weight: 400;
     line-height: 130%;
     color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   @media (max-width: ${breakpoints.xl}px) {

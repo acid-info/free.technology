@@ -63,6 +63,9 @@ const ShowMore = styled.button`
   background: #f2f2f2;
   border: none;
 
+  user-select: none;
+  -webkit-user-select: none;
+
   @media (min-width: ${breakpoints.md}px) {
     display: none;
   }

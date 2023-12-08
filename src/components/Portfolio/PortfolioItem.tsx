@@ -2,16 +2,14 @@ import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Badge } from '../Badge'
 
 interface Props {
   children: React.ReactNode
   title: string
   mark: string
-  est: string
 }
 
-export const PortfolioItem = ({ title, mark, est, children }: Props) => {
+export const PortfolioItem = ({ title, mark, children }: Props) => {
   const [open, setOpen] = useState<boolean>(false)
 
   const handleClick = () => {
@@ -19,12 +17,11 @@ export const PortfolioItem = ({ title, mark, est, children }: Props) => {
   }
 
   return (
-    <Container onClick={handleClick}>
+    <Container onClick={handleClick} isOpen={open}>
       <Header>
         <Title>
           <Image src={mark} width={34} height={34} alt={title + '-logo'} />
           <TitleText>{title}</TitleText>
-          <Badge>est. {est}</Badge>
         </Title>
         <Toggle>
           <ToggleButtonImage
@@ -38,13 +35,18 @@ export const PortfolioItem = ({ title, mark, est, children }: Props) => {
   )
 }
 
-const Container = styled.div`
+const Container = styled.div<{ isOpen: boolean }>`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease;
   cursor: pointer;
+
+  button {
+    transition: transform 0.3s ease;
+  }
 
   p {
     text-overflow: ellipsis;
@@ -86,8 +88,12 @@ const Container = styled.div`
   }
 
   &:hover {
-    border-top: 1px solid rgba(0, 0, 0, 0.18);
-    background: rgba(0, 0, 0, 0.02);
+    background: ${({ isOpen }) =>
+      isOpen ? 'transparent' : 'rgba(0, 0, 0, 0.05)'};
+
+    button {
+      transform: ${({ isOpen }) => (!isOpen ? 'rotate(45deg)' : 'rotate(0)')};
+    }
   }
 
   @media (max-width: ${breakpoints.xl}px) {
@@ -152,6 +158,9 @@ const Toggle = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
+
+  user-select: none;
+  -webkit-user-select: none;
 `
 
 const Title = styled.div`

@@ -135,6 +135,9 @@ const EmailButton = styled.button`
   cursor: pointer;
   border: none;
 
+  user-select: none;
+  -webkit-user-select: none;
+
   @media (max-width: ${breakpoints.xl}px) {
     width: 139px;
     height: 57px;

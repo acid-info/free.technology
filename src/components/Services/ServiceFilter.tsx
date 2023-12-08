@@ -37,19 +37,17 @@ const ServiceFilter = ({
       <FilterTitle title="Our Services" length={services.length} />
       <Border />
       <ServicesContainer>
-        {services?.length ? (
-          services.map((service) => (
-            <Tag
-              active={activeServices.includes(service.title)}
-              key={service.title + '-tag'}
-              onClick={() => toggleService(service.title)}
-            >
-              {service.title}
-            </Tag>
-          ))
-        ) : (
-          <NoServices>No Open Positions</NoServices>
-        )}
+        {services?.length
+          ? services.map((service) => (
+              <Tag
+                active={activeServices.includes(service.title)}
+                key={service.title + '-tag'}
+                onClick={() => toggleService(service.title)}
+              >
+                {service.title}
+              </Tag>
+            ))
+          : null}
       </ServicesContainer>
       <Border />
     </Container>
@@ -69,21 +67,6 @@ const Container = styled.div`
 
   @media (max-width: ${breakpoints.md}px) {
     margin-top: calc(${uiConfigs.navbarHeight}px + 16px);
-  }
-`
-
-const Title = styled.h3`
-  color: #000;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 130%;
-  text-transform: capitalize;
-  margin-bottom: 24px;
-
-  @media (max-width: ${breakpoints.md}px) {
-    font-size: 22px;
-    line-height: 122%;
-    margin-bottom: 16px;
   }
 `
 
@@ -110,13 +93,6 @@ const Border = styled.hr`
   height: 1px;
   width: 100%;
   margin: 0;
-`
-
-const NoServices = styled.p`
-  padding-top: 24px;
-  font-size: 36px;
-  color: black;
-  text-decoration: none;
 `
 
 export default ServiceFilter
