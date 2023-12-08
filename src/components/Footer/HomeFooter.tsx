@@ -27,9 +27,9 @@ export const HomeFooter = () => {
           <br />
           Contact the IFT to see what we can do for you and your startup.
         </p>
-        <Link href="mailto:info@free.technology">
+        <CustomLink href="mailto:info@free.technology">
           <button>Email us</button>
-        </Link>
+        </CustomLink>
       </Description>
       <Links>
         <LinksColumn>
@@ -117,6 +117,15 @@ const GoToTop = styled.button`
 
   user-select: none;
   -webkit-user-select: none;
+
+  &:hover {
+    transition: all 0.3s ease;
+    background-color: #fff;
+
+    img {
+      filter: invert(1);
+    }
+  }
 `
 
 const Description = styled.div`
@@ -143,6 +152,12 @@ const Description = styled.div`
     color: #fff;
     box-sizing: border-box;
     cursor: pointer;
+
+    &:hover {
+      transition: all 0.3s ease;
+      background-color: #fff;
+      color: #000;
+    }
   }
 
   @media (max-width: ${breakpoints.xl}px) {
@@ -264,6 +279,11 @@ const Bottom = styled.div`
       line-height: 130%;
     }
   }
+`
+
+const CustomLink = styled(Link)`
+  text-decoration: none;
+  width: fit-content;
 `
 
 export default HomeFooter

@@ -24,7 +24,6 @@ const StyledButton = styled.button<ButtonProps>`
   padding: ${(props) => props.padding || '6px 12px'};
   border: ${(props) => (props.color === 'grey' ? 'none' : '1px solid black')};
   cursor: pointer;
-  transition: 0.3s;
   box-sizing: border-box;
   width: ${(props) => props.width || 'auto'};
   height: ${(props) => props.height || 'auto'};
@@ -42,8 +41,17 @@ const StyledButton = styled.button<ButtonProps>`
     }
   }
 
+  transition: background-color 0.3s ease, color 0.3s ease;
+
   &:hover {
-    opacity: 0.8;
+    background-color: ${(props) =>
+      props.color === 'black' ? 'rgba(0, 0, 0, 0.05)' : 'black'};
+    color: ${(props) => (props.color === 'black' ? 'black' : 'white')};
+    border: 1px solid transparent;
+
+    svg path {
+      stroke: ${(props) => (props.color === 'black' ? 'black' : 'white')};
+    }
   }
 `
 

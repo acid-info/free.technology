@@ -89,6 +89,12 @@ const Icon = styled.div`
 `
 
 const Paragraph = styled.p`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  align-self: stretch;
+  overflow: hidden;
+
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

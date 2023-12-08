@@ -100,6 +100,17 @@ const ServiceButton = styled.button`
 
   user-select: none;
   -webkit-user-select: none;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background: #000;
+    color: white;
+
+    svg path {
+      stroke: white;
+    }
+  }
 `
 
 const IconContainer = styled.span`

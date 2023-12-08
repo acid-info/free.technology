@@ -12,7 +12,7 @@ export const Mission = ({ title, children }: Props) => {
     <Container>
       <Header>
         <Title>{title}</Title>
-        <Button width="150px" padding="10px 34px" color="grey">
+        <Button width="150px" padding="10px 34px" color="white">
           Learn more
         </Button>
       </Header>
@@ -54,6 +54,7 @@ const Container = styled.div`
     font-size: 22px;
     font-weight: 400;
     line-height: 122%;
+    width: 50%;
   }
 
   table {

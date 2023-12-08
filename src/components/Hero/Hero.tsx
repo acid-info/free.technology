@@ -20,6 +20,7 @@ const Container = styled.div`
 
   h1 {
     display: inline-flex;
+    margin-top: 8px;
 
     sup {
       vertical-align: super;

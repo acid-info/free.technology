@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { businessUnitMark } from '../../../utils/bu'
 import { Button } from '../Button'
+import ArrowUpRight from '../Icons/ArrowUpRight'
 
 interface Props {
   data: any
@@ -75,17 +76,18 @@ export const BUHero = ({ data }: Props) => {
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <Links>
                     {data?.connect?.map((item: any) => (
-                      <Link
+                      <CustomLink
                         key={item.label + '-link'}
                         href={item.link}
                         target="_blank"
                       >
                         {item?.label}
-                      </Link>
+                        <ArrowUpRight />
+                      </CustomLink>
                     ))}
-                  </td>
+                  </Links>
                   <td>{data?.lead}</td>
                 </tr>
               </tbody>
@@ -108,7 +110,7 @@ export const BUHero = ({ data }: Props) => {
             {data?.github && (
               <Link href={data?.github} target="_blank">
                 <LinkButton
-                  color="grey"
+                  color="white"
                   width="162px"
                   height="54px"
                   padding="0 0 0 18px"
@@ -269,16 +271,6 @@ const Content = styled.div`
   tr > td > a {
     font-size: 18px;
     line-height: 22px;
-
-    &:not(:last-child) {
-      &:after {
-        fill: rgba(0, 0, 0, 0.35);
-        content: '·';
-        margin-inline: 8px;
-        text-decoration: none;
-        display: inline-block;
-      }
-    }
   }
 
   table thead {
@@ -397,6 +389,22 @@ const LinkButton = styled(Button)`
 const MobileMark = styled(Image)`
   @media (min-width: ${breakpoints.md}px) {
     display: none;
+  }
+`
+
+const Links = styled.td`
+  display: flex;
+  gap: 16px;
+`
+
+const CustomLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 `
 

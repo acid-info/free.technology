@@ -16,9 +16,9 @@ const ServiceContact = () => {
           please get in touch.
         </Description>
       </Content>
-      <Link href="mailto:info@free.technology">
+      <CustomLink href="mailto:info@free.technology">
         <EmailButton>Email us</EmailButton>
-      </Link>
+      </CustomLink>
     </Container>
   )
 }
@@ -134,9 +134,17 @@ const EmailButton = styled.button`
   text-align: center;
   cursor: pointer;
   border: none;
+  border-radius: 2px;
 
   user-select: none;
   -webkit-user-select: none;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: black;
+  }
 
   @media (max-width: ${breakpoints.xl}px) {
     width: 139px;
@@ -145,6 +153,10 @@ const EmailButton = styled.button`
     font-size: 16.5px;
     line-height: 19.5px;
   }
+`
+
+const CustomLink = styled(Link)`
+  text-decoration: none;
 `
 
 export default ServiceContact

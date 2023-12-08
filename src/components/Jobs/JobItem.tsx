@@ -1,6 +1,7 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
-import ArrowUpRight from '../Icons/ArrowUpRight'
+import Link from 'next/link'
+import { Button } from '../Button'
 
 export type Job = {
   id: string
@@ -23,16 +24,14 @@ const JobItem = ({ job }: { job: Job }) => {
         <JobTitle>{job.title}</JobTitle>
         <JobInfo>{job.location.name}</JobInfo>
       </JobHeader>
-      <ApplyButton
+      <Link
         href={job.absolute_url}
         target="_blank"
         rel="noopener noreferrer"
+        passHref
       >
-        Apply
-        <IconContainer>
-          <ArrowUpRight />
-        </IconContainer>
-      </ApplyButton>
+        <ApplyButton icon={true}>Apply</ApplyButton>
+      </Link>
     </JobContainer>
   )
 }
@@ -96,20 +95,10 @@ const IconContainer = styled.span`
   right: 7px;
 `
 
-const ApplyButton = styled.a`
+const ApplyButton = styled(Button)`
   width: 105px;
   height: 42px;
   font-size: 14px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  border-radius: 2px;
-  background: rgba(0, 0, 0, 0.05);
-  position: relative;
-  color: black;
-  padding: 0 18px;
-  cursor: pointer;
-  text-decoration: none;
 
   @media (max-width: ${breakpoints.xl}px) {
     width: 81px;

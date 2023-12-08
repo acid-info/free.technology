@@ -13,16 +13,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 144px;
-
-  > div {
+  & > section {
     margin-bottom: 180px;
   }
 
   @media (max-width: ${breakpoints.md}px) {
     margin-bottom: 18px;
 
-    > div {
+    & > section {
       margin-bottom: 80px;
     }
   }

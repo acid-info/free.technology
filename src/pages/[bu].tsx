@@ -1,30 +1,41 @@
 import {
   BUAbout,
   BUHero,
-  // BUMedia,
-  BUMenuFilter,
   BUMenus,
   BUMilestones,
+  // BUMedia,
+  BUSectionPicker,
   BUTestimonials,
 } from '@/components/BU'
-import { ChallengeList } from '@/components/Challenges'
+// import { ChallengeList } from '@/components/Challenges'
 import { JobList } from '@/components/Jobs'
 import { SEO } from '@/components/SEO'
 import BU_DATA from '@/data/bu-data'
 import { SubPageLayout } from '@/layouts/SubPageLayout'
+import styled from '@emotion/styled'
 import { useState } from 'react'
 import { JOB_BOARD_MAPPING, getJobs } from '../../utils/getJobs'
 
-export const BUMenuBar = [
-  'Testimonials',
-  'About',
-  'Milestones',
-  'Jobs',
-  'Media',
-]
+const Section = styled.section`
+  scroll-margin-top: 24px;
+`
 
-const Page = ({ bu, jobs, issues }: any) => {
+const Page = ({ bu, jobs }: any) => {
   const [activeMenus, setActiveMenus] = useState<string[]>([])
+
+  const BUMenuBar = ['About', 'Milestones', 'Jobs']
+
+  if (BU_DATA[bu]?.testimonials?.length) {
+    BUMenuBar.unshift('Feedback')
+  }
+
+  if (!Object.keys(jobs)?.length) {
+    const jobsIndex = BUMenuBar.indexOf('Jobs')
+
+    if (jobsIndex !== -1) {
+      BUMenuBar.splice(jobsIndex, 1)
+    }
+  }
 
   return (
     <>
@@ -32,24 +43,25 @@ const Page = ({ bu, jobs, issues }: any) => {
       {/* <BUVideo /> */}
       <div>
         <BUHero data={BU_DATA[bu]?.hero} />
-        <BUMenuFilter
+        <BUSectionPicker
+          menus={BUMenuBar}
           activeMenus={activeMenus}
           setActiveMenus={setActiveMenus}
         />
         <BUMenus>
-          {activeMenus.length === 0 || activeMenus.includes('Testimonials') ? (
+          <Section id="feedback">
             <BUTestimonials data={BU_DATA[bu]?.testimonials} />
-          ) : null}
-          {activeMenus.length === 0 || activeMenus.includes('About') ? (
+          </Section>
+          <Section id="about">
             <BUAbout data={BU_DATA[bu]?.about} />
-          ) : null}
-          {activeMenus.length === 0 || activeMenus.includes('Milestones') ? (
+          </Section>
+          <Section id="milestones">
             <BUMilestones data={BU_DATA[bu]?.milestones} />
-          ) : null}
+          </Section>
           {/* {activeMenus.length === 0 && BU_DATA[bu]?.profiles?.length || activeMenus.includes('Team') && BU_DATA[bu]?.profiles?.length ? (
             <BUTeam profiles={BU_DATA[bu]?.profiles} />
           ) : null} */}
-          {activeMenus.length === 0 || activeMenus.includes('Jobs') ? (
+          <Section id="jobs">
             <JobList
               title="Jobs"
               jobs={jobs}
@@ -57,8 +69,8 @@ const Page = ({ bu, jobs, issues }: any) => {
               marginTop="0"
               marginBottom="0"
             />
-          ) : null}
-          {activeMenus.length === 0 || activeMenus.includes('Challenges') ? (
+          </Section>
+          {/* {activeMenus.length === 0 || activeMenus.includes('Challenges') ? (
             <ChallengeList
               title="Challenges"
               challenges={issues}
@@ -66,7 +78,7 @@ const Page = ({ bu, jobs, issues }: any) => {
               marginTop="0"
               marginBottom="0"
             />
-          ) : null}
+          ) : null} */}
           {/* {activeMenus.length === 0 || activeMenus.includes('Media') ? (
             <BUMedia />
           ) : null} */}

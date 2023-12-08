@@ -1,19 +1,20 @@
 import { breakpoints } from '@/configs/ui.configs'
-import { BUMenuBar } from '@/pages/[bu]'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 import { Tag } from '../Tag'
 
 type Props = {
+  menus: string[]
   activeMenus: string[]
   setActiveMenus: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-const BUMenuFilter = ({ activeMenus, setActiveMenus }: Props) => {
+const BUSectionPicker = ({ menus, activeMenus, setActiveMenus }: Props) => {
   const toggleMenu = (menu: string) => {
     if (activeMenus.includes(menu)) {
       setActiveMenus((preveMenus) => preveMenus.filter((item) => item !== menu))
     } else {
-      setActiveMenus((preveMenus) => [...preveMenus, menu])
+      setActiveMenus([menu])
     }
   }
 
@@ -21,20 +22,15 @@ const BUMenuFilter = ({ activeMenus, setActiveMenus }: Props) => {
     <Container>
       <Border />
       <Menus>
-        <Tag
-          active={activeMenus.length === 0}
-          onClick={() => setActiveMenus([])}
-        >
-          All
-        </Tag>
-        {BUMenuBar.map((menu: string) => (
-          <Tag
-            active={activeMenus.includes(menu)}
-            key={menu + '-tag'}
-            onClick={() => toggleMenu(menu)}
-          >
-            {menu}
-          </Tag>
+        {menus.map((menu: string) => (
+          <CustomLink key={menu + '-tag'} href={`#${menu.toLowerCase()}`}>
+            <Tag
+              active={activeMenus.includes(menu)}
+              onClick={() => toggleMenu(menu)}
+            >
+              {menu}
+            </Tag>
+          </CustomLink>
         ))}
       </Menus>
     </Container>
@@ -76,4 +72,8 @@ const Border = styled.hr`
   margin: 0;
 `
 
-export default BUMenuFilter
+const CustomLink = styled(Link)`
+  text-decoration: none;
+`
+
+export default BUSectionPicker

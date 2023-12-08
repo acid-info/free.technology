@@ -32,9 +32,9 @@ export const Footer = () => {
               <br />
               Contact the IFT to see what we can do for you and your startup.
             </p>
-            <Link href="mailto:info@free.technology">
+            <CustomLink href="mailto:info@free.technology">
               <button>Email us</button>
-            </Link>
+            </CustomLink>
           </Description>
         </FooterInfoItem>
       </FooterInto>
@@ -119,6 +119,15 @@ const GoToTop = styled.button`
 
   user-select: none;
   -webkit-user-select: none;
+
+  &:hover {
+    transition: all 0.3s ease;
+    background-color: #fff;
+
+    img {
+      filter: invert(1);
+    }
+  }
 `
 
 const FooterInto = styled.div`
@@ -175,6 +184,12 @@ const Description = styled.div`
     border: 1px solid #fff;
     color: #fff;
     cursor: pointer;
+
+    &:hover {
+      transition: all 0.3s ease;
+      background-color: #fff;
+      color: #000;
+    }
   }
 
   @media (max-width: ${breakpoints.md}px) {
@@ -298,6 +313,11 @@ const Bottom = styled.div`
   @media (max-width: ${breakpoints.md}px) {
     flex-direction: column-reverse;
   }
+`
+
+const CustomLink = styled(Link)`
+  text-decoration: none;
+  width: fit-content;
 `
 
 export default Footer

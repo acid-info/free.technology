@@ -8,13 +8,10 @@ type Props = React.DetailedHTMLProps<
 >
 
 export const Portfolio = ({ children, ...props }: Props) => {
-  const childrenArray = React.Children.toArray(children)
-
   return (
     <Container {...props}>
       <Header>
         <Title>Portfolio</Title>
-        <sup>({childrenArray?.length})</sup>
       </Header>
       {children}
     </Container>
@@ -30,20 +27,9 @@ const Header = styled.div`
   padding-block: 24px;
   margin-bottom: 56px;
 
-  sup {
-    vertical-align: super;
-    font-size: 18px;
-    font-weight: 400;
-  }
-
   @media (max-width: ${breakpoints.xl}px) {
     padding-block: 18px;
     margin-bottom: 42px;
-
-    sup {
-      font-size: 18px;
-      margin-left: 0px;
-    }
   }
 
   @media (max-width: ${breakpoints.md}px) {

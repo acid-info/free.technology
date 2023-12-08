@@ -17,8 +17,8 @@ export const PortfolioItem = ({ title, mark, children }: Props) => {
   }
 
   return (
-    <Container onClick={handleClick} isOpen={open}>
-      <Header>
+    <Container isOpen={open}>
+      <Header onClick={handleClick}>
         <Title>
           <Image src={mark} width={34} height={34} alt={title + '-logo'} />
           <TitleText>{title}</TitleText>
@@ -41,8 +41,7 @@ const Container = styled.div<{ isOpen: boolean }>`
   flex-wrap: wrap;
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
-  transition: transform 0.3s ease;
-  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   button {
     transition: transform 0.3s ease;
@@ -144,6 +143,7 @@ const Header = styled.div`
   width: 100%;
   padding-block: 24px;
   box-sizing: border-box;
+  cursor: pointer;
 
   @media (max-width: ${breakpoints.xl}px) {
     padding-block: 18px;
@@ -187,6 +187,10 @@ const TitleText = styled.h3`
 const Content = styled.div`
   width: 100%;
   padding-bottom: 40px;
+
+  button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
   @media (max-width: ${breakpoints.xl}px) {
     padding-bottom: 30px;

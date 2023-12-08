@@ -17,11 +17,17 @@ export const Tag = styled.div<{ active: boolean }>`
   cursor: pointer;
   border: 1px solid black;
   white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   user-select: none;
   -webkit-user-select: none;
 
   @media (max-width: ${breakpoints.md}px) {
     padding: 4px 10px;
+  }
+
+  &:hover {
+    background-color: ${({ active }) =>
+      active ? 'black' : 'rgba(0, 0, 0, 0.03)'};
   }
 `
