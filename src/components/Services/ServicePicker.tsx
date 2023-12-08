@@ -1,5 +1,7 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+import { toBuInUrl } from '../../../utils/bu'
 import { FilterTitle } from '../Filter'
 import { Tag } from '../Tag'
 import { ServiceType } from './ServiceItem'
@@ -10,7 +12,7 @@ type Props = {
   setActiveServices: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-const ServiceFilter = ({
+const ServicePicker = ({
   services,
   activeServices,
   setActiveServices,
@@ -25,10 +27,7 @@ const ServiceFilter = ({
         prevServicesContainer.filter((item) => item !== service),
       )
     } else {
-      setActiveServices((prevServicesContainer) => [
-        ...prevServicesContainer,
-        service,
-      ])
+      setActiveServices([service])
     }
   }
 
@@ -39,13 +38,17 @@ const ServiceFilter = ({
       <ServicesContainer>
         {services?.length
           ? services.map((service) => (
-              <Tag
-                active={activeServices.includes(service.title)}
+              <CustomLink
                 key={service.title + '-tag'}
-                onClick={() => toggleService(service.title)}
+                href={`#${toBuInUrl(service.title)}`}
               >
-                {service.title}
-              </Tag>
+                <Tag
+                  active={activeServices.includes(service.title)}
+                  onClick={() => toggleService(service.title)}
+                >
+                  {service.title}
+                </Tag>
+              </CustomLink>
             ))
           : null}
       </ServicesContainer>
@@ -95,4 +98,8 @@ const Border = styled.hr`
   margin: 0;
 `
 
-export default ServiceFilter
+const CustomLink = styled(Link)`
+  text-decoration: none;
+`
+
+export default ServicePicker

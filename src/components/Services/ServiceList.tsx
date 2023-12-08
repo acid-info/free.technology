@@ -1,5 +1,6 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import { toBuInUrl } from '../../../utils/bu'
 import ServiceItem, { ServiceType } from './ServiceItem' // adjust path accordingly
 
 type Props = {
@@ -17,7 +18,7 @@ const ServiceList = ({ services, activeServices }: Props) => {
       !activeServices?.length ? true : activeServices.includes(service.title),
     )
     .map((service, idx) => (
-      <Container key={idx + '-services'}>
+      <Container id={toBuInUrl(service.title)} key={idx + '-services'}>
         <TitleContainer>
           <Title>{service.title}</Title>
         </TitleContainer>
@@ -33,6 +34,7 @@ const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
+  scroll-margin-top: 24px;
 
   @media (max-width: ${breakpoints.md}px) {
     margin-top: 60px;

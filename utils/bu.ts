@@ -20,3 +20,12 @@ export const businessUnitMark = (businessUnit: string) => {
       return ''
   }
 }
+
+export function toBuInUrl(bu: string) {
+  return bu
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+}

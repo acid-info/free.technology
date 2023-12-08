@@ -28,27 +28,23 @@ const JobList = ({
 
   return (
     <CustomBox marginTop={marginTop} marginBottom={marginBottom}>
-      {Object.entries(jobs)
-        .filter(([businessUnit, _]) =>
-          !activeBUs?.length ? true : activeBUs.includes(businessUnit),
-        )
-        .map(([businessUnit, jobList]) => (
-          <Container key={businessUnit + '-jobs'}>
-            <TitleContainer>
-              <Title>{title ?? businessUnit}</Title>
-            </TitleContainer>
-            <Jobs>
-              {jobList?.length ? (
-                jobList.map((job: any) => <JobItem key={job.id} job={job} />)
-              ) : (
-                <NoJobs>
-                  No Open Positions
-                  {/* <p>Please get in touch on our Discord.</p> */}
-                </NoJobs>
-              )}
-            </Jobs>
-          </Container>
-        ))}
+      {Object.entries(jobs).map(([businessUnit, jobList]) => (
+        <Container id={businessUnit} key={businessUnit + '-jobs'}>
+          <TitleContainer>
+            <Title>{title ?? businessUnit}</Title>
+          </TitleContainer>
+          <Jobs>
+            {jobList?.length ? (
+              jobList.map((job: any) => <JobItem key={job.id} job={job} />)
+            ) : (
+              <NoJobs>
+                No Open Positions
+                {/* <p>Please get in touch on our Discord.</p> */}
+              </NoJobs>
+            )}
+          </Jobs>
+        </Container>
+      ))}
     </CustomBox>
   )
 }
@@ -58,6 +54,7 @@ const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
+  scroll-margin-top: 24px;
 
   @media (max-width: ${breakpoints.md}px) {
     margin-top: 60px;

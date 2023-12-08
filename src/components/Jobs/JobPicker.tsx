@@ -1,5 +1,6 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 import { calculatElementCount } from '../../../utils/count'
 import { FilterTitle } from '../Filter'
 import { Tag } from '../Tag'
@@ -15,7 +16,7 @@ type Props = {
   setActiveBUs: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
+const JobPicker = ({ data, activeBUs, setActiveBUs }: Props) => {
   if (data == null) {
     return <div>Something went wrong</div>
   }
@@ -26,7 +27,7 @@ const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
     if (activeBUs.includes(bu)) {
       setActiveBUs((prevBUs) => prevBUs.filter((item) => item !== bu))
     } else {
-      setActiveBUs((prevBUs) => [...prevBUs, bu])
+      setActiveBUs([bu])
     }
   }
 
@@ -35,18 +36,21 @@ const JobFilter = ({ data, activeBUs, setActiveBUs }: Props) => {
       <FilterTitle title="Open Vacancies" length={calculatElementCount(data)} />
       <Border />
       <BUs>
-        <Tag active={activeBUs.length === 0} onClick={() => setActiveBUs([])}>
-          All Jobs
-        </Tag>
+        <CustomLink href="/jobs">
+          <Tag active={activeBUs.length === 0} onClick={() => setActiveBUs([])}>
+            All Jobs
+          </Tag>
+        </CustomLink>
         {businessUnits?.length
           ? businessUnits.map((bu: string) => (
-              <Tag
-                active={activeBUs.includes(bu)}
-                key={bu + '-tag'}
-                onClick={() => toggleBU(bu)}
-              >
-                {bu}
-              </Tag>
+              <CustomLink key={bu + '-tag'} href={`#${bu}`}>
+                <Tag
+                  active={activeBUs.includes(bu)}
+                  onClick={() => toggleBU(bu)}
+                >
+                  {bu}
+                </Tag>
+              </CustomLink>
             ))
           : null}
       </BUs>
@@ -92,4 +96,8 @@ const Border = styled.hr`
   margin: 0;
 `
 
-export default JobFilter
+const CustomLink = styled(Link)`
+  text-decoration: none;
+`
+
+export default JobPicker

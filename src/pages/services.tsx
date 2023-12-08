@@ -1,6 +1,6 @@
 import { Box } from '@/components/Box'
 import { SEO } from '@/components/SEO'
-import { ServiceFilter, ServiceList } from '@/components/Services'
+import { ServiceList, ServicePicker } from '@/components/Services'
 import ServiceContact from '@/components/Services/ServiceContact'
 import { ServiceType } from '@/components/Services/ServiceItem'
 import { breakpoints } from '@/configs/ui.configs'
@@ -22,7 +22,7 @@ const Page = ({ services }: any) => {
       <SEO />
       <div>
         <CustomBox marginBottom="180px">
-          <ServiceFilter
+          <ServicePicker
             services={services}
             activeServices={activeServices}
             setActiveServices={setActiveServices}

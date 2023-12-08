@@ -1,5 +1,5 @@
 import { Box } from '@/components/Box'
-import { JobFilter, JobList } from '@/components/Jobs'
+import { JobList, JobPicker } from '@/components/Jobs'
 import { SEO } from '@/components/SEO'
 import { breakpoints } from '@/configs/ui.configs'
 import { SubPageLayout } from '@/layouts/SubPageLayout'
@@ -21,7 +21,7 @@ const Page = ({ jobs }: any) => {
       <SEO />
       <div>
         <CustomBox marginBottom="180px">
-          <JobFilter
+          <JobPicker
             data={jobs}
             activeBUs={activeBUs}
             setActiveBUs={setActiveBUs}
