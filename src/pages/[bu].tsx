@@ -49,9 +49,12 @@ const Page = ({ bu, jobs }: any) => {
           setActiveMenus={setActiveMenus}
         />
         <BUMenus>
-          <Section id="feedback">
-            <BUTestimonials data={BU_DATA[bu]?.testimonials} />
-          </Section>
+          {BU_DATA[bu]?.testimonials?.length ? (
+            <Section id="feedback">
+              <BUTestimonials data={BU_DATA[bu]?.testimonials} />
+            </Section>
+          ) : null}
+
           <Section id="about">
             <BUAbout data={BU_DATA[bu]?.about} />
           </Section>

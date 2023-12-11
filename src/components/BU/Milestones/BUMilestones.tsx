@@ -15,7 +15,7 @@ const BUMilestones = ({ data }: Props) => {
           <ScrollableContainer>
             {data?.map((item: any, index: number) => (
               <Item key={'milestone-' + index}>
-                <GreyBox key={item.milestone}>
+                <GreyBox isFullWidth={data?.length === 2} key={item.milestone}>
                   <Year>{item.year}</Year>
                   <h3>{item.title}</h3>
                 </GreyBox>
@@ -67,6 +67,7 @@ const ScrollableContainer = styled.div`
 const Item = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 24px;
   border-radius: 2px;
 
@@ -81,9 +82,9 @@ const Item = styled.div`
   }
 `
 
-const GreyBox = styled.div`
+const GreyBox = styled.div<{ isFullWidth: boolean }>`
   display: flex;
-  width: 268px;
+  width: ${({ isFullWidth }) => (isFullWidth ? 'calc(100% - 32px)' : '268px')};
   height: 356px;
   padding: 16px;
   flex-direction: column;
