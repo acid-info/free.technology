@@ -53,6 +53,11 @@ const JobContainer = styled.div`
   @media (max-width: ${breakpoints.md}px) {
     padding: 16px 0;
   }
+
+  &:hover {
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.02);
+  }
 `
 
 const JobHeader = styled.div`
