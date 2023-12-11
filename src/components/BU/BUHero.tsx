@@ -84,7 +84,9 @@ export const BUHero = ({ data }: Props) => {
                         target="_blank"
                       >
                         {item?.label}
-                        <ArrowUpRight />
+                        <IconContainer>
+                          <ArrowUpRight />
+                        </IconContainer>
                       </CustomLink>
                     ))}
                   </Links>
@@ -405,7 +407,15 @@ const CustomLink = styled(Link)`
 
   &:hover {
     text-decoration: underline;
+
+    div {
+      visibility: visible;
+    }
   }
+`
+
+const IconContainer = styled.div`
+  visibility: hidden;
 `
 
 export default BUHero
