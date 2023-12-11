@@ -21,10 +21,11 @@ const Container = styled.div`
 `
 
 const Title = styled.p`
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 400;
   line-height: 130%;
-  padding-block: 20px;
+  padding-block: 24px;
+  margin-bottom: 32px;
 
   @media (max-width: ${breakpoints.xl}px) {
     font-size: 16px;
