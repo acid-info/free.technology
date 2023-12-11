@@ -72,6 +72,11 @@ const Container = styled.div`
         vertical-align: super;
         font-size: 12px;
       }
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-bottom: 16px;
     }
 
     margin-bottom: 74px;
