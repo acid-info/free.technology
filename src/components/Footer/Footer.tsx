@@ -220,7 +220,6 @@ const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 50%;
   padding-block: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 
@@ -237,6 +236,8 @@ const LinksContainer = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
+    width: 50%;
+
     h3 {
       font-size: 12px;
     }

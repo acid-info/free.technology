@@ -157,6 +157,8 @@ const EmailButton = styled.button`
 
 const CustomLink = styled(Link)`
   text-decoration: none;
+  width: fit-content;
+  margin: 0 auto;
 `
 
 export default ServiceContact
