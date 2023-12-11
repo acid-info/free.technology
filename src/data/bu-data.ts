@@ -294,7 +294,8 @@ const BU_DATA: any = {
       devStatus: 'In production',
       vertical: 'Ethereum client',
       founders: 'Jarrad Hope, Carl Bennetts',
-      achievements: 'Integrated with Status, Railgun, and the Graph',
+      achievements:
+        'Nimbus consensus client released, staking protocol partnerships established, Ethereum Foundation grant received',
       description:
         'A lightweight Ethereum client implementation designed to reduce hardware requirements for solo stakers and increase efficiency for institutional staking service operators.\n\nNimbus’ mission is to make staking accessible, thus promoting maximum network decentralisation. The Nimbus consensus client is in production, and an execution client is in development. By offering lightweight implementations for both consensus and execution layers, Nimbus simplifies operating an Ethereum node for hobbyists and institutional stakers alike.\n',
       connect: [
