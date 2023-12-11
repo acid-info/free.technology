@@ -1,7 +1,7 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import ArrowUpRight from '../Icons/ArrowUpRight'
+import { Button } from '../Button'
 
 export type ServiceType = {
   id: string
@@ -25,11 +25,8 @@ const ServiceItem = ({ service }: { service: ServiceType }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ServiceButton>
+          <ServiceButton color="white" icon>
             {service.button.text}
-            <IconContainer>
-              <ArrowUpRight />
-            </IconContainer>
           </ServiceButton>
         </ServiceButtonLink>
       )}
@@ -84,39 +81,10 @@ const ServiceButtonLink = styled(Link)`
   text-decoration: none;
 `
 
-const ServiceButton = styled.button`
-  height: 42px;
+const ServiceButton = styled(Button)`
+  width: 150px;
+  height: 40px;
   font-size: 14px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  border-radius: 2px;
-  background: rgba(0, 0, 0, 0.05);
-  position: relative;
-  color: black;
-  padding: 10px 49px 10px 18px;
-  cursor: pointer;
-  border: none;
-
-  user-select: none;
-  -webkit-user-select: none;
-
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &:hover {
-    background: #000;
-    color: white;
-
-    svg path {
-      stroke: white;
-    }
-  }
-`
-
-const IconContainer = styled.span`
-  position: absolute;
-  top: 7px;
-  right: 7px;
 `
 
 export default ServiceItem

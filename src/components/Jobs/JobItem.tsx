@@ -45,6 +45,14 @@ const JobContainer = styled.div`
   &:last-child {
     border-bottom: none;
   }
+
+  @media (max-width: ${breakpoints.xl}px) {
+    padding: 18px 0;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding: 16px 0;
+  }
 `
 
 const JobHeader = styled.div`

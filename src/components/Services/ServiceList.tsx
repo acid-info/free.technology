@@ -35,10 +35,11 @@ const Container = styled.div`
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   scroll-margin-top: 24px;
+  margin-bottom: 180px;
 
   @media (max-width: ${breakpoints.md}px) {
-    margin-top: 60px;
     flex-direction: column;
+    margin-bottom: 60px;
   }
 `
 
