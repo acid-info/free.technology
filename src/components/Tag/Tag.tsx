@@ -27,7 +27,7 @@ export const Tag = styled.div<{ active: boolean }>`
   }
 
   &:hover {
-    background-color: ${({ active }) =>
-      active ? 'black' : 'rgba(0, 0, 0, 0.03)'};
+    background-color: #000;
+    color: #fff;
   }
 `
