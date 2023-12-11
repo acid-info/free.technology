@@ -416,6 +416,10 @@ const CustomLink = styled(Link)`
 
 const IconContainer = styled.div`
   visibility: hidden;
+
+  @media (max-width: ${breakpoints.md}px) {
+    display: none;
+  }
 `
 
 export default BUHero

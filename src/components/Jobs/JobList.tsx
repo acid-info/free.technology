@@ -111,7 +111,6 @@ const NoJobs = styled.p`
   font-size: 36px;
   color: black;
   text-decoration: none;
-  /* padding-top: 24px; */
 
   display: flex;
   height: 100%;
@@ -138,6 +137,7 @@ const NoJobs = styled.p`
   @media (max-width: ${breakpoints.md}px) {
     font-size: 16px;
     line-height: 130%;
+    padding-top: 16px;
   }
 `
 

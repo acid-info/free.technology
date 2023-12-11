@@ -60,7 +60,6 @@ const ScrollableContainer = styled.div`
   @media (max-width: ${breakpoints.md}px) {
     width: calc(100vw - 8px);
     margin-top: 8px;
-    margin-left: -8px;
   }
 `
 

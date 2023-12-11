@@ -82,7 +82,7 @@ const Menus = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
-    width: calc(100vw - 16px);
+    width: calc(100vw - 32px);
     margin-left: -16px;
     padding: 16px;
   }
