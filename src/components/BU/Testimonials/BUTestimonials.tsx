@@ -74,7 +74,7 @@ const Item = styled.section`
 const Header = styled.div`
   width: 100%;
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 `
 
 const Icon = styled.div`
@@ -115,7 +115,7 @@ const Title = styled.h2`
   line-height: 42px;
   padding-top: 16px;
   width: 100%;
-  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
   margin-top: auto;
 
   @media (max-width: ${breakpoints.md}px) {
