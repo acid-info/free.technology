@@ -23,7 +23,7 @@ const BUMilestones = ({ data }: Props) => {
                   <Step>
                     <StepNumber>{index + 1}</StepNumber>
                   </Step>
-                  <Bar />
+                  <Bar isFullWidth={data?.length === 2} />
                 </TimelineContainer>
               </Item>
             ))}
@@ -131,10 +131,10 @@ const TimelineContainer = styled.div`
   position: relative;
 `
 
-const Bar = styled.hr`
+const Bar = styled.hr<{ isFullWidth: boolean }>`
   background-color: #000;
   opacity: 0.2;
-  width: 284px;
+  width: ${({ isFullWidth }) => (isFullWidth ? '100%' : '284px')};
   position: absolute;
   height: 1px;
   z-index: 0;

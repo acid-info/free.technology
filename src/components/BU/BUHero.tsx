@@ -147,12 +147,12 @@ const MarkContainer = styled.div`
   position: relative;
   width: 520px;
   height: 520px;
-  padding: 150px;
+  margin-left: 100px;
 
   @media (max-width: ${breakpoints.xl}px) {
     width: 390px;
     height: 390px;
-    padding: 113px;
+    margin-left: 50px;
   }
 
   @media (max-width: ${breakpoints.md}px) {
@@ -410,16 +410,14 @@ const CustomLink = styled(Link)`
 
     div {
       visibility: visible;
+      display: unset;
     }
   }
 `
 
 const IconContainer = styled.div`
   visibility: hidden;
-
-  @media (max-width: ${breakpoints.md}px) {
-    display: none;
-  }
+  display: none;
 `
 
 export default BUHero

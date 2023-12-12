@@ -1,6 +1,5 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
-import { Button } from '../Button'
 
 interface Props {
   children: React.ReactNode
@@ -12,9 +11,6 @@ export const Mission = ({ title, children }: Props) => {
     <Container>
       <Header>
         <Title>{title}</Title>
-        <Button width="150px" padding="10px 34px" color="white">
-          Learn more
-        </Button>
       </Header>
       <Content>{children}</Content>
     </Container>
