@@ -1,7 +1,7 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import React from 'react'
-import { GIFContainer } from './GIFContainer'
+import { HeroAssetContainer } from './HeroAssetContainer'
 
 export type HomePageProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
@@ -12,7 +12,7 @@ export const Home: React.FC<HomePageProps> = ({ children, ...props }) => {
   return (
     <Root {...props}>
       <Content>{children}</Content>
-      <GIFContainer />
+      <HeroAssetContainer />
     </Root>
   )
 }
