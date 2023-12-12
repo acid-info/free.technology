@@ -19,8 +19,8 @@ const BUTestimonials = ({ data }: Props) => {
             </Header>
             <FlexContainer>
               <Paragraph>{item.quote}</Paragraph>
-              <Title>{item.project}</Title>
             </FlexContainer>
+            <Title>{item.project}</Title>
           </Item>
         ))}
       </ItemContainer>
@@ -58,16 +58,17 @@ const ItemContainer = styled.div`
   }
 `
 
-const Item = styled.section`
+const Item = styled.div`
   flex-shrink: 0;
   box-sizing: border-box;
   border-radius: 2px;
   background: rgba(0, 0, 0, 0.03);
   padding: 16px;
+  height: auto;
 
   @media (max-width: ${breakpoints.md}px) {
     width: 275px;
-    height: 384px;
+    min-height: 384px;
   }
 `
 
@@ -89,16 +90,11 @@ const Icon = styled.div`
 `
 
 const Paragraph = styled.p`
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
-  align-self: stretch;
-  overflow: hidden;
-
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   opacity: 0.54;
+  margin-block: 16px;
 
   @media (max-width: ${breakpoints.lg}px) {
     line-height: 126%;
@@ -120,22 +116,19 @@ const Title = styled.h2`
 
   @media (max-width: ${breakpoints.md}px) {
     font-size: 22px;
-    padding-top: 16px;
   }
 `
 
 const FlexContainer = styled.div`
   display: flex;
-  height: 226px;
-  padding-top: 16px;
+  min-height: 226px;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
 
   @media (max-width: ${breakpoints.md}px) {
-    padding-top: 16px;
-    height: 282px;
+    min-height: 282px;
   }
 `
 

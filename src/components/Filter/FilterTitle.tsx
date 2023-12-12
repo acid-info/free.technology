@@ -34,9 +34,6 @@ const Container = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}px) {
-    font-size: 22px;
-    line-height: 122%;
-
     sup {
       font-size: 12px;
       margin-left: 0px;
@@ -56,6 +53,11 @@ const Title = styled.h3`
     font-size: 38px;
     line-height: 45px;
     margin-bottom: 18px;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    font-size: 22px;
+    line-height: 122%;
   }
 `
 

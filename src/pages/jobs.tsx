@@ -9,7 +9,7 @@ import { getJobs } from '../../utils/getJobs'
 
 const CustomBox = styled(Box)`
   @media (max-width: ${breakpoints.xl}px) {
-    margin-bottom: 130px;
+    margin-bottom: 54px;
   }
 `
 
