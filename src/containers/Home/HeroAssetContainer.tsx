@@ -5,7 +5,7 @@ import React from 'react'
 export const HeroAssetContainer: React.FC = () => {
   return (
     <Container>
-      <Image src="hero-image.png" alt="right-side" />
+      <Image src="right-side.gif" alt="right-side" />
     </Container>
   )
 }
