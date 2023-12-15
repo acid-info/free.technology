@@ -43,6 +43,8 @@ const Container = styled.div<{ isOpen: boolean }>`
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   transition: background-color 0.3s ease, color 0.3s ease;
 
+  user-select: none;
+
   button {
     transition: transform 0.3s ease;
   }
