@@ -26,7 +26,7 @@ export default function SEO({
   locale,
   site_name,
   pageURL,
-  imageUrl,
+  imageUrl = `${SITE_URL}/api/og`,
   tags = [],
   pagePath = '',
   noIndex = false,
