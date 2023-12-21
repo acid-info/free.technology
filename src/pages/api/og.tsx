@@ -36,7 +36,27 @@ export default async function handler(request: NextRequest) {
             gap: '4px',
           }}
         >
-          <div style={{ fontSize: '53px' }}>Institute of Free Technologies</div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              fontSize: '53px',
+            }}
+          >
+            Institute of Free Technologies
+            <div
+              style={{
+                verticalAlign: 'super',
+                fontSize: '30px',
+                position: 'relative',
+                top: '-10px',
+                left: '-6px',
+                transform: 'rotate(180deg)',
+              }}
+            >
+              ©
+            </div>
+          </div>
           <div style={{ fontSize: '53px', opacity: '0.3' }}>
             Fostering innovation, defending digital liberties
           </div>
