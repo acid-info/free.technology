@@ -18,7 +18,7 @@ const Page = ({ jobs }: any) => {
 
   return (
     <>
-      <SEO />
+      <SEO pagePath={`/jobs`} />
       <div>
         <CustomBox marginBottom="180px">
           <JobPicker

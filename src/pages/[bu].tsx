@@ -39,7 +39,7 @@ const Page = ({ bu, jobs }: any) => {
 
   return (
     <>
-      <SEO />
+      <SEO pagePath={`/${bu}`} />
       {/* <BUVideo /> */}
       <div>
         <BUHero data={BU_DATA[bu]?.hero} />

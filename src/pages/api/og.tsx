@@ -1,3 +1,4 @@
+import { removeSlashAndCapitalize } from '@/utils/og.utils'
 import { ImageResponse } from '@vercel/og'
 import { handleMethodNotAllowedResponse } from 'next/dist/server/future/route-modules/helpers/response-handlers'
 import { NextRequest } from 'next/server'
@@ -12,6 +13,10 @@ export default async function handler(request: NextRequest) {
   const helvetica = await fetch(
     new URL('../../../public/fonts/Helvetica.ttf', import.meta.url),
   ).then((res) => res.arrayBuffer())
+  const { href } = request.nextUrl
+
+  const searchParams = new URL(href).searchParams
+  const pagePath = searchParams.get('pagePath') || '/'
 
   return new ImageResponse(
     (
@@ -57,9 +62,30 @@ export default async function handler(request: NextRequest) {
               ©
             </div>
           </div>
+
           <div style={{ fontSize: '53px', opacity: '0.3' }}>
             Fostering innovation, defending digital liberties
           </div>
+
+          {pagePath === '/' ? null : pagePath === '/services' ? (
+            <div style={{ fontSize: '50px', marginTop: '80px' }}>Services</div>
+          ) : pagePath === '/jobs' ? (
+            <div style={{ fontSize: '50px', marginTop: '80px' }}>Jobs</div>
+          ) : (
+            <div
+              style={{
+                fontSize: '50px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '24px',
+                marginTop: '80px',
+              }}
+            >
+              <div style={{ opacity: '0.4' }}>Porfolio</div>
+              <div>/</div>
+              <div>{removeSlashAndCapitalize(pagePath)}</div>
+            </div>
+          )}
         </div>
         <div style={{ fontSize: '53px', marginTop: 'auto' }}>IFT</div>
       </div>

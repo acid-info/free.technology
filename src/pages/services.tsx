@@ -19,7 +19,7 @@ const Page = ({ services }: any) => {
 
   return (
     <>
-      <SEO />
+      <SEO pagePath={`/services`} />
       <div>
         <CustomBox marginBottom="180px">
           <ServicePicker
