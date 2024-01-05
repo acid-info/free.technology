@@ -75,7 +75,7 @@ export async function getStaticProps() {
       id: '5',
       title: 'Branding and awareness',
       description:
-        'Ned Karlovich draws on experience as Creative Director at Nike Inc. and staat to lead the IFT’s creative branding studio, Acid. The studio works with our startups to deploy high-impact campaigns, raising brand awareness among their target markets both within the web3 ecosystem and beyond it. IFT startups enjoy full access to the studio, which comprises marketing, digital communications, design, web development, and events management specialists.',
+        'Ned Karlovich draws on experience as Creative Director at Nike Inc, Magic Leap and R/GA to lead the IFT’s creative branding studio, Acid. The studio works with our startups to deploy high-impact campaigns, raising brand awareness among their target markets both within the web3 ecosystem and beyond it. IFT startups enjoy full access to the studio, which comprises marketing, digital communications, design, web development, and events management specialists.',
       button: {
         text: 'Discover Acid',
         url: 'https://acid.info/',
