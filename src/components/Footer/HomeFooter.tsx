@@ -219,6 +219,7 @@ const LinksColumn = styled.div`
     line-height: 130%;
     color: white;
     text-decoration: none;
+    width: fit-content;
 
     &:hover {
       text-decoration: underline;
