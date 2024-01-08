@@ -14,49 +14,41 @@ export const breakpoints = {
 export const footerBUs = [
   {
     name: 'Waku',
-    link: '#',
+    link: 'https://waku.org/',
   },
   {
     name: 'Nimbus',
-    link: '#',
+    link: 'https://nimbus.team/',
   },
   {
     name: 'Codex',
-    link: '#',
+    link: 'https://codex.storage/',
   },
   {
     name: 'Nomos',
-    link: '#',
+    link: 'https://nomos.tech/',
   },
   {
     name: 'Status',
-    link: '#',
+    link: 'https://status.app/',
   },
   {
     name: 'Keycard',
-    link: '#',
+    link: 'https://keycard.tech/',
   },
   {
     name: 'Logos',
-    link: '#',
+    link: 'https://logos.co/',
   },
 ]
 
 export const footerSocial = [
-  {
-    name: 'LinkedIn',
-    link: '#',
-  },
-  {
-    name: 'Vimeo',
-    link: '#',
-  },
-  {
-    name: 'Youtube',
-    link: '#',
-  },
+  // {
+  //   name: 'LinkedIn',
+  //   link: '#',
+  // },
   {
     name: 'X',
-    link: '#',
+    link: 'https://twitter.com/InstituteFT',
   },
 ]
