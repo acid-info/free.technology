@@ -106,8 +106,8 @@ export const BUHero = ({ data }: Props) => {
             <table>
               <thead>
                 <tr>
-                  <th>Connect:</th>
-                  <th>Programme lead:</th>
+                  <CustomTh>Connect:</CustomTh>
+                  <CustomTh>Programme lead:</CustomTh>
                 </tr>
               </thead>
               <tbody>
@@ -300,7 +300,7 @@ const Content = styled.div`
   table td,
   table th {
     width: calc(100% / 2);
-    vertical-align: baseline;
+    vertical-align: top;
   }
 
   tr > td > a {
@@ -455,6 +455,16 @@ const SocialIcon = styled(Image)`
   @media (max-width: ${breakpoints.sm}px) {
     width: 18px;
     height: 18px;
+  }
+`
+
+const CustomTh = styled.th`
+  padding-top: 20px !important;
+  padding-bottom: 16px !important;
+
+  @media (max-width: ${breakpoints.sm}px) {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
   }
 `
 
