@@ -11,13 +11,27 @@ interface Props {
 
 export const PortfolioItem = ({ title, mark, children }: Props) => {
   const [open, setOpen] = useState<boolean>(false)
+  const [isHovered, setIsHovered] = useState<boolean>(false)
 
   const handleClick = () => {
     setOpen(!open)
   }
 
+  const handleMouseOver = () => {
+    setIsHovered(true)
+  }
+
+  const handleMouseOut = () => {
+    setIsHovered(false)
+  }
+
   return (
-    <Container isOpen={open}>
+    <Container
+      isOpen={open}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
+      <LeftSpan isOpen={open} isHovered={isHovered} />
       <Header onClick={handleClick}>
         <Title>
           <Image src={mark} width={34} height={34} alt={title + '-logo'} />
@@ -31,6 +45,7 @@ export const PortfolioItem = ({ title, mark, children }: Props) => {
         </Toggle>
       </Header>
       {open && <Content>{children}</Content>}
+      <RightSpan isOpen={open} isHovered={isHovered} />
     </Container>
   )
 }
@@ -42,6 +57,7 @@ const Container = styled.div<{ isOpen: boolean }>`
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
 
   user-select: none;
 
@@ -90,7 +106,7 @@ const Container = styled.div<{ isOpen: boolean }>`
 
   &:hover {
     background: ${({ isOpen }) =>
-      isOpen ? 'transparent' : 'rgba(0, 0, 0, 0.05)'};
+      isOpen ? 'transparent' : 'rgba(0, 0, 0, 0.02)'};
 
     button {
       transform: ${({ isOpen }) => (!isOpen ? 'rotate(45deg)' : 'rotate(0)')};
@@ -220,6 +236,31 @@ const ToggleButtonImage = styled.img`
     width: 18px;
     height: 18px;
   }
+`
+
+const HoverAttachment = styled.span<{ isOpen: boolean; isHovered: boolean }>`
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  background: ${({ isHovered, isOpen }) =>
+    isOpen
+      ? 'transparent'
+      : !isHovered
+      ? 'transparent'
+      : 'rgba(0, 0, 0, 0.02)'};
+`
+
+const LeftSpan = styled(HoverAttachment)`
+  position: absolute;
+  left: -16px;
+`
+
+const RightSpan = styled(HoverAttachment)`
+  position: absolute;
+  right: -16px;
 `
 
 export default PortfolioItem
