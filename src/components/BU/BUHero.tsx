@@ -4,13 +4,45 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { businessUnitMark } from '../../../utils/bu'
 import { Button } from '../Button'
-import ArrowUpRight from '../Icons/ArrowUpRight'
 
 interface Props {
   data: any
 }
 
 export const BUHero = ({ data }: Props) => {
+  const renderSocialIcon = (label: string) => {
+    switch (label) {
+      case 'X':
+        return <SocialIcon src="/icons/x.svg" width={24} height={24} alt="X" />
+      case 'Discord':
+        return (
+          <SocialIcon
+            src="/icons/discord.svg"
+            width={24}
+            height={24}
+            alt="Discord"
+          />
+        )
+      case 'Docs':
+        return (
+          <SocialIcon src="/icons/docs.svg" width={24} height={24} alt="Docs" />
+        )
+      case 'Forum':
+        return (
+          <SocialIcon
+            src="/icons/forum.svg"
+            width={24}
+            height={24}
+            alt="Forum"
+          />
+        )
+      default:
+        return (
+          <SocialIcon src="/icons/docs.svg" width={24} height={24} alt="Docs" />
+        )
+    }
+  }
+
   return (
     <Container>
       <Left>
@@ -83,10 +115,7 @@ export const BUHero = ({ data }: Props) => {
                         href={item.link}
                         target="_blank"
                       >
-                        {item?.label}
-                        <IconContainer>
-                          <ArrowUpRight />
-                        </IconContainer>
+                        {renderSocialIcon(item?.label)}
                       </CustomLink>
                     ))}
                   </Links>
@@ -415,9 +444,14 @@ const CustomLink = styled(Link)`
   }
 `
 
-const IconContainer = styled.div`
-  visibility: hidden;
-  display: none;
+const SocialIcon = styled(Image)`
+  width: 24px;
+  height: 24px;
+
+  @media (max-width: ${breakpoints.sm}px) {
+    width: 18px;
+    height: 18px;
+  }
 `
 
 export default BUHero
