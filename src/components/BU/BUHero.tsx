@@ -36,6 +36,10 @@ export const BUHero = ({ data }: Props) => {
             alt="Forum"
           />
         )
+      case 'Blog':
+        return (
+          <SocialIcon src="/icons/blog.svg" width={24} height={24} alt="Blog" />
+        )
       default:
         return (
           <SocialIcon src="/icons/docs.svg" width={24} height={24} alt="Docs" />
