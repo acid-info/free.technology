@@ -7,8 +7,6 @@ import { useEffect, useState } from 'react'
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
-  const isTransparent = router.pathname === '/'
-
   const background = 'black'
 
   useEffect(() => {
@@ -24,11 +22,7 @@ export const Navbar = () => {
   }, [])
 
   return (
-    <Container
-      scrolled={scrolled}
-      isTransparent={isTransparent}
-      background={background}
-    >
+    <Container scrolled={scrolled} background={background}>
       <span>
         <Link href="/">
           <p>HOME</p>
@@ -49,7 +43,6 @@ export const Navbar = () => {
 
 const Container = styled.nav<{
   scrolled: boolean
-  isTransparent: boolean
   background: string
 }>`
   position: fixed;
@@ -58,8 +51,8 @@ const Container = styled.nav<{
   right: 0;
   z-index: 1000;
   display: flex;
-  background-color: ${({ isTransparent, scrolled, background }) =>
-    !scrolled && isTransparent ? background : scrolled ? 'black' : background};
+  background-color: ${({ scrolled, background }) =>
+    !scrolled ? background : scrolled ? 'black' : background};
 
   height: ${uiConfigs.navbarHeight}px;
   padding: 4px 16px;
@@ -88,8 +81,7 @@ const Container = styled.nav<{
   }
 
   @media (max-width: ${breakpoints.md}px) {
-    background-color: ${({ isTransparent, scrolled }) =>
-      !scrolled && isTransparent ? 'transparent' : 'black'};
+    background-color: black;
 
     span {
       gap: 10px 20px;
