@@ -87,7 +87,24 @@ export default async function handler(request: NextRequest) {
             </div>
           )}
         </div>
-        <div style={{ fontSize: '53px', marginTop: 'auto' }}>IFT</div>
+        <div
+          style={{
+            display: 'flex',
+            width: '100vw',
+            height: '50vh',
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+          }}
+        >
+          <img
+            src="https://free.technology/og/og-asset.png"
+            width={'100%'}
+            height={'100%'}
+            alt="og-asset"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
       </div>
     ),
     {
