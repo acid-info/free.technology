@@ -7,6 +7,8 @@ type Props = {
 }
 
 const BUMilestones = ({ data }: Props) => {
+  const fullWidth = data?.length <= 2
+
   return (
     <Container>
       <BUSection
@@ -15,7 +17,11 @@ const BUMilestones = ({ data }: Props) => {
           <ScrollableContainer>
             {data?.map((item: any, index: number) => (
               <Item key={'milestone-' + index}>
-                <GreyBox isFullWidth={data?.length === 2} key={item.milestone}>
+                <GreyBox
+                  isFullWidth={fullWidth}
+                  isTransparent={false}
+                  key={item.milestone}
+                >
                   <Year>{item.year}</Year>
                   <h3>{item.title}</h3>
                 </GreyBox>
@@ -23,10 +29,24 @@ const BUMilestones = ({ data }: Props) => {
                   <Step>
                     <StepNumber>{index + 1}</StepNumber>
                   </Step>
-                  <Bar isFullWidth={data?.length === 2} />
+                  <Bar isFullWidth={fullWidth} />
                 </TimelineContainer>
               </Item>
             ))}
+            {data?.length === 1 && (
+              <Item key={'milestone-placeholder'}>
+                <GreyBox isFullWidth={true} isTransparent={true}>
+                  <Year>{data[0].year + '+'}</Year>
+                  <h3>{'More to come'}</h3>
+                </GreyBox>
+                <TimelineContainer>
+                  <Step>
+                    <StepNumber>{2}</StepNumber>
+                  </Step>
+                  <Bar isFullWidth={true} />
+                </TimelineContainer>
+              </Item>
+            )}
           </ScrollableContainer>
         }
       />
@@ -81,7 +101,7 @@ const Item = styled.div`
   }
 `
 
-const GreyBox = styled.div<{ isFullWidth: boolean }>`
+const GreyBox = styled.div<{ isFullWidth: boolean; isTransparent?: boolean }>`
   display: flex;
   width: ${({ isFullWidth }) => (isFullWidth ? 'calc(100% - 32px)' : '268px')};
   height: 356px;
@@ -90,7 +110,10 @@ const GreyBox = styled.div<{ isFullWidth: boolean }>`
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 2px;
-  background: rgba(0, 0, 0, 0.03);
+  background: ${({ isTransparent }) =>
+    isTransparent ? 'transparent' : 'rgba(0, 0, 0, 0.03);'};
+  border: ${({ isTransparent }) =>
+    isTransparent ? '1px dashed rgba(0, 0, 0, 0.18)' : 'none'};
   flex-shrink: 0;
 
   h3 {
