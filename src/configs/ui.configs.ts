@@ -43,10 +43,10 @@ export const footerBUs = [
 ]
 
 export const footerSocial = [
-  // {
-  //   name: 'LinkedIn',
-  //   link: '#',
-  // },
+  {
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/company/institute-of-free-technologies/',
+  },
   {
     name: 'X',
     link: 'https://twitter.com/InstituteFT',
