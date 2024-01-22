@@ -44,7 +44,9 @@ export const Footer = () => {
             Institute of Free Technology.
             <br />
             <span>©</span>
-            {new Date().getFullYear()}
+            {new Date().getFullYear()} •{' '}
+            <PageLink href={'/terms-of-use'}>Terms of Use</PageLink> •{' '}
+            <PageLink href={'/privacy-policy'}>Privacy Policy</PageLink>
           </p>
           <p>All Rights Reserved.</p>
         </Org>
@@ -319,6 +321,19 @@ const Bottom = styled.div`
 const CustomLink = styled(Link)`
   text-decoration: none;
   width: fit-content;
+`
+
+const PageLink = styled(CustomLink)`
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+
+  &:visited {
+    color: white;
+  }
 `
 
 export default Footer
