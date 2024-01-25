@@ -44,7 +44,7 @@ const BU_DATA: any = {
       description:
         'A family of generalised P2P communications protocols. The messaging layer of the Logos stack. Waku is private, censorship resistant, modular, and scalable by design. This combination of features makes Waku suitable to run in a wide range of environments, including phones and browsers, while upholding its users’ rights to private communications.',
       connect: [
-        { link: 'https://docs.waku.org/', label: 'Docs' },
+        // { link: 'https://docs.waku.org/', label: 'Docs' },
         { link: 'https://x.com/waku_org', label: 'X' },
         { link: 'https://discord.waku.org/', label: 'Discord' },
       ],
@@ -106,7 +106,7 @@ const BU_DATA: any = {
       description:
         'A decentralised storage engine with strong censorship resistance and retrievability guarantees. The data archiving layer of the Logos stack. Codex leverages a novel combination of cutting-edge features, including erasure coding, a lazy repair system, ZK-based remote auditing, and incentivisation mechanisms to ensure reliability, data durability, efficiency, and cost effectiveness.',
       connect: [
-        { link: 'https://docs.codex.storage/', label: 'Docs' },
+        // { link: 'https://docs.codex.storage/', label: 'Docs' },
         { link: 'https://blog.codex.storage/', label: 'Blog' },
         { link: 'https://x.com/Codex_storage', label: 'X' },
         { link: 'https://discord.gg/2NXGrsqmDq', label: 'Discord' },
