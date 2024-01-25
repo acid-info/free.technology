@@ -29,7 +29,7 @@ const Page = ({ services }: any) => {
           />
         </CustomBox>
         <Box>
-          <ServiceList services={services} activeServices={activeServices} />
+          <ServiceList services={services} />
           <ServiceContact />
         </Box>
       </div>

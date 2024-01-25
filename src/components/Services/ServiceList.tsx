@@ -5,28 +5,23 @@ import ServiceItem, { ServiceType } from './ServiceItem' // adjust path accordin
 
 type Props = {
   services: ServiceType[]
-  activeServices: string[]
 }
 
-const ServiceList = ({ services, activeServices }: Props) => {
+const ServiceList = ({ services }: Props) => {
   if (services == null) {
     return <div>Something went wrong</div>
   }
 
-  return services
-    .filter((service) =>
-      !activeServices?.length ? true : activeServices.includes(service.title),
-    )
-    .map((service, idx) => (
-      <Container id={toBuInUrl(service.title)} key={idx + '-services'}>
-        <TitleContainer>
-          <Title>{service.title}</Title>
-        </TitleContainer>
-        <Service>
-          <ServiceItem key={service.id} service={service} />
-        </Service>
-      </Container>
-    ))
+  return services.map((service, idx) => (
+    <Container id={toBuInUrl(service.title)} key={idx + '-services'}>
+      <TitleContainer>
+        <Title>{service.title}</Title>
+      </TitleContainer>
+      <Service>
+        <ServiceItem key={service.id} service={service} />
+      </Service>
+    </Container>
+  ))
 }
 
 const Container = styled.div`
