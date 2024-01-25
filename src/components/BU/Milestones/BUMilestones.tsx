@@ -103,7 +103,7 @@ const Item = styled.div`
 
 const GreyBox = styled.div<{ isFullWidth: boolean; isTransparent?: boolean }>`
   display: flex;
-  width: ${({ isFullWidth }) => (isFullWidth ? 'calc(100% - 32px)' : '268px')};
+  width: ${({ isFullWidth }) => (isFullWidth ? 'calc(100% - 34px)' : '268px')};
   height: 356px;
   padding: 16px;
   flex-direction: column;
