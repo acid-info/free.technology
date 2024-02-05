@@ -48,7 +48,7 @@ export default async function handler(request: NextRequest) {
               fontSize: '53px',
             }}
           >
-            Institute of Free Technologies
+            Institute of Free Technology
             <div
               style={{
                 verticalAlign: 'super',
