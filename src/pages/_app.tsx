@@ -30,6 +30,13 @@ export default function App({ Component, pageProps }: AppLayoutProps) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link
+          rel="preload"
+          href={'/videos/output.webm'}
+          as="video"
+          fetchPriority="high"
+        />
       </Head>
       <Global
         styles={css`
