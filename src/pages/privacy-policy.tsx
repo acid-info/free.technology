@@ -4,7 +4,7 @@ import { SubPageLayout } from '../layouts/SubPageLayout'
 
 const content = `# IFT Studio Pte Ltd. Website - Privacy Policy
 
-_Last updated 22 January 2024_
+_Last updated 14 February 2024_
 
 This Privacy Policy is intended to inform users of our approach to privacy in respect of this website (“**Website**”). In this regard, if you are visiting our Website, this Privacy Policy applies to you. 
 
@@ -78,7 +78,7 @@ We may modify or replace any part of this Privacy Policy at any time and without
 
 ## **9. Contact information**
 
-To the extent that you have any questions about the Privacy Policy, please contact us through the relevant channels. 
+To the extent that you have any questions about the Privacy Policy, please contact us please contact us at legal@free.technology.
 
 This document is licensed under CC-BY-SA.
 `
