@@ -305,7 +305,7 @@ const BU_DATA: any = {
       ],
       website: 'https://nimbus.team/',
       github: 'https://github.com/status-im/nimbus',
-      lead: 'Zahary Karadjov, Jacek Sieka',
+      lead: 'Dustin Brody, Jacek Sieka',
     },
     about: {
       description:
