@@ -241,7 +241,7 @@ const BU_DATA: any = {
       ],
       website: 'https://status.im/',
       github: 'https://github.com/status-im',
-      lead: 'John Lea',
+      lead: 'John',
     },
     about: {
       description:
