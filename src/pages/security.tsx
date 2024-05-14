@@ -4,7 +4,7 @@ import { SubPageLayout } from '../layouts/SubPageLayout'
 
 const content = `# Security
 
-We take security seriously at IFT and across the <a href="https://free.technology" target="_blank">Institute of Free Technology</a> and its affiliates. 
+We take security seriously at IFT and across the Institute of Free Technology and its affiliates. 
 
 Please report any security vulnerabilities and incidents you encounter via <a href="mailto:security@free.technology">security@free.technology</a>. 
 
