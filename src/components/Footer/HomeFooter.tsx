@@ -1,4 +1,9 @@
-import { breakpoints, footerBUs, footerSocial } from '@/configs/ui.configs'
+import {
+  breakpoints,
+  footerBUs,
+  footerLegal,
+  footerSocial,
+} from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -33,18 +38,29 @@ export const HomeFooter = () => {
       </Description>
       <Links>
         <LinksColumn>
-          <h3>Infrastructure</h3>
-          {footerBUs.map((bu) => (
-            <a key={bu.name} href={bu.link} target="_blank">
-              {bu.name}
-            </a>
-          ))}
-        </LinksColumn>
-        <LinksColumn>
+          <div className="border-no-margin"></div>
           <h3>Social</h3>
           {footerSocial.map((item) => (
             <a key={item.name} href={item.link} target="_blank">
               {item.name}
+            </a>
+          ))}
+
+          <div className="border"></div>
+
+          <h3>Legal</h3>
+          {footerLegal.map((item) => (
+            <a key={item.name} href={item.link}>
+              {item.name}
+            </a>
+          ))}
+        </LinksColumn>
+        <LinksColumn>
+          <div className="border-no-margin"></div>
+          <h3>Infrastructure</h3>
+          {footerBUs.map((bu) => (
+            <a key={bu.name} href={bu.link} target="_blank">
+              {bu.name}
             </a>
           ))}
         </LinksColumn>
@@ -54,9 +70,7 @@ export const HomeFooter = () => {
           Institute of Free Technology.
           <br />
           <span>©</span>
-          {new Date().getFullYear()} •{' '}
-          <PageLink href={'/terms-of-use'}>Terms of Use</PageLink> •{' '}
-          <PageLink href={'/privacy-policy'}>Privacy Policy</PageLink>
+          {new Date().getFullYear()}
         </p>
         <p>All Rights Reserved.</p>
       </Bottom>
@@ -195,9 +209,9 @@ const Description = styled.div`
 
 const Links = styled.div`
   display: flex;
+  gap: 20px;
   padding-top: 20px;
   padding-bottom: 64px;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
 
   @media (max-width: ${breakpoints.xl}px) {
     padding-bottom: 48px;
@@ -207,7 +221,7 @@ const Links = styled.div`
 const LinksColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   width: 50%;
 
   h3 {
@@ -226,6 +240,17 @@ const LinksColumn = styled.div`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .border {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 16px;
+    margin-bottom: 12px;
+  }
+
+  .border-no-margin {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 12px;
   }
 
   @media (max-width: ${breakpoints.xl}px) {

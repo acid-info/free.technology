@@ -52,3 +52,18 @@ export const footerSocial = [
     link: 'https://twitter.com/InstituteFT',
   },
 ]
+
+export const footerLegal = [
+  {
+    name: 'Terms of Use',
+    link: '/terms-of-use',
+  },
+  {
+    name: 'Privacy Policy',
+    link: '/privacy-policy',
+  },
+  {
+    name: 'Security',
+    link: '/security',
+  },
+]

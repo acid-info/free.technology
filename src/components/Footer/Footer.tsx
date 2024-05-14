@@ -46,27 +46,28 @@ export const Footer = () => {
             <span>©</span>
             {new Date().getFullYear()} •{' '}
             <PageLink href={'/terms-of-use'}>Terms of Use</PageLink> •{' '}
-            <PageLink href={'/privacy-policy'}>Privacy Policy</PageLink>
+            <PageLink href={'/privacy-policy'}>Privacy Policy</PageLink> •{' '}
+            <PageLink href={'/security'}>Security</PageLink>
           </p>
           <p>All Rights Reserved.</p>
         </Org>
         <Links>
-          <LinksContainer>
-            <h3>Infrastructure</h3>
-            <LinkItems>
-              {footerBUs.map((bu) => (
-                <a key={bu.name} href={bu.link} target="_blank">
-                  {bu.name}
-                </a>
-              ))}
-            </LinkItems>
-          </LinksContainer>
           <LinksContainer>
             <h3>Social</h3>
             <LinkItems>
               {footerSocial.map((item) => (
                 <a key={item.name} href={item.link} target="_blank">
                   {item.name}
+                </a>
+              ))}
+            </LinkItems>
+          </LinksContainer>
+          <LinksContainer>
+            <h3>Infrastructure</h3>
+            <LinkItems>
+              {footerBUs.map((bu) => (
+                <a key={bu.name} href={bu.link} target="_blank">
+                  {bu.name}
                 </a>
               ))}
             </LinkItems>
