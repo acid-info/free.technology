@@ -6,9 +6,9 @@ const content = `# Security
 
 We take security seriously at IFT and across the Institute of Free Technology and its affiliates. 
 
-Please report any security vulnerabilities and incidents you encounter via <a href="mailto:security@free.technology">security@free.technology</a>. 
+Please report any security incidents via <a href="mailto:security@free.technology">security@free.technology</a>. 
 
-Participate in our bounty programme at <a href="https://hackenproof.com/status-dot-app" target="_blank">HackenProof</a> to help ensure our protocols remain secure.
+Please report any discovered vulnerabilities in our bounty programme at <a href="https://hackenproof.com/status-dot-app" target="_blank">HackenProof</a> to help ensure our protocols and software remain secure.
 `
 
 const Page = () => {
