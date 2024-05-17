@@ -186,7 +186,8 @@ const BU_DATA: any = {
       devStatus: 'Research',
       vertical: 'Layer-1',
       founders: 'Jarrad Hope, Carl Bennetts',
-      achievements: 'Carnot consensus algorithm specification written',
+      achievements:
+        'Whitepaper and Architecture, working on specifications and first implementation',
       description:
         'A sovereign, modular, zk-encrypted network of blockchains. The trustless agreements layer of the Logos stack. The forthcoming Nomos network will provide a common infrastructure layer upon which communities and aspiring network states can build social, governance, and financial services that uphold their community members’ fundamental rights and values.',
       connect: [
@@ -195,7 +196,7 @@ const BU_DATA: any = {
       ],
       website: 'https://nomos.tech/',
       github: 'https://github.com/logos-co',
-      lead: 'Álvaro Castro Castilla',
+      lead: 'Álvaro',
     },
     about: {
       description:
