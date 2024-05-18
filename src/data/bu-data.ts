@@ -196,7 +196,7 @@ const BU_DATA: any = {
       ],
       website: 'https://nomos.tech/',
       github: 'https://github.com/logos-co',
-      lead: 'Álvaro',
+      lead: '-',
     },
     about: {
       description:
