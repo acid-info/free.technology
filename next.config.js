@@ -16,6 +16,36 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
+  async headers() {
+    return [
+      {
+        source: '/.well-known/matrix/client',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+          {
+            key: 'Content-Type',
+            value: 'application/json',
+          },
+        ],
+      },
+      {
+        source: '/.well-known/matrix/server',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+          {
+            key: 'Content-Type',
+            value: 'application/json',
+          },
+        ],
+      },
+    ]
+  },
 }
 
 export default withMDX(nextConfig)
