@@ -11,8 +11,8 @@ const BU_DATA: any = {
         'A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.',
       connect: [
         { link: 'http://forum.logos.co', label: 'Forum' },
-        { link: 'https://x.com/Logos_state', label: 'X' },
-        { link: 'http://www.discord.gg/logos-state', label: 'Discord' },
+        { link: 'https://x.com/Logos_network', label: 'X' },
+        { link: 'https://discord.com/invite/logosnetwork', label: 'Discord' },
       ],
       website: 'https://logos.co/',
       github: 'https://github.com/logos-co',
