@@ -1,13 +1,8 @@
+#!/usr/bin/env groovy
+library 'status-jenkins-lib@v1.9.4'
+
 pipeline {
   agent { label 'linux' }
-
-  parameters {
-    string(
-      name: 'IMAGE_TAG',
-      defaultValue: params.IMAGE_TAG ?: '',
-      description: 'Optional Docker image tag to push.'
-    )
-  }
 
   options {
     disableConcurrentBuilds()
@@ -19,45 +14,42 @@ pipeline {
   }
 
   environment {
-    IMAGE_NAME = 'statusteam/free-technology'
-    NEXT_PUBLIC_SITE_URL = "https://${env.JOB_BASE_NAME}"
+    GIT_COMMITTER_NAME = 'status-im-auto'
+    GIT_COMMITTER_EMAIL = 'auto@status.im'
   }
 
   stages {
-    stage('Build') {
-      steps {
+    stage('Install') {
+      steps { 
         script {
-          withCredentials([
-            string(
-              credentialsId: 'free-technology-github-token',
-              variable: 'NEXT_GITHUB_PERSONAL_ACCESS_TOKEN'
-            ),
-          ]) {
-            image = docker.build(
-              "${IMAGE_NAME}:${GIT_COMMIT.take(8)}",
-              ["--build-arg='NEXT_GITHUB_PERSONAL_ACCESS_TOKEN=${NEXT_GITHUB_PERSONAL_ACCESS_TOKEN}'",
-               "."].join(' ')
-            )
-          }
+          nix.develop('yarn install')
         }
       }
     }
 
-    stage('Push') {
-      steps { script {
-        withDockerRegistry([credentialsId: 'dockerhub-statusteam-auto', url: '']) {
-          image.push()
+    stage('Build') {
+      steps {
+        script {
+          nix.develop('yarn build')
+          jenkins.genBuildMetaJSON('build/build.json')
         }
-      } }
+      }
     }
 
-    stage('Deploy') {
-      when { expression { params.IMAGE_TAG != '' } }
-      steps { script {
-        withDockerRegistry([credentialsId: 'dockerhub-statusteam-auto', url: '']) {
-          image.push(params.IMAGE_TAG)
+    stage('Publish') {
+      steps {
+        sshagent(credentials: ['status-im-auto-ssh']) {
+          script {
+            nix.develop("""
+              ghp-import \
+                -b ${deployBranch()} \
+                -c ${deployDomain()} \
+                -p build
+              """
+            )
+          }
         }
-      } }
+      }
     }
   }
 
@@ -65,3 +57,7 @@ pipeline {
     cleanup { cleanWs() }
   }
 }
+
+def isMasterBranch() { GIT_BRANCH ==~ /.*master/ }
+def deployBranch() { isMasterBranch() ? 'deploy-master' : 'deploy-develop' }
+def deployDomain() { isMasterBranch() ? 'free.technology' : 'dev.free.technology' }
