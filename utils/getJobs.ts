@@ -9,6 +9,7 @@ export const JOB_BOARD_MAPPING: any = {
   // ift: "instituteoffreetechnologies",
   vac: 'vac',
   waku: 'waku',
+  keycard: 'keycard',
   other: 'iftother',
 }
 
