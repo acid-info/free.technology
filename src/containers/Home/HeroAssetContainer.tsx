@@ -6,8 +6,8 @@ export const HeroAssetContainer: React.FC = () => {
   return (
     <Container>
       <Video autoPlay loop muted playsInline poster={'/videos/poster.jpeg'}>
-        <source src={'/videos/output.webm'} type={'video/webm'} />
         <source src={'/videos/output.mp4'} type={'video/mp4'} />
+        <source src={'/videos/output.webm'} type={'video/webm'} />
         <source src={'/videos/output.ogv'} type={'video/ogv'} />
       </Video>
     </Container>
