@@ -4,6 +4,8 @@ export const businessUnitMark = (businessUnit: string) => {
       return '/icons/bu/logos.svg'
     case 'codex':
       return '/icons/bu/codex.svg'
+    case 'status-network':
+      return '/icons/bu/status-network.svg'
     case 'status':
       return '/icons/bu/status.svg'
     case 'waku':
