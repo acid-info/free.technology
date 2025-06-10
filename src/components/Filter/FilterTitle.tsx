@@ -41,7 +41,7 @@ const Container = styled.div`
   }
 `
 
-const Title = styled.h3`
+const Title = styled.h1`
   color: #000;
   font-size: 52px;
   font-weight: 400;
