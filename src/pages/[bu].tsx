@@ -103,6 +103,7 @@ export async function getStaticPaths() {
     'codex',
     'nomos',
     'status',
+    'status-network',
     'keycard',
     'keycard',
     'logos',

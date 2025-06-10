@@ -82,7 +82,7 @@ const TitleContainer = styled.div`
   }
 `
 
-const Title = styled.h3`
+const Title = styled.h2`
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;

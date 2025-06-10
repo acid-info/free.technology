@@ -68,7 +68,7 @@ export const BUHero = ({ data }: Props) => {
                 src={businessUnitMark(data?.bu)}
                 alt={data?.bu + '-mark'}
               />
-              <TitleText>{data?.bu}</TitleText>
+              <TitleText>{data?.bu?.replace(/-/g, ' ')}</TitleText>
             </BUTitle>
           </Title>
         </Header>
@@ -257,7 +257,7 @@ const BUTitle = styled.div`
   }
 `
 
-const TitleText = styled.h3`
+const TitleText = styled.h1`
   font-size: 90px;
   line-height: 103px;
   text-transform: capitalize;
