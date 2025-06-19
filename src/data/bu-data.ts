@@ -271,12 +271,12 @@ const BU_DATA: any = {
       description:
         'A gasless Ethereum L2 with a built-in public goods funding mechanism. Status Network is designed for social apps, games, and DeFi protocols, while its native funding mechanism ensures thriving, sustainable onchain activity.',
       connect: [
-        { link: 'x.com/StatusL2', label: 'X' },
+        { link: 'https://x.com/StatusL2', label: 'X' },
         { link: 'https://status.network/', label: 'Website' },
         { link: 'https://docs.status.network/', label: 'Docs' },
       ],
-      website: 'https://keycard.tech/',
-      github: 'https://github.com/status-im/status-keycard',
+      website: 'https://status.network/',
+      github: 'https://github.com/status-im/status-network-monorepo',
       lead: 'Cyp',
     },
     about: {
