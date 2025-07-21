@@ -113,7 +113,7 @@ const BU_DATA: any = {
       ],
       website: 'https://codex.storage/',
       github: 'https://github.com/codex-storage',
-      lead: 'Dmitriy Ryajov',
+      lead: 'Giuliano',
     },
     about: {
       description:
