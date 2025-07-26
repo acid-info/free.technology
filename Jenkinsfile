@@ -11,6 +11,7 @@ pipeline {
 
   options {
     disableConcurrentBuilds()
+    disableRestartFromStage()
     /* manage how many builds we keep */
     buildDiscarder(logRotator(
       numToKeepStr: '20',
