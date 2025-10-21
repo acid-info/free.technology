@@ -1,4 +1,10 @@
-import { SEO } from '@/components/SEO'
+import {
+  SEO,
+  JsonLd,
+  OrganizationSchema,
+  WebsiteSchema,
+  HomeBreadcrumbSchema,
+} from '@/components/SEO'
 import { Home } from '@/containers/Home'
 import { Button } from '@/components/Button'
 import { Hero, Description } from '@/components/Hero'
@@ -10,6 +16,10 @@ import Link from 'next/link'
 import BU_DATA from '../data/bu-data'
 
 <SEO />
+
+<JsonLd data={OrganizationSchema} />
+<JsonLd data={WebsiteSchema} />
+<JsonLd data={HomeBreadcrumbSchema} />
 
 <Home>
     <Hero>

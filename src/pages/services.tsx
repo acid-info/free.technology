@@ -1,5 +1,10 @@
 import { Box } from '@/components/Box'
-import { SEO } from '@/components/SEO'
+import {
+  JsonLd,
+  SEO,
+  ServicesBreadcrumbSchema,
+  ServicesSchema,
+} from '@/components/SEO'
 import { ServiceList, ServicePicker } from '@/components/Services'
 import ServiceContact from '@/components/Services/ServiceContact'
 import { ServiceType } from '@/components/Services/ServiceItem'
@@ -19,7 +24,13 @@ const Page = ({ services }: any) => {
 
   return (
     <>
-      <SEO pagePath={`/services`} />
+      <SEO
+        pagePath={`/services`}
+        title="Services - Institute of Free Technology"
+        description="Comprehensive startup studio services including technical support, financial backing, legal guidance, people operations, and branding for blockchain and web3 startups."
+      />
+      <JsonLd data={ServicesSchema} />
+      <JsonLd data={ServicesBreadcrumbSchema} />
       <div>
         <CustomBox marginBottom="180px">
           <ServicePicker
