@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://free.technology/sitemap.xml
+
+# Disallow API routes from being crawled
+Disallow: /api/
