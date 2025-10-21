@@ -134,11 +134,6 @@ export const WebsiteSchema = {
     '@type': 'Organization',
     name: 'Institute of Free Technology',
   },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://free.technology/search?q={search_term_string}',
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 // Breadcrumb Schema for homepage
@@ -161,7 +156,7 @@ export const ServicesSchema = {
   '@type': 'Service',
   name: 'Institute of Free Technology Services',
   description:
-    'Comprehensive startup studio services including technical support, financial backing, legal guidance, people operations, and branding.',
+    'A mission-driven tech startup studio including technical support, financial backing, legal guidance, people operations, and branding.',
   provider: {
     '@type': 'Organization',
     name: 'Institute of Free Technology',
