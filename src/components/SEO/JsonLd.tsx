@@ -38,8 +38,14 @@ export const OrganizationSchema = {
       jobTitle: 'Co-founder',
     },
   ],
-  industry: 'Technology',
-  sector: 'Blockchain Technology',
+  knowsAbout: [
+    'Blockchain Technology',
+    'Decentralized Systems',
+    'Web3 Development',
+    'Privacy Technology',
+    'Digital Rights',
+    'Startup Incubation',
+  ],
   keywords: [
     'blockchain',
     'decentralization',
