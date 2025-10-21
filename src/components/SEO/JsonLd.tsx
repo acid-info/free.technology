@@ -54,7 +54,10 @@ export const OrganizationSchema = {
     'web3',
     'startup studio',
   ],
-  sameAs: ['https://x.com/InstituteFT'],
+  sameAs: [
+    'https://x.com/InstituteFT',
+    'https://www.linkedin.com/company/institute-of-free-technologies/',
+  ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'General Inquiries',
