@@ -16,18 +16,6 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/sitemap.xml',
-      },
-      {
-        source: '/robots.txt',
-        destination: '/robots.txt',
-      },
-    ]
-  },
   async headers() {
     return [
       {
