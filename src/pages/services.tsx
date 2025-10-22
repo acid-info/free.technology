@@ -27,10 +27,11 @@ const Page = ({ services }: any) => {
       <SEO
         pagePath={`/services`}
         title="Services - Institute of Free Technology"
-        description="Comprehensive startup studio services including technical support, financial backing, legal guidance, people operations, and branding for blockchain and web3 startups."
+        description="A mission-driven tech startup studio including technical support, financial backing, legal guidance, people operations, and branding."
       />
       <JsonLd data={ServicesSchema} />
       <JsonLd data={ServicesBreadcrumbSchema} />
+
       <div>
         <CustomBox marginBottom="180px">
           <ServicePicker
