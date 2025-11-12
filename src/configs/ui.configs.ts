@@ -13,20 +13,8 @@ export const breakpoints = {
 
 export const footerBUs = [
   {
-    name: 'Waku',
-    link: 'https://waku.org/',
-  },
-  {
     name: 'Nimbus',
     link: 'https://nimbus.team/',
-  },
-  {
-    name: 'Codex',
-    link: 'https://codex.storage/',
-  },
-  {
-    name: 'Nomos',
-    link: 'https://nomos.tech/',
   },
   {
     name: 'Status',
