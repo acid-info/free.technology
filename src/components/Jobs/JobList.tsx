@@ -1,5 +1,6 @@
 import { breakpoints } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
+import { businessUnitDisplayName } from '../../../utils/bu'
 import { Box } from '../Box'
 import JobItem, { Job } from './JobItem'
 
@@ -31,7 +32,7 @@ const JobList = ({
       {Object.entries(jobs).map(([businessUnit, jobList]) => (
         <Container id={businessUnit} key={businessUnit + '-jobs'}>
           <TitleContainer>
-            <Title>{title ?? businessUnit}</Title>
+            <Title>{title ?? businessUnitDisplayName(businessUnit)}</Title>
           </TitleContainer>
           <Jobs>
             {jobList?.length ? (
