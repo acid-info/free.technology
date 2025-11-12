@@ -22,27 +22,6 @@
     </url>
 
     <url>
-        <loc>https://free.technology/waku</loc>
-        <lastmod>2025-10-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://free.technology/codex</loc>
-        <lastmod>2025-10-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://free.technology/nomos</loc>
-        <lastmod>2025-10-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
         <loc>https://free.technology/status</loc>
         <lastmod>2025-10-21</lastmod>
         <changefreq>weekly</changefreq>

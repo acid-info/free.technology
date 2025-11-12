@@ -99,9 +99,6 @@ export async function getStaticPaths() {
   const paths: any = []
 
   const BUs = [
-    'waku',
-    'codex',
-    'nomos',
     'status',
     'status-network',
     'keycard',
