@@ -1,6 +1,7 @@
 import { breakpoints, uiConfigs } from '@/configs/ui.configs'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { businessUnitDisplayName } from '../../../utils/bu'
 import { calculatElementCount } from '../../../utils/count'
 import { FilterTitle } from '../Filter'
 import { Tag } from '../Tag'
@@ -48,7 +49,7 @@ const JobPicker = ({ data, activeBUs, setActiveBUs }: Props) => {
                   active={activeBUs.includes(bu)}
                   onClick={() => toggleBU(bu)}
                 >
-                  {bu}
+                  {businessUnitDisplayName(bu)}
                 </Tag>
               </CustomLink>
             ))

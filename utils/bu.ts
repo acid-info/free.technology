@@ -25,3 +25,11 @@ export function toBuInUrl(bu: string) {
     .replace(/[^\w\-]+/g, '')
     .replace(/\-\-+/g, '-')
 }
+export const businessUnitDisplayName = (businessUnit: string) => {
+  const displayNames: { [key: string]: string } = {
+    codex: 'Logos Storage',
+    nomos: 'Logos Blockchain',
+    waku: 'Logos Messaging',
+  }
+  return displayNames[businessUnit] || businessUnit
+}
