@@ -8,7 +8,7 @@ const BU_DATA: any = {
       founders: 'Jarrad Hope, Carl Bennetts',
       achievements: 'Public launch, founded Logos Press Engine',
       description:
-        'A movement supporting the development of the decentralised web. Logos technologies lay the foundations for a freer internet upon which communities can evolve into network states. Each protocol in the Logos stack seeks to empower its users while upholding civil liberties and fundamental freedoms.',
+        'Logos is a movement of technologists, creatives, strategists, and activists working together to build a sovereign, people-owned technology stack that revitalises civil society and protects digital liberties at scale.',
       connect: [
         { link: 'http://forum.logos.co', label: 'Forum' },
         { link: 'https://x.com/Logos_network', label: 'X' },
@@ -20,7 +20,7 @@ const BU_DATA: any = {
     },
     about: {
       description:
-        'Logos is a collective of technologists, creatives, legal experts, business strategists, and activists who support the development, sustainability, and promotion of protocols furthering the decentralised web movement. These protocols lay the foundations for a freer internet upon which communities can evolve into network states. Each is built to empower users while upholding civil liberties and fundamental freedoms.\n\nInitially, the Logos tech stack comprises the P2P communications protocols (Logos Messaging), decentralised data storage engine (Logos Storage), and the trustless agreements layer (Logos Blockchain). This trifecta mirrors Ethereum’s early roadmap for the decentralised web. However, Logos places greater importance on individual liberty, privacy, and self-sovereignty, and the design of its protocols reflects these values.\n\nAlongside developing infrastructure, Logos supports the advancement of the network state narrative. Among its initiatives to do so is the Logos Press Engine — an educational resource that hosts content from in-house activists, writers, and thinkers, as well as guest thought leaders on related topics.',
+        'Our mission is simple: to rebuild the systems society depends on so they are free, fair, and usable for everyone. Today’s digital infrastructure was built to serve platforms, institutions, and states, not people. Logos changes that. We’re building technology for the self-determination of individuals and communities alike. \n\nThree core components under one identity and one mission form the Logos technology stack:\n\n - Messaging: a peer-to-peer communications protocol for private, censorship-resistant messaging. \n\n - Storage: a decentralised data storage engine designed for resilience, security, and autonomy. \n\n - Blockchain: a trustless agreements layer enabling private, decentralised coordination and computation. \n\n Together, these protocols deliver a complete toolkit for building and operating sovereign digital infrastructure. Private by default and decentralised, the Logos stack is the foundation for restoring civil society and a freer internet. ',
     },
     milestones: [
       {
