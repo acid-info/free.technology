@@ -56,7 +56,12 @@ export const Footer = () => {
             <h3>Social</h3>
             <LinkItems>
               {footerSocial.map((item) => (
-                <a key={item.name} href={item.link} target="_blank">
+                <a
+                  key={item.name}
+                  href={item.link}
+                  target={item.download ? undefined : '_blank'}
+                  download={item.download ? item.name : undefined}
+                >
                   {item.name}
                 </a>
               ))}

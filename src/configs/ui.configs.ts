@@ -39,6 +39,11 @@ export const footerSocial = [
     name: 'X',
     link: 'https://twitter.com/InstituteFT',
   },
+  {
+    name: 'Brand Assets',
+    link: '/assets/IFT Brand Assets.zip',
+    download: true,
+  },
 ]
 
 export const footerLegal = [
