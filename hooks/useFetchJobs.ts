@@ -9,8 +9,6 @@ const boardMappings: { [key: string]: string } = {
   nomos: 'nomos',
   statusnetwork: 'thestatusnetwork',
   ift: 'instituteoffreetechnologies',
-  vac: 'vac',
-  waku: 'waku',
 }
 
 interface Job {
