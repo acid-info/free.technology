@@ -7,8 +7,8 @@ export const JOB_BOARD_MAPPING: any = {
   nomos: 'nomos',
   // statusnetwork: "thestatusnetwork",
   // ift: "instituteoffreetechnologies",
-  vac: 'vac',
-  waku: 'waku',
+  // vac: 'vac',
+  // waku: 'waku',
   keycard: 'keycard',
   other: 'iftother',
 }
