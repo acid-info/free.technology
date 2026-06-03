@@ -98,14 +98,7 @@ Page.getLayout = function getLayout(page: React.ReactNode) {
 export async function getStaticPaths() {
   const paths: any = []
 
-  const BUs = [
-    'status',
-    'status-network',
-    'keycard',
-    'keycard',
-    'logos',
-    'nimbus',
-  ]
+  const BUs = ['status', 'keycard', 'keycard', 'logos', 'nimbus']
 
   for (const bu of BUs) {
     paths.push({ params: { bu } })
