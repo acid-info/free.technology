@@ -93,17 +93,6 @@ export const OrganizationSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'SoftwareApplication',
-          name: 'Status Network',
-          description:
-            'A gasless Ethereum L2 with a built-in public goods funding mechanism.',
-          url: 'https://free.technology/status-network',
-          applicationCategory: 'Ethereum Layer 2',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'SoftwareApplication',
           name: 'Keycard',
           description:
             'A discreet, convenient, affordable hardware security solution for crypto assets.',
