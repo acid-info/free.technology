@@ -16,6 +16,16 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/status-network',
+        destination:
+          'https://status.app/blog/status-network-merges-with-linea-scaling-gasless-privacy-upstream',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
