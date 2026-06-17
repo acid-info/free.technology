@@ -1,5 +1,7 @@
 # IFT
 
+This project is tested with BrowserStack.
+
 ## Test pages
 - `next-mdx-remote` test page: '/'
 - `@next/mdx` test page: '/test'
@@ -68,3 +70,7 @@ Keep in mind this webpage rebuilds itself at runtime.
 3. After approval, merge the pull request, and verify the changes on the staging server (https://dev.logos.co/).
 
 4. When ready to promote changes to the live website, create a pull request against the "master" branch, based on the "develop" branch.
+
+## License
+
+This project is licensed under the terms of the [MIT License](./LICENSE).
