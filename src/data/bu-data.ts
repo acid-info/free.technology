@@ -78,11 +78,11 @@ const BU_DATA: any = {
       description:
         'A discreet, convenient, affordable hardware security solution for crypto assets. Taking the form of a credit card, Keycard offers comparable crypto security at a fraction of the cost of others in the hardware wallet niche. Keycard is in production, and the team is working on a full hardware wallet, which will be entirely open-source and compatible with existing Keycards while offering a familiar user experience.',
       connect: [
-        { link: 'https://keycard.tech/docs/', label: 'Docs' },
+        { link: 'https://docs.keycard.tech/', label: 'Docs' },
         { link: 'https://twitter.com/Keycard_', label: 'X' },
       ],
       website: 'https://keycard.tech/',
-      github: 'https://github.com/status-im/status-keycard',
+      github: 'https://github.com/keycard-tech/',
       lead: 'Guy-Louis Grau',
     },
     about: {
